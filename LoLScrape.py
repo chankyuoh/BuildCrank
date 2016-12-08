@@ -118,7 +118,7 @@ with open('champData.json', 'w') as fp:
 with open('champData.json', 'r') as fp:
     data = json.load(fp)
     print "JSON DATA"
-    print str(data)
+    print str(data["Akali"]["FreqStarterBuild"])
 
 
 
