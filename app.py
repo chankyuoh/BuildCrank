@@ -6,8 +6,6 @@ from flask import Flask, request
 app = Flask(__name__)
 
 
-
-
 @app.route('/', methods=['GET'])
 def verify():
     # when the endpoint is registered as a webhook, it must echo back
@@ -41,10 +39,22 @@ def webhook():
 
                     with open('champData.json', 'r') as fp:
                         data = json.load(fp)
-
                     res = ""
-                    res += "Frequent Starter: " + str(data["Akali"]["FreqStarterBuild"]) + "\n"
-                    res += "Frequent Full Build: " + str(data["Akali"]["FreqFullBuild"]) + "\n"
+                    res += "Frequent Starter: "  # + str(data["Akali"]["FreqStarterBuild"]) + "\n"
+                    freqStart = data["Akali"]["FreqStarterBuild"]
+                    for i in range(len(freqStart)):
+                        res += freqStart[i]
+                        if i != len(freqStart) - 1:
+                            res += str(" -> ")
+                        else:
+                            print data["Akali"]["FreqStarterBuild"]
+                    res += "\n\n"
+                    res += "Frequent Full Build: "
+                    freqFull = data["Akali"]["FreqFullBuild"]
+                    for i in range(len(freqFull)):
+                        res += freqFull[i]
+                        if i != len(freqFull) - 1:
+                            res += str(" -> ")
                     send_message(sender_id, res)
                     #send_message(sender_id, str(data["Akali"]["FreqFullBuild"]))
 
@@ -87,6 +97,7 @@ def send_message(recipient_id, message_text):
 def log(message):  # simple wrapper for logging to stdout on heroku
     print str(message)
     sys.stdout.flush()
+
 
 
 if __name__ == '__main__':
