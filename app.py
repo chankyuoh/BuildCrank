@@ -40,7 +40,8 @@ def webhook():
                     with open('champData.json', 'r') as fp:
                         data = json.load(fp)
 
-                    send_message(sender_id, str(data))
+                    send_message(sender_id, str(data["FreqStarterBuild"]))
+                    send_message(sender_id, str(data["FreqFullBuild"]))
 
                 if messaging_event.get("delivery"):  # delivery confirmation
                     pass
