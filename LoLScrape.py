@@ -1,6 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 
+
+# github commit check
 def parseUrlTag(tag):
     """Given an HTML tag, parses out and returns only the URL portion"""
     isWithinQuote = False
