@@ -41,7 +41,7 @@ def webhook():
                         data = json.load(fp)
 
                     send_message(sender_id, str(data["Akali"]["FreqStarterBuild"]))
-                    send_message(sender_id, str(data["Akali"]["FreqFullBuild"]))
+                    #send_message(sender_id, str(data["Akali"]["FreqFullBuild"]))
 
                 if messaging_event.get("delivery"):  # delivery confirmation
                     pass
