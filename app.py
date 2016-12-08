@@ -3,7 +3,6 @@ import sys
 import json
 import requests
 from flask import Flask, request
-from LoLScrape import championScrape
 app = Flask(__name__)
 
 
@@ -26,8 +25,7 @@ def webhook():
 
     data = request.get_json()
     log(data)  # you may not want to log every incoming message in production, but it's good for testing
-    c = championScrape()
-    builds = c.getBuilds("http://champion.gg/champion/Leblanc")
+
     if data["object"] == "page":
 
         for entry in data["entry"]:
@@ -40,7 +38,6 @@ def webhook():
                     message_text = messaging_event["message"]["text"]  # the message's text
 
                     send_message(sender_id, "HIHI PYCHARM")
-                    send_message(sender_id, str(builds))
 
                 if messaging_event.get("delivery"):  # delivery confirmation
                     pass
