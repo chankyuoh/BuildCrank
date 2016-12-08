@@ -40,21 +40,13 @@ def webhook():
                     with open('champData.json', 'r') as fp:
                         data = json.load(fp)
                     res = ""
-                    res += "Frequent Starter: "  # + str(data["Akali"]["FreqStarterBuild"]) + "\n"
-                    freqStart = data["Akali"]["FreqStarterBuild"]
-                    for i in range(len(freqStart)):
-                        res += freqStart[i]
-                        if i != len(freqStart) - 1:
-                            res += str(" -> ")
-                        else:
-                            print data["Akali"]["FreqStarterBuild"]
-                    res += "\n\n"
-                    res += "Frequent Full Build: "
+                    res += "Frequent Full Build: \n"
                     freqFull = data["Akali"]["FreqFullBuild"]
+                    itemCount = 1
                     for i in range(len(freqFull)):
-                        res += freqFull[i]
-                        if i != len(freqFull) - 1:
-                            res += str(" -> ")
+                        res += str(itemCount) + ") "
+                        res += freqFull[i] + "\n"
+                        itemCount += 1
                     send_message(sender_id, res)
                     #send_message(sender_id, str(data["Akali"]["FreqFullBuild"]))
 
