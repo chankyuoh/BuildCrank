@@ -39,8 +39,10 @@ def webhook():
 
                     with open('champData.json', 'r') as fp:
                         data = json.load(fp)
-
-                    send_message(sender_id, str(data["Akali"]["FreqStarterBuild"]))
+                    res = ""
+                    res += "Frequent Starter: " + str(data["Akali"]["FreqStarterBuild"]) + "\n"
+                    res += "Frequent Full Build: " + str(data["Akali"]["FreqFullBuild"]) + "\n"
+                    send_message(sender_id, res)
                     #send_message(sender_id, str(data["Akali"]["FreqFullBuild"]))
 
                 if messaging_event.get("delivery"):  # delivery confirmation
