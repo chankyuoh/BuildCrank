@@ -1,9 +1,12 @@
 import requests
+import json
 from bs4 import BeautifulSoup
 
 #TODO: add builds sorted by roles
 
 # github commit check
+
+championDict = {}
 
 class championScrape(object):
     def __init__(self):
@@ -76,7 +79,7 @@ class championScrape(object):
         # "http://champion.gg/champion/Leblanc"
 
         soup = BeautifulSoup(r.content)
-        buildList = []
+        buildList = {}
         # print soup.prettify()
 
         # 0 = Most Frequent Build
@@ -88,18 +91,34 @@ class championScrape(object):
         fullBuilds = buildTypes[0:2]
         print "FULL BUILDS"
         starterBuilds = buildTypes[2:]
-        for build in fullBuilds:
-            print self.parseFullBuild(build)
-            buildList.append(self.parseFullBuild(build))
+        for i in range(len(fullBuilds)):
+            print self.parseFullBuild(fullBuilds[i])
+            if i == 0:
+                buildList["FreqFullBuild"] = self.parseFullBuild(fullBuilds[i])
+            elif i == 1:
+                buildList["WinFullBuild"] = self.parseFullBuild(fullBuilds[i])
         print "STARTER BUILDS"
-        for build in starterBuilds:
-            print self.parseStarterBuild(build)
-            buildList.append(self.parseStarterBuild(build))
+        for i in range(len(starterBuilds)):
+            print self.parseStarterBuild(starterBuilds[i])
+            if i == 0:
+                buildList["FreqStarterBuild"] = self.parseStarterBuild(starterBuilds[i])
+            elif i == 1:
+                buildList["WinStarterBuild"] = self.parseStarterBuild(starterBuilds[i])
         return buildList
 
 c = championScrape()
-print c.getBuilds("http://champion.gg/champion/Leblanc")
+champBuilds = c.getBuilds("http://champion.gg/champion/Akali")
+print champBuilds
+championDict['Akali'] = champBuilds
 
+
+with open('champData.json', 'w') as fp:
+    json.dump(championDict, fp, sort_keys=True, indent=4)
+
+with open('champData.json', 'r') as fp:
+    data = json.load(fp)
+    print "JSON DATA"
+    print str(data)
 
 
 

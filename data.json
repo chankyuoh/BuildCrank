@@ -1,0 +1,31 @@
+{
+    "Akali": {
+        "FreqFullBuild": [
+            "Hextech Gunblade", 
+            "Sorcerer's Shoes", 
+            "Lich Bane", 
+            "Zhonya's Hourglass", 
+            "Rylai's Crystal Scepter", 
+            "Rabadon's Deathcap"
+        ], 
+        "FreqStarterBuild": [
+            "Boots of Speed", 
+            "Health Potion", 
+            "Health Potion", 
+            "Health Potion", 
+            "Health Potion"
+        ], 
+        "WinFullBuild": [
+            "Hextech Gunblade", 
+            "Sorcerer's Shoes", 
+            "Lich Bane", 
+            "Zhonya's Hourglass", 
+            "Rylai's Crystal Scepter", 
+            "Sunfire Cape"
+        ], 
+        "WinStarterBuild": [
+            "Doran's Shield", 
+            "Health Potion"
+        ]
+    }
+}

@@ -37,7 +37,10 @@ def webhook():
                     recipient_id = messaging_event["recipient"]["id"]  # the recipient's ID, which should be your page's facebook ID
                     message_text = messaging_event["message"]["text"]  # the message's text
 
-                    send_message(sender_id, "HIHI PYCHARM")
+                    with open('champData.json', 'r') as fp:
+                        data = json.load(fp)
+
+                    send_message(sender_id, str(data))
 
                 if messaging_event.get("delivery"):  # delivery confirmation
                     pass
