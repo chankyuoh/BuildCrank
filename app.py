@@ -5,6 +5,9 @@ import requests
 from flask import Flask, request
 app = Flask(__name__)
 
+with open('champData.json', 'r') as fp:
+    data = json.load(fp)
+
 
 @app.route('/', methods=['GET'])
 def verify():
@@ -37,8 +40,6 @@ def webhook():
                     recipient_id = messaging_event["recipient"]["id"]  # the recipient's ID, which should be your page's facebook ID
                     message_text = messaging_event["message"]["text"]  # the message's text
 
-                    with open('champData.json', 'r') as fp:
-                        data = json.load(fp)
                     res = ""
                     res += "Frequent Starter: " + str(data["Akali"]["FreqStarterBuild"]) + "\n"
                     res += "Frequent Full Build: " + str(data["Akali"]["FreqFullBuild"]) + "\n"
