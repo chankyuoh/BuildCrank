@@ -121,39 +121,43 @@ class championScrape(object):
         return buildList
 
 
-c = championScrape()
-champBuilds = c.getBuilds("http://champion.gg/champion/akali")
-#print champBuilds
 
-champBuildDict = {}
-champBuildDict['akali'] = champBuilds
+def makeChampBuildDict():
+    champBuildDict = {}
+    c = championScrape()
+    champBuilds = c.getBuilds("http://champion.gg/champion/akali")
+    champBuildDict['akali'] = champBuilds
+    makeJsonData(champBuildDict)
 
 
-#  write new champion build data to .json file
-with open('champData.json', 'w') as fp:
-    json.dump(champBuildDict, fp, sort_keys=True, indent=4)
+
+def makeJsonData(champBuildDict):
+    """Writes a JSON file that has all the information of a champion's builds
+       in a file named 'champData.json' """
+    #  write new champion build data to .json file
+    with open('champData.json', 'w') as fp:
+        json.dump(champBuildDict, fp, sort_keys=True, indent=4)
+
+def printBuildFromJson(fileName,champName):
+    """parses the Json to print out the build order for the champion specified"""
+    with open(fileName, 'r') as fp:
+        data = json.load(fp)
+
+        res = ""
+        res += "Frequent Full Build: \n"
+        freqFull = data[champName]["FreqFullBuild"]
+        itemCount = 1
+        for i in range(len(freqFull)):
+            res += str(itemCount) + ") "
+            res += freqFull[i] + "\n"
+            itemCount += 1
+        logger.info(res)
+
+makeChampBuildDict()
+printBuildFromJson("champData.json","akali")
 
 #  read .json file for champion build data
-with open('champData.json', 'r') as fp:
-    data = json.load(fp)
 
-    res = ""
-    #res += "Frequent Starter: "  # + str(data["Akali"]["FreqStarterBuild"]) + "\n"
-    #freqStart = data["akali"]["FreqStarterBuild"]
-    #for i in range(len(freqStart)):
-    #    res += freqStart[i]
-    #    if i != len(freqStart)-1:
-    #        res += str(" -> ")
-    #res += "\n\n"
-    res += "Frequent Full Build: \n"
-    freqFull = data["akali"]["FreqFullBuild"]
-    itemCount = 1
-    for i in range(len(freqFull)):
-        res += str(itemCount) + ") "
-        res += freqFull[i] + "\n"
-        itemCount+= 1
-
-    logger.info(res)
 
 
 
