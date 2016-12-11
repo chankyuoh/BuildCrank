@@ -41,7 +41,7 @@ def webhook():
                         data = json.load(fp)
                     res = ""
                     res += "Frequent Full Build: \n"
-                    freqFull = data["Akali"]["FreqFullBuild"]
+                    freqFull = data[message_text]["FreqFullBuild"]
                     itemCount = 1
                     for i in range(len(freqFull)):
                         res += str(itemCount) + ") "
