@@ -107,9 +107,9 @@ class championScrape(object):
         return buildList
 
 c = championScrape()
-champBuilds = c.getBuilds("http://champion.gg/champion/Akali")
+champBuilds = c.getBuilds("http://champion.gg/champion/akali")
 #print champBuilds
-championDict['Akali'] = champBuilds
+championDict['akali'] = champBuilds
 
 
 with open('champData.json', 'w') as fp:
@@ -120,16 +120,16 @@ with open('champData.json', 'r') as fp:
 
     res = ""
     res += "Frequent Starter: "  # + str(data["Akali"]["FreqStarterBuild"]) + "\n"
-    freqStart = data["Akali"]["FreqStarterBuild"]
+    freqStart = data["akali"]["FreqStarterBuild"]
     for i in range(len(freqStart)):
         res += freqStart[i]
         if i != len(freqStart)-1:
             res += str(" -> ")
         else:
-            print data["Akali"]["FreqStarterBuild"]
+            print data["akali"]["FreqStarterBuild"]
     res += "\n\n"
     res += "Frequent Full Build: \n"
-    freqFull = data["Akali"]["FreqFullBuild"]
+    freqFull = data["akali"]["FreqFullBuild"]
     itemCount = 1
     for i in range(len(freqFull)):
         res += str(itemCount) + ") "
