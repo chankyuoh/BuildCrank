@@ -1,18 +1,25 @@
 import requests
 import json
+import logging
+import inspect
 from bs4 import BeautifulSoup
 
 #TODO: add builds sorted by roles
 
-# github commit check
 
-championDict = {}
+logging.basicConfig(level=logging.INFO, format= '%(levelname)s %(lineno)d \n%(message)s')
+logger = logging.getLogger(__name__)
+# ignore requests library's logging information
+logging.getLogger("requests").setLevel(logging.WARNING)
+logging.getLogger("urllib3").setLevel(logging.WARNING)
+
+
 
 class championScrape(object):
     def __init__(self):
         self.url = ""
     def parseUrlTag(self,tag):
-        """Given an HTML tag of href link and other stuff, parses out and returns only the URL portion"""
+        """Given an HTML tag of href link and other HTML stuff, parses out and returns only the URL portion"""
         isWithinQuote = False
         count = 0
         url = ""
@@ -26,13 +33,18 @@ class championScrape(object):
                 url += char
         return url
 
-    def parseUrl(self,url):
+    def parseLeaguePediaURL(self, url):
         """Given a URL link of the leaguepedia wiki's item description, parses out the item name"""
         begin = url.find("/wiki/")
         begin = begin + len("/wiki/")
         return url[begin:]
 
     def parseFullBuild(self,build):
+        """
+        build: HTML div portion that contains the build order
+        Parses the HTML to obtain just the items from the HTML code
+        returns a list of the items in order
+        Note: This method is used to parse the full build div"""
         items = build.findChildren()  # items per build can be parsed with findChildren()
         # the items list contains a pattern of [URL,PictureLink,random HTML tag]
         itemList = []
@@ -40,13 +52,7 @@ class championScrape(object):
         while i < len(items):
             item = items[i]
             item = str(item)
-            # print "item's leaguepedia link tag"
-            # print item
-            # print "PARSED URL TAG"
-            # print parseUrlTag(itemInfo)
-            # print "PARSE URL"
-            # print parseUrl(parseUrlTag(item))
-            itemList.append(self.parseUrl(self.parseUrlTag(item)))
+            itemList.append(self.parseLeaguePediaURL(self.parseUrlTag(item)))
             i += 3
             # the items list contains a pattern of [URL,PictureLink,random HTML tag], we only want URL, so skip by 3's
         if len(itemList) >= 1:
@@ -54,6 +60,11 @@ class championScrape(object):
         return itemList
 
     def parseStarterBuild(self,build):
+        """
+        build: HTML div portion that contains the build order
+        Parses the HTML to obtain just the items from the HTML code
+        returns a list of the items in order
+        Note: this method is used to parse the starter item div"""
         items = build.findChildren()  # items per build can be parsed with findChildren()
         # the items list contains a pattern of [URL,PictureLink,random HTML tag]
         itemList = []
@@ -67,7 +78,7 @@ class championScrape(object):
             # print parseUrlTag(itemInfo)
             # print "PARSE URL"
             # print parseUrl(parseUrlTag(item))
-            itemList.append(self.parseUrl(self.parseUrlTag(item)))
+            itemList.append(self.parseLeaguePediaURL(self.parseUrlTag(item)))
             i += 2
             # the items list contains a pattern of [URL,PictureLink,random HTML tag], we only want URL, so skip by 3's
         if len(itemList) >= 2:
@@ -75,10 +86,13 @@ class championScrape(object):
         return itemList
 
     def getBuilds(self,url):
+        """
+        url: URL link to the champion's profile page
+        uses BS4 to web scrape item build order data from the page"""
         r = requests.get(url)
         # "http://champion.gg/champion/Leblanc"
 
-        soup = BeautifulSoup(r.content)
+        soup = BeautifulSoup(r.content, "html.parser")
         buildList = {}
         # print soup.prettify()
 
@@ -87,47 +101,50 @@ class championScrape(object):
         # 2 = Most Frequent Starter
         # 3 = Highest Winrate Starter
         buildTypes = soup.find_all("div", class_="build-wrapper")
-        freqBuild = ""
-        fullBuilds = buildTypes[0:2]
-        print "FULL BUILDS"
-        starterBuilds = buildTypes[2:]
+        # buildTypes becomes a list of the HTML parts that encloses the build order
+        fullBuilds = buildTypes[0:2]  # full builds (freq, highest win) are the first 2 items
+        starterBuilds = buildTypes[2:]  # starter builds (freq, highest win) are last 2 items
         for i in range(len(fullBuilds)):
-            print self.parseFullBuild(fullBuilds[i])
             if i == 0:
                 buildList["FreqFullBuild"] = self.parseFullBuild(fullBuilds[i])
+                logger.info(str("FreqFullBuild: " + str(self.parseFullBuild(fullBuilds[i]))))
             elif i == 1:
                 buildList["WinFullBuild"] = self.parseFullBuild(fullBuilds[i])
-        print "STARTER BUILDS"
+                logger.info(str("WinFullBuild: " + str(self.parseFullBuild(fullBuilds[i]))))
         for i in range(len(starterBuilds)):
-            print self.parseStarterBuild(starterBuilds[i])
             if i == 0:
                 buildList["FreqStarterBuild"] = self.parseStarterBuild(starterBuilds[i])
+                logger.info(str("FreqStarterBuild: " + str(self.parseFullBuild(fullBuilds[i]))))
             elif i == 1:
                 buildList["WinStarterBuild"] = self.parseStarterBuild(starterBuilds[i])
+                logger.info(str("WinStarterBuild: " + str(self.parseFullBuild(fullBuilds[i]))))
         return buildList
+
 
 c = championScrape()
 champBuilds = c.getBuilds("http://champion.gg/champion/akali")
 #print champBuilds
-championDict['akali'] = champBuilds
+
+champBuildDict = {}
+champBuildDict['akali'] = champBuilds
 
 
+#  write new champion build data to .json file
 with open('champData.json', 'w') as fp:
-    json.dump(championDict, fp, sort_keys=True, indent=4)
+    json.dump(champBuildDict, fp, sort_keys=True, indent=4)
 
+#  read .json file for champion build data
 with open('champData.json', 'r') as fp:
     data = json.load(fp)
 
     res = ""
-    res += "Frequent Starter: "  # + str(data["Akali"]["FreqStarterBuild"]) + "\n"
-    freqStart = data["akali"]["FreqStarterBuild"]
-    for i in range(len(freqStart)):
-        res += freqStart[i]
-        if i != len(freqStart)-1:
-            res += str(" -> ")
-        else:
-            print data["akali"]["FreqStarterBuild"]
-    res += "\n\n"
+    #res += "Frequent Starter: "  # + str(data["Akali"]["FreqStarterBuild"]) + "\n"
+    #freqStart = data["akali"]["FreqStarterBuild"]
+    #for i in range(len(freqStart)):
+    #    res += freqStart[i]
+    #    if i != len(freqStart)-1:
+    #        res += str(" -> ")
+    #res += "\n\n"
     res += "Frequent Full Build: \n"
     freqFull = data["akali"]["FreqFullBuild"]
     itemCount = 1
@@ -136,8 +153,7 @@ with open('champData.json', 'r') as fp:
         res += freqFull[i] + "\n"
         itemCount+= 1
 
-    print "RES"
-    print res
+    logger.info(res)
 
 
 
