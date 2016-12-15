@@ -1,6 +1,7 @@
 import requests
 import json
 import logging
+import unicodedata
 import inspect
 from bs4 import BeautifulSoup
 
@@ -107,27 +108,31 @@ class championScrape(object):
         for i in range(len(fullBuilds)):
             if i == 0:
                 buildList["FreqFullBuild"] = self.parseFullBuild(fullBuilds[i])
-                logger.info(str("FreqFullBuild: " + str(self.parseFullBuild(fullBuilds[i]))))
+                logger.debug(str("FreqFullBuild: " + str(self.parseFullBuild(fullBuilds[i]))))
             elif i == 1:
                 buildList["WinFullBuild"] = self.parseFullBuild(fullBuilds[i])
-                logger.info(str("WinFullBuild: " + str(self.parseFullBuild(fullBuilds[i]))))
+                logger.debug(str("WinFullBuild: " + str(self.parseFullBuild(fullBuilds[i]))))
         for i in range(len(starterBuilds)):
             if i == 0:
                 buildList["FreqStarterBuild"] = self.parseStarterBuild(starterBuilds[i])
-                logger.info(str("FreqStarterBuild: " + str(self.parseFullBuild(fullBuilds[i]))))
+                logger.debug(str("FreqStarterBuild: " + str(self.parseFullBuild(fullBuilds[i]))))
             elif i == 1:
                 buildList["WinStarterBuild"] = self.parseStarterBuild(starterBuilds[i])
-                logger.info(str("WinStarterBuild: " + str(self.parseFullBuild(fullBuilds[i]))))
+                logger.debug(str("WinStarterBuild: " + str(self.parseFullBuild(fullBuilds[i]))))
         return buildList
 
 
 
 def makeChampBuildJson():
+    # Open json file that has the list of champion names
+    with open("champNames.json", 'r') as fp:
+        champNames = json.load(fp)
     champBuildDict = {}
     c = championScrape()
-    champBuilds = c.getBuilds("http://champion.gg/champion/akali")
-    champBuildDict['akali'] = champBuilds
-    makeJsonData(champBuildDict)
+    for champName in champNames:
+        champBuilds = c.getBuilds("http://champion.gg/champion/"+champName)
+        champBuildDict[champName] = champBuilds
+        makeJsonData(champBuildDict)
 
 
 
@@ -144,17 +149,27 @@ def printBuildFromJson(fileName,champName):
         data = json.load(fp)
 
         res = ""
-        res += "Frequent Full Build: \n"
+        res += "Build Suggestion: \n"
         freqFull = data[champName]["FreqFullBuild"]
         itemCount = 1
         for i in range(len(freqFull)):
             res += str(itemCount) + ") "
             res += freqFull[i] + "\n"
             itemCount += 1
-        logger.info(res)
-
+        print res
 makeChampBuildJson()
-printBuildFromJson("champData.json","akali")
+with open("champNames.json", 'r') as fp:
+    champNames = json.load(fp)
+
+for champ in champNames:
+    print champ
+    printBuildFromJson('champData.json',champ)
+
+
+
+
+
+
 
 #  read .json file for champion build data
 

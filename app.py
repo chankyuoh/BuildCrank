@@ -36,15 +36,16 @@ def webhook():
                     sender_id = messaging_event["sender"]["id"]        # the facebook ID of the person sending you the message
                     recipient_id = messaging_event["recipient"]["id"]  # the recipient's ID, which should be your page's facebook ID
                     message_text = messaging_event["message"]["text"]  # the message's text
-
-                    if message_text != "akali":
+                    with open('champNames.json','r') as fp:
+                        names = json.load(fp)
+                    if message_text not in names:
                         send_message(sender_id,"Sorry I don't recognize that champion name")
                         return "ok", 200
 
                     with open('champData.json', 'r') as fp:
                         data = json.load(fp)
                     res = ""
-                    res += "Frequent Full Build: \n"
+                    res += "Suggested build: \n"
                     freqFull = data[message_text]["FreqFullBuild"]
                     itemCount = 1
                     for i in range(len(freqFull)):
