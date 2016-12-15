@@ -54,7 +54,7 @@ def webhook():
                             send_message(sender_id, "Sorry " + original_champion_name + "'s " + role + " build is not available")
                             return "ok", 200
                     else:
-                        send_message(sender_id, "Sorry I don't recognize that champion name")
+                        send_message(sender_id, "Sorry I don't recognize the champion name " + championName)
                         return "ok", 200
 
 
@@ -153,11 +153,14 @@ def getSpecifiedChampName(message_text):
     """gets the specified champion's name by removing the role portion of the message"""
     msgList = message_text.split(" ")
     roles = ['sup','supp', 'support', "bot", 'adc', 'mid', "middle", 'jg', 'jungle', 'top']
+    itemsToRemoveList = []
     for msg in msgList:
         original_msg = msg
         msg = msg.lower()
         if msg in roles:
-            msgList.remove(original_msg)
+            itemsToRemoveList.append(original_msg)
+    for item in itemsToRemoveList:
+        msgList.remove(item)
     return "".join(msgList)
 
 

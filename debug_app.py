@@ -86,11 +86,14 @@ def getSpecifiedChampName(message_text):
     """gets the specified champion's name by removing the role portion of the message"""
     msgList = message_text.split(" ")
     roles = ['sup','supp', 'support', "bot", 'adc', 'mid', "middle", 'jg', 'jungle', 'top']
+    itemsToRemoveList = []
     for msg in msgList:
         original_msg = msg
         msg = msg.lower()
         if msg in roles:
-            msgList.remove(original_msg)
+            itemsToRemoveList.append(original_msg)
+    for item in itemsToRemoveList:
+        msgList.remove(item)
     return "".join(msgList)
 
 
@@ -168,7 +171,7 @@ def convertAltNametoOriginal(name):
 
 def webhook():
 
-    message_text = "velkoz supp"
+    message_text = "velkoz supp mid"
     sender_id = 1
     original_message = message_text
     original_champion_name = getSpecifiedChampName(message_text)
@@ -185,7 +188,7 @@ def webhook():
         else:
             send_message(sender_id, "Sorry the build for " + role + "is not available for " + original_champion_name)
     else:
-        send_message(sender_id, "Sorry I don't recognize that champion name")
+        send_message(sender_id, "Sorry I don't recognize the champion name: " + championName)
 
 
 webhook()
