@@ -123,15 +123,21 @@ def getRole(championName,message_text):
         return getSpecifiedRole(message_text)
 
 
-
-
+def prettifyRole(role):
+    if role == "ADC":
+        return "Adc"
+    elif role == "Middle":
+        return "Mid"
+    else:
+        return role
 
 def sendPrettyBuild(championName,role,sender_id,original_message):
     with open('champData.json', 'r') as fp:
         data = json.load(fp)
     prettyChampName = championName[0].upper() + championName[1:]
+    prettyRoleName = prettifyRole(role)
     res = ""
-    res += "Suggested build for: " + prettyChampName + " " + role + "\n"
+    res += "Suggested build for: " + prettyChampName + " " + prettyRoleName + "\n"
     freqFullBuild = data[championName][role]["FreqFullBuild"]
     itemCount = 1
     for i in range(len(freqFullBuild)):
