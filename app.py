@@ -44,17 +44,17 @@ def webhook():
                         return "ok", 200
 
                     championName = getChampName(message_text)
-                    role = getRole(championName, message_text)
-
-
                     if isValidChampionName(championName):
-                        if isValidRole(championName, role):
-                            sendPrettyBuild(championName,role,sender_id, original_message)
-                        else:
-                            send_message(sender_id, "Sorry " + original_champion_name + "'s " + role + " build is not available")
-                            return "ok", 200
+                        role = getRole(championName, message_text)
                     else:
-                        send_message(sender_id, "Sorry I don't recognize the champion name " + championName)
+                        send_message(sender_id, "Sorry I don't recognize the champion name: " + championName)
+                        return "ok", 200
+
+                    if isValidRole(championName, role):
+                        sendPrettyBuild(championName, role, sender_id, original_message)
+                    else:
+                        send_message(sender_id,
+                                     "Sorry " + original_champion_name + "'s " + role + " build is not available")
                         return "ok", 200
 
 

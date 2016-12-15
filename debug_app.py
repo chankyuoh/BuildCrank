@@ -171,7 +171,7 @@ def convertAltNametoOriginal(name):
 
 def webhook():
 
-    message_text = "velkoz supp mid"
+    message_text = "velly"
     sender_id = 1
     original_message = message_text
     original_champion_name = getSpecifiedChampName(message_text)
@@ -179,16 +179,18 @@ def webhook():
         sendHelpMessage(sender_id)
 
     championName = getChampName(message_text)
-    role = getRole(championName, message_text)
-
-
     if isValidChampionName(championName):
-        if isValidRole(championName, role):
-            sendPrettyBuild(championName,role, sender_id, original_message)
-        else:
-            send_message(sender_id, "Sorry the build for " + role + "is not available for " + original_champion_name)
+        role = getRole(championName, message_text)
     else:
         send_message(sender_id, "Sorry I don't recognize the champion name: " + championName)
+        return
+
+    if isValidRole(championName, role):
+        sendPrettyBuild(championName, role, sender_id, original_message)
+    else:
+        send_message(sender_id, "Sorry the build for " + role + "is not available for " + original_champion_name)
+
+
 
 
 webhook()
