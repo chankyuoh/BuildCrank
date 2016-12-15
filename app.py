@@ -41,6 +41,7 @@ def webhook():
                     message_text = message_text.replace(".","")
                     message_text = message_text.replace("'","")
                     message_text = message_text.replace(" ","")
+                    message_text = message_text.lower()
                     log("message: " + message_text)
                     with open('champNames.json','r') as fp:
                         names = json.load(fp)
