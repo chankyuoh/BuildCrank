@@ -26,7 +26,7 @@ def webhook():
 
     data = request.get_json()
     log(data)  # you may not want to log every incoming message in production, but it's good for testing
-
+    send_welcome_message()
     if data["object"] == "page":
 
         for entry in data["entry"]:
@@ -218,6 +218,26 @@ def convertAltNametoOriginal(name):
         return "lissandra"
     else:
         return name
+
+def send_welcome_message():
+    log("sending message to {recipient}: {text}".format(recipient=recipient_id, text=message_text))
+
+    params = {
+        "access_token": os.environ["PAGE_ACCESS_TOKEN"]
+    }
+    headers = {
+        "Content-Type": "application/json"
+    }
+    data = json.dumps({
+        "setting_type":"greeting",
+        "greeting": {
+            "text": "Hi {{user_first_name}}, BuildCrank helps you find item build orders for champions in LoL"
+        }
+    })
+    r = requests.post("https://graph.facebook.com/v2.6/me/messages", params=params, headers=headers, data=data)
+    if r.status_code != 200:
+        log(r.status_code)
+        log(r.text)
 
 
 def send_message(recipient_id, message_text):
