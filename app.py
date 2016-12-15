@@ -220,7 +220,7 @@ def convertAltNametoOriginal(name):
         return name
 
 def send_welcome_message():
-    log("sending message to {recipient}: {text}".format(recipient=recipient_id, text=message_text))
+    log("sending welcome message")
 
     params = {
         "access_token": os.environ["PAGE_ACCESS_TOKEN"]
