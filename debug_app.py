@@ -42,10 +42,11 @@ def isValidInput(message_text):
 
 def getChampName(message_text):
     msgList = message_text.split(" ")
+    if len(msgList) == 1:
+        championName = updateChampNameFormat(message_text)
     if len(msgList) == 2:
         championName = getSpecifiedChampName(message_text)  # message contain both champ name and role, parse out name
-
-    championName = updateChampNameFormat(championName)
+        championName = updateChampNameFormat(championName)
     return championName
 
 def getRole(championName,message_text):
@@ -160,7 +161,7 @@ def convertAltNametoOriginal(name):
 
 def webhook():
 
-    message_text = "akali top"
+    message_text = "akali"
     sender_id = 1
     original_message = message_text
     original_champion_name = getSpecifiedChampName(message_text)

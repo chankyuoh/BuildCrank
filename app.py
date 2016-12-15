@@ -107,10 +107,11 @@ def isValidInput(message_text):
 
 def getChampName(message_text):
     msgList = message_text.split(" ")
+    if len(msgList) == 1:
+        championName = updateChampNameFormat(message_text)
     if len(msgList) == 2:
         championName = getSpecifiedChampName(message_text)  # message contain both champ name and role, parse out name
-
-    championName = updateChampNameFormat(championName)
+        championName = updateChampNameFormat(championName)
     return championName
 
 def getRole(championName,message_text):
@@ -129,7 +130,7 @@ def sendPrettyBuild(championName,role,sender_id,original_message):
     with open('champData.json', 'r') as fp:
         data = json.load(fp)
     res = ""
-    res += "Suggested build for: " + original_message + "\n"
+    res += "Suggested build for: " + championName + " " + role + "\n"
     freqFullBuild = data[championName][role]["FreqFullBuild"]
     itemCount = 1
     for i in range(len(freqFullBuild)):
