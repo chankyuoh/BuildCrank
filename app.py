@@ -1,6 +1,7 @@
 import os
 import sys
 import json
+import string
 import requests
 from flask import Flask, request
 app = Flask(__name__)
@@ -36,6 +37,11 @@ def webhook():
                     sender_id = messaging_event["sender"]["id"]        # the facebook ID of the person sending you the message
                     recipient_id = messaging_event["recipient"]["id"]  # the recipient's ID, which should be your page's facebook ID
                     message_text = messaging_event["message"]["text"]  # the message's text
+
+                    message_text = message_text.translate(None, string.punctuation)
+                    message_text = message_text.replace(" ","")
+
+
                     with open('champNames.json','r') as fp:
                         names = json.load(fp)
                     if message_text not in names:
