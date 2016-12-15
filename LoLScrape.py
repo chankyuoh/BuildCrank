@@ -15,111 +15,127 @@ logging.getLogger("requests").setLevel(logging.WARNING)
 logging.getLogger("urllib3").setLevel(logging.WARNING)
 
 
+def parseUrlTag(tag):
+    """Given an HTML tag of href link and other HTML stuff, parses out and returns only the URL portion"""
+    isWithinQuote = False
+    count = 0
+    url = ""
+    for char in tag:
+        if count == 2:
+            break
+        if char == '"':
+            isWithinQuote = not isWithinQuote
+            count += 1
+        elif isWithinQuote:
+            url += char
+    return url
 
-class championScrape(object):
-    def __init__(self):
-        self.url = ""
-    def parseUrlTag(self,tag):
-        """Given an HTML tag of href link and other HTML stuff, parses out and returns only the URL portion"""
-        isWithinQuote = False
-        count = 0
-        url = ""
-        for char in tag:
-            if count == 2:
-                break
-            if char == '"':
-                isWithinQuote = not isWithinQuote
-                count += 1
-            elif isWithinQuote:
-                url += char
-        return url
 
-    def parseLeaguePediaURL(self, url):
-        """Given a URL link of the leaguepedia wiki's item description, parses out the item name"""
-        begin = url.find("/wiki/")
-        begin = begin + len("/wiki/")
-        return url[begin:]
+def parseLeaguePediaURL(url):
+    """Given a URL link of the leaguepedia wiki's item description, parses out the item name"""
+    begin = url.find("/wiki/")
+    begin = begin + len("/wiki/")
+    return url[begin:]
 
-    def parseFullBuild(self,build):
-        """
-        build: HTML div portion that contains the build order
-        Parses the HTML to obtain just the items from the HTML code
-        returns a list of the items in order
-        Note: This method is used to parse the full build div"""
-        items = build.findChildren()  # items per build can be parsed with findChildren()
-        # the items list contains a pattern of [URL,PictureLink,random HTML tag]
-        itemList = []
-        i = 0
-        while i < len(items):
-            item = items[i]
-            item = str(item)
-            itemList.append(self.parseLeaguePediaURL(self.parseUrlTag(item)))
-            i += 3
-            # the items list contains a pattern of [URL,PictureLink,random HTML tag], we only want URL, so skip by 3's
-        if len(itemList) >= 1:
-            itemList = itemList[0:len(itemList) - 1]  # remove last item which is a blank item from parsing
-        return itemList
 
-    def parseStarterBuild(self,build):
-        """
-        build: HTML div portion that contains the build order
-        Parses the HTML to obtain just the items from the HTML code
-        returns a list of the items in order
-        Note: this method is used to parse the starter item div"""
-        items = build.findChildren()  # items per build can be parsed with findChildren()
-        # the items list contains a pattern of [URL,PictureLink,random HTML tag]
-        itemList = []
-        i = 0
-        while i < len(items):
-            item = items[i]
-            item = str(item)
-            # print "item's leaguepedia link tag"
-            # print item
-            # print "PARSED URL TAG"
-            # print parseUrlTag(itemInfo)
-            # print "PARSE URL"
-            # print parseUrl(parseUrlTag(item))
-            itemList.append(self.parseLeaguePediaURL(self.parseUrlTag(item)))
-            i += 2
-            # the items list contains a pattern of [URL,PictureLink,random HTML tag], we only want URL, so skip by 3's
-        if len(itemList) >= 2:
-            itemList = itemList[0:len(itemList) - 2]
-        return itemList
+def parseFullBuild(build):
+    """
+    build: HTML div portion that contains the build order
+    Parses the HTML to obtain just the items from the HTML code
+    returns a list of the items in order
+    Note: This method is used to parse the full build div"""
+    items = build.findChildren()  # items per build can be parsed with findChildren()
+    # the items list contains a pattern of [URL,PictureLink,random HTML tag]
+    itemList = []
+    i = 0
+    while i < len(items):
+        item = items[i]
+        item = str(item)
+        itemList.append(parseLeaguePediaURL(parseUrlTag(item)))
+        i += 3
+        # the items list contains a pattern of [URL,PictureLink,random HTML tag], we only want URL, so skip by 3's
+    if len(itemList) >= 1:
+        itemList = itemList[0:len(itemList) - 1]  # remove last item which is a blank item from parsing
+    return itemList
 
-    def getBuilds(self,url):
-        """
-        url: URL link to the champion's profile page
-        uses BS4 to web scrape item build order data from the page"""
-        r = requests.get(url)
-        # "http://champion.gg/champion/Leblanc"
 
-        soup = BeautifulSoup(r.content, "html.parser")
-        buildList = {}
-        # print soup.prettify()
+def parseStarterBuild(build):
+    """
+    build: HTML div portion that contains the build order
+    Parses the HTML to obtain just the items from the HTML code
+    returns a list of the items in order
+    Note: this method is used to parse the starter item div"""
+    items = build.findChildren()  # items per build can be parsed with findChildren()
+    # the items list contains a pattern of [URL,PictureLink,random HTML tag]
+    itemList = []
+    i = 0
+    while i < len(items):
+        item = items[i]
+        item = str(item)
+        # print "item's leaguepedia link tag"
+        # print item
+        # print "PARSED URL TAG"
+        # print parseUrlTag(itemInfo)
+        # print "PARSE URL"
+        # print parseUrl(parseUrlTag(item))
+        itemList.append(parseLeaguePediaURL(parseUrlTag(item)))
+        i += 2
+        # the items list contains a pattern of [URL,PictureLink,random HTML tag], we only want URL, so skip by 3's
+    if len(itemList) >= 2:
+        itemList = itemList[0:len(itemList) - 2]
+    return itemList
 
-        # 0 = Most Frequent Build
-        # 1 = Highest Winrate Build
-        # 2 = Most Frequent Starter
-        # 3 = Highest Winrate Starter
-        buildTypes = soup.find_all("div", class_="build-wrapper")
-        # buildTypes becomes a list of the HTML parts that encloses the build order
-        fullBuilds = buildTypes[0:2]  # full builds (freq, highest win) are the first 2 items
-        starterBuilds = buildTypes[2:]  # starter builds (freq, highest win) are last 2 items
-        for i in range(len(fullBuilds)):
-            if i == 0:
-                buildList["FreqFullBuild"] = self.parseFullBuild(fullBuilds[i])
-                logger.debug(str("FreqFullBuild: " + str(self.parseFullBuild(fullBuilds[i]))))
-            elif i == 1:
-                buildList["WinFullBuild"] = self.parseFullBuild(fullBuilds[i])
-                logger.debug(str("WinFullBuild: " + str(self.parseFullBuild(fullBuilds[i]))))
-        for i in range(len(starterBuilds)):
-            if i == 0:
-                buildList["FreqStarterBuild"] = self.parseStarterBuild(starterBuilds[i])
-                logger.debug(str("FreqStarterBuild: " + str(self.parseFullBuild(fullBuilds[i]))))
-            elif i == 1:
-                buildList["WinStarterBuild"] = self.parseStarterBuild(starterBuilds[i])
-                logger.debug(str("WinStarterBuild: " + str(self.parseFullBuild(fullBuilds[i]))))
-        return buildList
+def championRoleList(soup):
+    roleList = []
+    webLinks = soup.find_all("a")  # pull things that has web link in it b/c roles are listed as links to the role page
+    for link in webLinks:
+        roleName = link.find_all("h3")  # the roles (Middle,Top, etc.) are written in h3 html tag
+        if roleName != []:
+            roleName = roleName[0]  # convert roleName from single element list to string
+            roleName = roleName.text.strip()  # strip empty spaces out
+            roleList.append(roleName)
+    return roleList
+
+def makeRoleBuildDict(url,role):
+    # 0 = Most Frequent Build
+    # 1 = Highest Winrate Build
+    # 2 = Most Frequent Starter
+    # 3 = Highest Winrate Starter
+    r = requests.get(url+"/"+role)
+    soup = BeautifulSoup(r.content, "html.parser")
+    roleBuildDict = {}
+    buildTypes = soup.find_all("div", class_="build-wrapper")
+    # buildTypes becomes a list of the HTML parts that encloses the build order
+    for i in range(len(buildTypes)):
+        if i == 0:
+            roleBuildDict["FreqFullBuild"] = parseFullBuild(buildTypes[0])
+            logger.debug(str("FreqFullBuild: " + str(parseFullBuild(buildTypes[0]))))
+        elif i == 1:
+            roleBuildDict["WinFullBuild"] = parseFullBuild(buildTypes[i])
+            logger.debug(str("WinFullBuild: " + str(parseFullBuild(buildTypes[i]))))
+        if i == 2:
+            roleBuildDict["FreqStarterBuild"] = parseStarterBuild(buildTypes[i])
+            logger.debug(str("FreqStarterBuild: " + str(parseStarterBuild(buildTypes[i]))))
+        elif i == 3:
+            roleBuildDict["WinStarterBuild"] = parseStarterBuild(buildTypes[i])
+            logger.debug(str("WinStarterBuild: " + str(parseStarterBuild(buildTypes[i]))))
+    return roleBuildDict
+
+def makeChampData(name):
+    """
+    url: URL link to the champion's profile page
+    uses BS4 to web scrape item build order data from the page"""
+    url = "http://champion.gg/champion/" + name
+    r = requests.get(url)
+    # "http://champion.gg/champion/Leblanc"
+    soup = BeautifulSoup(r.content, "html.parser")
+    roleList = championRoleList(soup)
+    roleData = {}
+    for role in roleList:
+        roleData[role] = makeRoleBuildDict(url,role)
+    #print soup.prettify()
+    return roleData
+
 
 
 
@@ -128,10 +144,9 @@ def makeChampBuildJson():
     with open("champNames.json", 'r') as fp:
         champNames = json.load(fp)
     champBuildDict = {}
-    c = championScrape()
     for champName in champNames:
-        champBuilds = c.getBuilds("http://champion.gg/champion/"+champName)
-        champBuildDict[champName] = champBuilds
+        champBuild = makeChampData(champName)
+        champBuildDict[champName] = champBuild
         makeJsonData(champBuildDict)
 
 
@@ -147,17 +162,19 @@ def printBuildFromJson(fileName,champName):
     """parses the Json to print out the build order for the champion specified"""
     with open(fileName, 'r') as fp:
         data = json.load(fp)
+        for champ in data:
+            for role in data[champ]:
+                res = "Build Suggestion: for " + champ + " " + role +  "\n"
+                itemCount = 1
+                freqFull = data[champ][role]["FreqFullBuild"]
+                for i in range(len(freqFull)):
+                    res += str(itemCount) + ") "
+                    res += freqFull[i] + "\n"
+                    itemCount += 1
+                print res
 
-        res = ""
-        res += "Build Suggestion: \n"
-        freqFull = data[champName]["FreqFullBuild"]
-        itemCount = 1
-        for i in range(len(freqFull)):
-            res += str(itemCount) + ") "
-            res += freqFull[i] + "\n"
-            itemCount += 1
-        print res
-makeChampBuildJson()
+        #print res
+#makeChampBuildJson()
 with open("champNames.json", 'r') as fp:
     champNames = json.load(fp)
 
@@ -165,7 +182,9 @@ for champ in champNames:
     print champ
     printBuildFromJson('champData.json',champ)
 
+#print roles
 
+#print soup.prettify()
 
 
 

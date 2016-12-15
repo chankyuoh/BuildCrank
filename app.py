@@ -55,7 +55,7 @@ def webhook():
                     with open('champData.json', 'r') as fp:
                         data = json.load(fp)
                     res = ""
-                    res += "Suggested build: for " + message_text + "\n"
+                    res += "Suggested build for: " + message_text + "\n"
                     freqFull = data[message_text]["FreqFullBuild"]
                     itemCount = 1
                     for i in range(len(freqFull)):
