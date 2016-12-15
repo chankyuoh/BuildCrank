@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 #TODO: add builds sorted by roles
 #TODO: Fix Aatrox Jungle build bug
 #TODO: Things learned: Logging, WebScraping, Scaling, automation, making things work for long-run
+#TODO: Making code easier to read by making methods
 
 
 logging.basicConfig(level=logging.INFO, format= '%(levelname)s %(lineno)d \n%(message)s')
