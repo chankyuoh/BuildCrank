@@ -55,7 +55,7 @@ def webhook():
                     with open('champData.json', 'r') as fp:
                         data = json.load(fp)
                     res = ""
-                    res += "Suggested build: \n"
+                    res += "Suggested build: for " + message_text + "\n"
                     freqFull = data[message_text]["FreqFullBuild"]
                     itemCount = 1
                     for i in range(len(freqFull)):
@@ -100,7 +100,7 @@ def convertAltNametoOriginal(name):
     if name == "ilaoi":
         return "illaoi"
     if name in ["j4","jarvan","jarvan4"]:
-        return "jarvanIV"
+        return "jarvaniv"
     if name in ["kasadin","kass"]:
         return "kassadin"
     if name == "kat":
