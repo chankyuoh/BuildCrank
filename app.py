@@ -152,7 +152,7 @@ def sendPrettyBuild(championName,role,sender_id,original_message):
 def getSpecifiedChampName(message_text):
     """gets the specified champion's name by removing the role portion of the message"""
     msgList = message_text.split(" ")
-    roles = ['supp', 'support', "bot", 'adc', 'mid', "middle", 'jg', 'jungle', 'top']
+    roles = ['sup','supp', 'support', "bot", 'adc', 'mid', "middle", 'jg', 'jungle', 'top']
     for msg in msgList:
         original_msg = msg
         msg = msg.lower()

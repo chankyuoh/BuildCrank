@@ -45,12 +45,12 @@ def getChampName(message_text):
     return championName
 
 def getRole(championName,message_text):
-    roles = ['supp', 'support', "bot", 'adc', 'mid', "middle", 'jg', 'jungle', 'top']
+    roles = ['sup','supp', 'support', "bot", 'adc', 'mid', "middle", 'jg', 'jungle', 'top']
     msgList = message_text.split(" ")
     for msg in msgList:
         msg = msg.lower()
         if msg in roles:
-            if msg == "supp" or msg == "support":
+            if msg == "sup" or msg == "supp" or msg == "support":
                 return "Support"
             if msg == "bot" or msg == "adc":
                 return "ADC"
@@ -85,7 +85,7 @@ def sendPrettyBuild(championName,role,sender_id,original_message):
 def getSpecifiedChampName(message_text):
     """gets the specified champion's name by removing the role portion of the message"""
     msgList = message_text.split(" ")
-    roles = ['supp', 'support', "bot", 'adc', 'mid', "middle", 'jg', 'jungle', 'top']
+    roles = ['sup','supp', 'support', "bot", 'adc', 'mid', "middle", 'jg', 'jungle', 'top']
     for msg in msgList:
         original_msg = msg
         msg = msg.lower()
@@ -95,7 +95,7 @@ def getSpecifiedChampName(message_text):
 
 
 def getSpecifiedRole(message_text):
-    roles = ['supp', 'support', "bot", 'adc', 'mid', "middle", 'jg', 'jungle', 'top']
+    roles = ['sup','supp', 'support', "bot", 'adc', 'mid', "middle", 'jg', 'jungle', 'top']
     msgList = message_text.split(" ")
     for msg in msgList:
         msg = msg.lower()
@@ -168,7 +168,7 @@ def convertAltNametoOriginal(name):
 
 def webhook():
 
-    message_text = "kha zix jg "
+    message_text = "velkoz supp"
     sender_id = 1
     original_message = message_text
     original_champion_name = getSpecifiedChampName(message_text)
