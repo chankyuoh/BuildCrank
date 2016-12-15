@@ -122,7 +122,7 @@ class championScrape(object):
 
 
 
-def makeChampBuildDict():
+def makeChampBuildJson():
     champBuildDict = {}
     c = championScrape()
     champBuilds = c.getBuilds("http://champion.gg/champion/akali")
@@ -153,7 +153,7 @@ def printBuildFromJson(fileName,champName):
             itemCount += 1
         logger.info(res)
 
-makeChampBuildDict()
+makeChampBuildJson()
 printBuildFromJson("champData.json","akali")
 
 #  read .json file for champion build data
