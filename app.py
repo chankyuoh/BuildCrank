@@ -43,18 +43,15 @@ def webhook():
                         sendHelpMessage(sender_id)
                         return "ok", 200
 
-                    if isValidInput(message_text):
-                        championName = getChampName(message_text)
-                        role = getRole(championName, message_text)
-                    else:
-                        send_message(sender_id,"Sorry I don't understand your input. Please type help")
-                        return "ok", 200
+                    championName = getChampName(message_text)
+                    role = getRole(championName, message_text)
+
 
                     if isValidChampionName(championName):
                         if isValidRole(championName, role):
                             sendPrettyBuild(championName,role,sender_id, original_message)
                         else:
-                            send_message(sender_id, "Sorry the build for " + role + "is not available for " + original_champion_name)
+                            send_message(sender_id, "Sorry " + original_champion_name + "'s " + role + " build is not available")
                             return "ok", 200
                     else:
                         send_message(sender_id, "Sorry I don't recognize that champion name")
@@ -98,29 +95,34 @@ def isValidRole(championName,role):
         return True
     else:
         return False
-def isValidInput(message_text):
-    msgList = message_text.split(" ")
-    if len(msgList) == 1 or len(msgList) == 2:
-        return True
-    else:
-        return False
 
 def getChampName(message_text):
     msgList = message_text.split(" ")
     if len(msgList) == 1:
         championName = updateChampNameFormat(message_text)
-    if len(msgList) == 2:
+    else:
         championName = getSpecifiedChampName(message_text)  # message contain both champ name and role, parse out name
         championName = updateChampNameFormat(championName)
     return championName
 
 def getRole(championName,message_text):
+    roles = ['supp', 'support', "bot", 'adc', 'mid', "middle", 'jg', 'jungle', 'top']
     msgList = message_text.split(" ")
-    if len(msgList) == 1:
-        roleList = getRoleList(championName)
-        return roleList[0]  # first element = highest played role
-    elif len(msgList) == 2:
-        return getSpecifiedRole(message_text)
+    for msg in msgList:
+        msg = msg.lower()
+        if msg in roles:
+            if msg == "supp" or msg == "support":
+                return "Support"
+            if msg == "bot" or msg == "adc":
+                return "ADC"
+            if msg == "mid" or msg == "middle":
+                return "Middle"
+            if msg == "jg" or msg == "jungle":
+                return "Jungle"
+            if msg == "top":
+                return "Top"
+    roleList = getRoleList(championName)
+    return roleList[0]  # this leads to random role selection
 
 
 def prettifyRole(role):
@@ -159,23 +161,6 @@ def getSpecifiedChampName(message_text):
     return "".join(msgList)
 
 
-def getSpecifiedRole(message_text):
-    roles = ['supp', 'support', "bot", 'adc', 'mid', "middle", 'jg', 'jungle', 'top']
-    msgList = message_text.split(" ")
-    for msg in msgList:
-        msg = msg.lower()
-        if msg in roles:
-            if msg == "supp" or msg == "support":
-                return "Support"
-            if msg == "bot" or msg == "adc":
-                return "ADC"
-            if msg == "mid" or msg == "middle":
-                return "Middle"
-            if msg == "jg" or msg == "jungle":
-                return "Jungle"
-            if msg == "top":
-                return "Top"
-    return ""
 
 def updateChampNameFormat(message_text):
     """ Updates the message text to fit the format used in the champData.json file"""

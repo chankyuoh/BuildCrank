@@ -33,29 +33,36 @@ def isValidRole(championName,role):
         return True
     else:
         return False
-def isValidInput(message_text):
-    msgList = message_text.split(" ")
-    if len(msgList) == 1 or len(msgList) == 2:
-        return True
-    else:
-        return False
+
 
 def getChampName(message_text):
     msgList = message_text.split(" ")
     if len(msgList) == 1:
         championName = updateChampNameFormat(message_text)
-    if len(msgList) == 2:
+    else:
         championName = getSpecifiedChampName(message_text)  # message contain both champ name and role, parse out name
         championName = updateChampNameFormat(championName)
     return championName
 
 def getRole(championName,message_text):
+    roles = ['supp', 'support', "bot", 'adc', 'mid', "middle", 'jg', 'jungle', 'top']
     msgList = message_text.split(" ")
-    if len(msgList) == 1:
-        roleList = getRoleList(championName)
-        return roleList[0]  # first element = highest played role
-    elif len(msgList) == 2:
-        return getSpecifiedRole(message_text)
+    for msg in msgList:
+        msg = msg.lower()
+        if msg in roles:
+            if msg == "supp" or msg == "support":
+                return "Support"
+            if msg == "bot" or msg == "adc":
+                return "ADC"
+            if msg == "mid" or msg == "middle":
+                return "Middle"
+            if msg == "jg" or msg == "jungle":
+                return "Jungle"
+            if msg == "top":
+                return "Top"
+    roleList = getRoleList(championName)
+    return roleList[0]  # this leads to random role selection
+
 
 
 
@@ -161,18 +168,16 @@ def convertAltNametoOriginal(name):
 
 def webhook():
 
-    message_text = "akali"
+    message_text = "kha zix jg "
     sender_id = 1
     original_message = message_text
     original_champion_name = getSpecifiedChampName(message_text)
     if message_text == "help":
         sendHelpMessage(sender_id)
 
-    if isValidInput(message_text):
-        championName = getChampName(message_text)
-        role = getRole(championName, message_text)
-    else:
-        send_message(sender_id, "Sorry I don't understand your input. Please type help")
+    championName = getChampName(message_text)
+    role = getRole(championName, message_text)
+
 
     if isValidChampionName(championName):
         if isValidRole(championName, role):
