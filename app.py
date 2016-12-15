@@ -37,33 +37,29 @@ def webhook():
                     sender_id = messaging_event["sender"]["id"]        # the facebook ID of the person sending you the message
                     recipient_id = messaging_event["recipient"]["id"]  # the recipient's ID, which should be your page's facebook ID
                     message_text = messaging_event["message"]["text"]  # the message's text
-
-                    message_text = message_text.replace(".","")
-                    message_text = message_text.replace("'","")
-                    message_text = message_text.replace(" ","")
-                    message_text = message_text.lower()
-                    message_text = convertAltNametoOriginal(message_text)
-
-                    log("message: " + message_text)
-                    with open('champNames.json','r') as fp:
-                        names = json.load(fp)
-                    if message_text not in names:
-
-                        send_message(sender_id,"Sorry I don't recognize that champion name")
+                    original_message = message_text
+                    original_champion_name = getSpecifiedChampName(message_text)
+                    if message_text == "help":
+                        sendHelpMessage(sender_id)
                         return "ok", 200
 
-                    with open('champData.json', 'r') as fp:
-                        data = json.load(fp)
-                    res = ""
-                    res += "Suggested build for: " + message_text + "\n"
-                    freqFull = data[message_text]["FreqFullBuild"]
-                    itemCount = 1
-                    for i in range(len(freqFull)):
-                        res += str(itemCount) + ") "
-                        res += freqFull[i] + "\n"
-                        itemCount += 1
-                    send_message(sender_id, res)
-                    #send_message(sender_id, str(data["Akali"]["FreqFullBuild"]))
+                    if isValidInput(message_text):
+                        championName = getChampName(message_text)
+                        role = getRole(championName, message_text)
+                    else:
+                        send_message(sender_id,"Sorry I don't understand your input. Please type help")
+                        return "ok", 200
+
+                    if isValidChampionName(championName):
+                        if isValidRole(championName, role):
+                            sendPrettyBuild(championName, sender_id, original_message)
+                        else:
+                            send_message(sender_id, "Sorry the build for " + role + "is not available for " + original_champion_name)
+                            return "ok", 200
+                    else:
+                        send_message(sender_id, "Sorry I don't recognize that champion name")
+                        return "ok", 200
+
 
                 if messaging_event.get("delivery"):  # delivery confirmation
                     pass
@@ -75,6 +71,113 @@ def webhook():
                     pass
 
     return "ok", 200
+
+
+
+def sendHelpMessage(sender_id):
+    send_message(sender_id, "type in a champion's name to get a build order. \n"
+                            "type in a champion's name + role name to get build order for specified role \n"
+                            "Ex1) annie \n"
+                            "Ex2) annie mid")
+def getRoleList(champName):
+    with open('champData.json', 'r') as fp:
+        data = json.load(fp)
+    roleList = data[champName].keys()
+    return roleList
+
+def isValidChampionName(championName):
+    with open('champNames.json', 'r') as fp:
+        champNames = json.load(fp)
+    if championName in champNames:
+        return True
+    else:
+        return False
+def isValidRole(championName,role):
+    roleList = getRoleList(championName)
+    if role in roleList:
+        return True
+    else:
+        return False
+def isValidInput(message_text):
+    msgList = message_text.split(" ")
+    if len(msgList) == 1 or len(msgList) == 2:
+        return True
+    else:
+        return False
+
+def getChampName(message_text):
+    msgList = message_text.split(" ")
+    if len(msgList) == 2:
+        championName = getSpecifiedChampName(message_text)  # message contain both champ name and role, parse out name
+
+    championName = updateChampNameFormat(championName)
+    return championName
+
+def getRole(championName,message_text):
+    msgList = message_text.split(" ")
+    if len(msgList) == 1:
+        roleList = getRoleList(championName)
+        role = roleList[0]  # first element = highest played role
+    elif len(msgList) == 2:
+        role = getSpecifiedRole(message_text)
+
+
+
+
+
+def sendPrettyBuild(championName,sender_id,original_message):
+    with open('champData.json', 'r') as fp:
+        data = json.load(fp)
+    res = ""
+    res += "Suggested build for: " + original_message + "\n"
+    freqFullBuild = data[championName]["FreqFullBuild"]
+    itemCount = 1
+    for i in range(len(freqFullBuild)):
+        res += str(itemCount) + ") "
+        res += freqFullBuild[i] + "\n"
+        itemCount += 1
+    send_message(sender_id, res)
+
+
+def getSpecifiedChampName(message_text):
+    """gets the specified champion's name by removing the role portion of the message"""
+    msgList = message_text.split(" ")
+    roles = ['supp', 'support', "bot", 'adc', 'mid', "middle", 'jg', 'jungle', 'top']
+    for msg in msgList:
+        original_msg = msg
+        msg = msg.lower()
+        if msg in roles:
+            msgList.remove(original_msg)
+    return "".join(msgList)
+
+
+def getSpecifiedRole(message_text):
+    roles = ['supp', 'support', "bot", 'adc', 'mid', "middle", 'jg', 'jungle', 'top']
+    msgList = message_text.split(" ")
+    for msg in msgList:
+        msg = msg.lower()
+        if msg in roles:
+            if msg == "supp" or msg == "support":
+                return "Support"
+            if msg == "bot" or msg == "adc":
+                return "ADC"
+            if msg == "mid" or msg == "middle":
+                return "Middle"
+            if msg == "jg" or msg == "jungle":
+                return "Jungle"
+            if msg == "top":
+                return "Top"
+    return ""
+
+def updateChampNameFormat(message_text):
+    """ Updates the message text to fit the format used in the champData.json file"""
+    message_text = message_text.replace(".", "")
+    message_text = message_text.replace("'", "")
+    message_text = message_text.replace(" ", "")
+    message_text = message_text.lower()
+    message_text = convertAltNametoOriginal(message_text)
+    return message_text
+
 
 def convertAltNametoOriginal(name):
     if name in ["asol","aurelion","aurlieon","sol"]:

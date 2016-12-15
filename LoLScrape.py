@@ -6,6 +6,8 @@ import inspect
 from bs4 import BeautifulSoup
 
 #TODO: add builds sorted by roles
+#TODO: Fix Aatrox Jungle build bug
+#TODO: Things learned: Logging, WebScraping, Scaling, automation, making things work for long-run
 
 
 logging.basicConfig(level=logging.INFO, format= '%(levelname)s %(lineno)d \n%(message)s')
@@ -85,18 +87,11 @@ def parseStarterBuild(build):
         itemList = itemList[0:len(itemList) - 2]
     return itemList
 
-def championRoleList(soup):
-    roleList = []
-    webLinks = soup.find_all("a")  # pull things that has web link in it b/c roles are listed as links to the role page
-    for link in webLinks:
-        roleName = link.find_all("h3")  # the roles (Middle,Top, etc.) are written in h3 html tag
-        if roleName != []:
-            roleName = roleName[0]  # convert roleName from single element list to string
-            roleName = roleName.text.strip()  # strip empty spaces out
-            roleList.append(roleName)
-    return roleList
 
 def makeRoleBuildDict(url,role):
+    """ url: champion.gg url link to the champion's page
+        role: the specified role of the champ's build you want
+        Parses champion's specific role page and returns a dictionary of d[BuildType] = build details"""
     # 0 = Most Frequent Build
     # 1 = Highest Winrate Build
     # 2 = Most Frequent Starter
@@ -121,26 +116,51 @@ def makeRoleBuildDict(url,role):
             logger.debug(str("WinStarterBuild: " + str(parseStarterBuild(buildTypes[i]))))
     return roleBuildDict
 
+
+def createChampRoleList(soup):
+    """
+    soup: beautifulsoup object, used to parse HTML web page. soup object should be
+    the champion.gg page of the champion you are interested in.
+
+    Finds the roles that the specified champion plays (mid, top, jg, etc.)
+    and returns a list of the roles"""
+    roleList = []
+    webLinks = soup.find_all("a")  # pull html code that has web link in it b/c roles are listed as links to the role page
+    for link in webLinks:
+        roleName = link.find_all("h3")  # the roles (Middle,Top, etc.) are written in h3 html tag
+        if roleName != []:
+            roleName = roleName[0]  # convert roleName from single element list to string
+            roleName = roleName.text.strip()
+            roleList.append(roleName)
+    return roleList
+
 def makeChampData(name):
     """
-    url: URL link to the champion's profile page
-    uses BS4 to web scrape item build order data from the page"""
+    name: string format name of the champion
+    Creates the champion's build data in a dictionary of format d[role][buildType]"""
     url = "http://champion.gg/champion/" + name
     r = requests.get(url)
     # "http://champion.gg/champion/Leblanc"
     soup = BeautifulSoup(r.content, "html.parser")
-    roleList = championRoleList(soup)
-    roleData = {}
+    roleList = createChampRoleList(soup)
+    roleData = {}  # roleData format: roleData[Role][BuildType]
     for role in roleList:
         roleData[role] = makeRoleBuildDict(url,role)
     #print soup.prettify()
     return roleData
 
+def makeJsonData(champBuildDict):
+    """Writes a JSON file that has all the information of a champion's builds
+       in a file named 'champData.json' """
+    #  write new champion build data to .json file
+    with open('champData.json', 'w') as fp:
+        json.dump(champBuildDict, fp, sort_keys=True, indent=4)
 
 
-
-def makeChampBuildJson():
-    # Open json file that has the list of champion names
+def createChampBuildsJsonFile():
+    """
+    creates a dictionary of champion builds ( d[ChampionName][Role][BuildType]
+    and saves the dictionary to a json file called 'champData.json' """
     with open("champNames.json", 'r') as fp:
         champNames = json.load(fp)
     champBuildDict = {}
@@ -151,16 +171,11 @@ def makeChampBuildJson():
 
 
 
-def makeJsonData(champBuildDict):
-    """Writes a JSON file that has all the information of a champion's builds
-       in a file named 'champData.json' """
-    #  write new champion build data to .json file
-    with open('champData.json', 'w') as fp:
-        json.dump(champBuildDict, fp, sort_keys=True, indent=4)
 
-def printBuildFromJson(fileName,champName):
-    """parses the Json to print out the build order for the champion specified"""
-    with open(fileName, 'r') as fp:
+
+def printEveryBuildFromJson():
+    """parses the Json to print out the build order for all champion and roles"""
+    with open("champData.json", 'r') as fp:
         data = json.load(fp)
         for champ in data:
             for role in data[champ]:
@@ -173,27 +188,26 @@ def printBuildFromJson(fileName,champName):
                     itemCount += 1
                 print res
 
-        #print res
-#makeChampBuildJson()
-with open("champNames.json", 'r') as fp:
-    champNames = json.load(fp)
+def printSpecificBuildFromJson(champName):
+    """parses the Json to print out the build order for the specified champion's roles"""
+    with open("champData.json", 'r') as fp:
+        data = json.load(fp)
+        for role in data[champName]:
+            res = "Build Suggestion: for " + champName + " " + role + "\n"
+            itemCount = 1
 
-for champ in champNames:
-    print champ
-    printBuildFromJson('champData.json',champ)
-
-#print roles
-
-#print soup.prettify()
-
-
-
-
+            freqFull = data[champName][role]["FreqFullBuild"]
+            for i in range(len(freqFull)):
+                res += str(itemCount) + ") "
+                res += freqFull[i] + "\n"
+                itemCount += 1
+            print res
 
 
 
-#  read .json file for champion build data
-
+#createChampBuildsJsonFile()
+#printEveryBuildFromJson()
+printSpecificBuildFromJson("akali")
 
 
 
