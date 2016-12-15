@@ -32,10 +32,11 @@ print championNames
 print len(championNames)
 
 
-
 championNames = [name.replace("'","") for name in championNames]
 championNames = [name.replace(" ","") for name in championNames]
 championNames = [name.lower() for name in championNames]
 championNames = [name.replace(".","") for name in championNames]
+
+champWithAltNames = championNames # championNames2 includes shorter, alternate names
 with open('champNames.json', 'w') as fp:
     json.dump(championNames, fp, sort_keys=True, indent=4)

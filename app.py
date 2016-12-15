@@ -42,6 +42,8 @@ def webhook():
                     message_text = message_text.replace("'","")
                     message_text = message_text.replace(" ","")
                     message_text = message_text.lower()
+                    message_text = convertAltNametoOriginal(message_text)
+
                     log("message: " + message_text)
                     with open('champNames.json','r') as fp:
                         names = json.load(fp)
@@ -73,6 +75,50 @@ def webhook():
                     pass
 
     return "ok", 200
+
+def convertAltNametoOriginal(name):
+    if name in ["asol","aurelion","aurlieon","sol"]:
+        return "aurelionsol"
+    if name in ["blitz"]:
+        return "blitzcrank"
+    if name in ["cass","cassi","cassiopiea"]:
+        return "cassiopeia"
+    if name == "cho":
+        return "chogath"
+    if name == "mundo":
+        return "drmundo"
+    if name in ["eve","evelyn"]:
+        return "evelynn"
+    if name == "ez":
+        return "ezreal"
+    if name in ["fiddle","fiddlestick","fid"]:
+        return "fiddlesticks"
+    if name == "gp":
+        return "gangplank"
+    if name == "heimer":
+        return "heimerdinger"
+    if name == "ilaoi":
+        return "illaoi"
+    if name in ["j4","jarvan","jarvan4"]:
+        return "jarvanIV"
+    if name in ["kasadin","kass"]:
+        return "kassadin"
+    if name == "kat":
+        return "katarina"
+    if name == "kenen":
+        return "kennen"
+    if name == "kha":
+        return "khazix"
+    if name in ["kog","kogmow"]:
+        return "kogmaw"
+    if name == "lb":
+        return "leblanc"
+    if name in ["ls","lee"]:
+        return "leesin"
+    if name == "liss":
+        return "lissandra"
+    else:
+        return name
 
 
 def send_message(recipient_id, message_text):
