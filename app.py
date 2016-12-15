@@ -26,7 +26,6 @@ def webhook():
 
     data = request.get_json()
     log(data)  # you may not want to log every incoming message in production, but it's good for testing
-    send_welcome_message()
     if data["object"] == "page":
 
         for entry in data["entry"]:
@@ -37,6 +36,7 @@ def webhook():
                     sender_id = messaging_event["sender"]["id"]        # the facebook ID of the person sending you the message
                     recipient_id = messaging_event["recipient"]["id"]  # the recipient's ID, which should be your page's facebook ID
                     message_text = messaging_event["message"]["text"]  # the message's text
+                    send_welcome_message(sender_id)
                     original_message = message_text
                     original_champion_name = getSpecifiedChampName(message_text)
                     if message_text == "help":
@@ -219,7 +219,7 @@ def convertAltNametoOriginal(name):
     else:
         return name
 
-def send_welcome_message():
+def send_welcome_message(recipient_id):
     log("sending welcome message")
 
     params = {
@@ -231,10 +231,10 @@ def send_welcome_message():
     data = json.dumps({
         "setting_type":"greeting",
         "greeting": {
-            "text": "Hi {{user_first_name}}, BuildCrank helps you find item build orders for champions in LoL"
+            "text": "BuildCrank helps you find item build orders for champions in LoL"
         }
     })
-    r = requests.post("https://graph.facebook.com/v2.6/me/messages", params=params, headers=headers, data=data)
+    r = requests.post("https://graph.facebook.com/v2.6/me/thread_settings", params=params, headers=headers, data=data)
     if r.status_code != 200:
         log(r.status_code)
         log(r.text)
