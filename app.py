@@ -307,7 +307,7 @@ def makeWinBuild(championName,role,data):
     return res
 
 def makeFrequentBuild(championName,role,data):
-    prettyChampName = championName[0].upper() + championName[1:]
+    prettyChampName = prettifyChampionName(championName)
     prettyRoleName = prettifyRole(role)
     res = ""
     res += "Most Frequent Build For: " + prettyChampName + " " + prettyRoleName + "\n"
