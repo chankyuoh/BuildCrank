@@ -36,26 +36,29 @@ def webhook():
                     sender_id = messaging_event["sender"]["id"]        # the facebook ID of the person sending you the message
                     recipient_id = messaging_event["recipient"]["id"]  # the recipient's ID, which should be your page's facebook ID
                     message_text = messaging_event["message"]["text"]  # the message's text
-                    message_text = removeApostropheS(message_text)
-                    message_text = "".join(c for c in message_text if c not in ('!', '.', ':','?',",","'"))
-                    original_message = message_text
-                    original_champion_name = getSpecifiedChampName(message_text)
+                    message_text = formatMessage(message_text)
+                    isPostBackClicked = False
                     if message_text.lower().strip() == "help":
                         sendHelpMessage(sender_id)
                         return "ok", 200
 
                     championName = getChampName(message_text)
                     if isValidChampionName(championName):
-                        role = getRole(championName, message_text)
+                        if isRoleSpecified(message_text):
+                            role = getRole(championName, message_text)
+                        else:
+                            print "Please Choose a role"
+                            send_post_message(sender_id,"hilo world")
+                            return "ok", 200
                     else:
                         send_message(sender_id, "Sorry I don't recognize the champion name " + championName)
                         return "ok", 200
 
                     if isValidRole(championName, role):
-                        sendPrettyBuild(championName, role, sender_id, original_message)
+                        sendPrettyBuild(championName, role, sender_id)
                     else:
                         send_message(sender_id,
-                                     "Sorry " + original_champion_name + "'s " + role + " build is not available")
+                                     "Sorry " + championName + "'s " + role + " build is not available")
                         return "ok", 200
 
 
@@ -66,15 +69,20 @@ def webhook():
                     pass
 
                 if messaging_event.get("postback"):  # user clicked/tapped "postback" button in earlier message
-                    pass
+                    roleList = getRoleList(championName)
 
     return "ok", 200
+
+
+def formatMessage(message_text):
+    message_text = removeApostropheS(message_text)
+    message_text = "".join(c for c in message_text if c not in ('!', '.', ':', '?', ",", "'"))
+    return message_text
 
 
 def removeApostropheS(message_text):
     for i in range(len(message_text)-1):
         twoMsg = message_text[i] + message_text[i+1]
-        print twoMsg
         if twoMsg == "'s":
             newMsg = message_text[0:i] + message_text[i+2:]
             return newMsg
@@ -86,7 +94,7 @@ def getKeyWordList():
         champNames = json.load(fp)
     keywords += champNames
     roles = ['sup','supp', 'support', "bot", 'adc', 'mid', "middle", 'jg', 'jungle', 'top']
-    buildTypes = ['frequent', 'frequently','win','winrate','full','core','start','starter']
+    buildTypes = ['frequent', 'frequently','popular','win','winning','winrate','full','core','start','starting','starter']
     keywords += roles
     keywords += buildTypes
     return keywords
@@ -125,6 +133,15 @@ def getChampName(message_text):
         championName = updateChampNameFormat(championName)
     return championName
 
+def isRoleSpecified(message_text):
+    roles = ['sup', 'supp', 'support', "bot", 'adc', 'mid', "middle", 'jg', 'jungle', 'top']
+    msgList = message_text.split(" ")
+    for msg in msgList:
+        msg = msg.lower()
+        if msg in roles:
+            return True
+    return False
+
 def getRole(championName,message_text):
     roles = ['sup','supp', 'support', "bot", 'adc', 'mid', "middle", 'jg', 'jungle', 'top']
     msgList = message_text.split(" ")
@@ -153,7 +170,7 @@ def prettifyRole(role):
     else:
         return role
 
-def sendPrettyBuild(championName,role,sender_id,original_message):
+def sendPrettyBuild(championName,role,sender_id):
     with open('champData.json', 'r') as fp:
         data = json.load(fp)
     prettyChampName = championName[0].upper() + championName[1:]
@@ -298,6 +315,46 @@ def send_message(recipient_id, message_text):
         log(r.status_code)
         log(r.text)
 
+def send_post_message(recipient_id, message_text):
+
+    log("sending message to {recipient}: {text}".format(recipient=recipient_id, text=message_text))
+
+    params = {
+        "access_token": os.environ["PAGE_ACCESS_TOKEN"]
+    }
+    headers = {
+        "Content-Type": "application/json"
+    }
+    data = json.dumps({
+        "recipient": {
+            "id": recipient_id
+        },
+        "message": {
+            "attachment": {
+                "type": "template",
+                "payload": {
+                    "template_type": "button",
+                    "text": "What do you want to do next?",
+                    "buttons": [
+                        {
+                            "type": "web_url",
+                            "url": "https://www.reddit.com",
+                            "title": "Show Website"
+                        },
+                        {
+                            "type": "postback",
+                            "title": "Start Chatting",
+                            "payload": "USER_DEFINED_PAYLOAD"
+                        }
+                    ]
+                }
+            }
+        }
+    })
+    r = requests.post("https://graph.facebook.com/v2.6/me/messages", params=params, headers=headers, data=data)
+    if r.status_code != 200:
+        log(r.status_code)
+        log(r.text)
 
 def log(message):  # simple wrapper for logging to stdout on heroku
     print str(message)
