@@ -80,13 +80,13 @@ def sendAppropriateMessage(message_text,sender_id):
         championName = getChampionName(message_text)
         buildType = getBuildType(message_text)
         roles = getRoleList(championName)
-        send_role_post_message(sender_id,roles,championName,buildType)
+        send_role_post_message(sender_id,roles,championName)
         return "ok", 200
     elif isChampionNameSpecified(message_text) and not isRoleSpecified(message_text) and not isBuildTypeSpecified(message_text):
         championName = getChampionName(message_text)
         buildType = getBuildType(message_text)
         roles = getRoleList(championName)
-        send_role_post_message(sender_id,roles,championName,buildType)
+        send_role_post_message(sender_id,roles,championName)
         return "ok", 200
     else:
         send_message(sender_id, "Sorry I don't recognize a champion name in your message. Type help if you're stuck!")
@@ -403,11 +403,7 @@ def send_message(recipient_id, message_text):
         log(r.status_code)
         log(r.text)
 
-def generateBuildTypeMsg(buildType):
-    if buildType == "frequent":
-        return "Most Frequent Build For "
-    else:
-        return "Highest Win Rate Build For "
+
 
 def send_build_type_post_message(recipient_id, championName,role):
 
@@ -452,10 +448,10 @@ def send_build_type_post_message(recipient_id, championName,role):
         log(r.status_code)
         log(r.text)
 
-def send_role_post_message(recipient_id, roles, championName,buildType):
+def send_role_post_message(recipient_id, roles, championName):
 
     log("sending message to {recipient}: {text}".format(recipient=recipient_id, text=championName))
-    buildTypeMsg = generateBuildTypeMsg(buildType)
+    championName = prettifyChampionName(championName)
     params = {
         "access_token": os.environ["PAGE_ACCESS_TOKEN"]
     }
