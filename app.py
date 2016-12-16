@@ -36,31 +36,7 @@ def webhook():
                     sender_id = messaging_event["sender"]["id"]        # the facebook ID of the person sending you the message
                     recipient_id = messaging_event["recipient"]["id"]  # the recipient's ID, which should be your page's facebook ID
                     message_text = messaging_event["message"]["text"]  # the message's text
-                    message_text = formatMessage(message_text)
-                    isPostBackClicked = False
-                    if message_text.lower().strip() == "help":
-                        sendHelpMessage(sender_id)
-                        return "ok", 200
-
-                    championName = getChampName(message_text)
-                    if isValidChampionName(championName):
-                        if isRoleSpecified(message_text):
-                            role = getRole(championName, message_text)
-                        else:
-                            print "Please Choose a role"
-                            roles = ["a"]
-                            send_post_message(sender_id,roles,"hilo world")
-                            return "ok", 200
-                    else:
-                        send_message(sender_id, "Sorry I don't recognize the champion name " + championName)
-                        return "ok", 200
-
-                    if isValidRole(championName, role):
-                        sendPrettyBuild(championName, role, sender_id)
-                    else:
-                        send_message(sender_id,
-                                     "Sorry " + championName + "'s " + role + " build is not available")
-                        return "ok", 200
+                    sendAppropriateMessage(message_text,sender_id)
 
 
                 if messaging_event.get("delivery"):  # delivery confirmation
@@ -70,9 +46,38 @@ def webhook():
                     pass
 
                 if messaging_event.get("postback"):  # user clicked/tapped "postback" button in earlier message
-                    roleList = getRoleList(championName)
+                    message_text = messaging_event["postback"]["payload"]  # the message's text
+                    sendAppropriateMessage(message_text,sender_id)
 
     return "ok", 200
+
+
+
+def sendAppropriateMessage(message_text,sender_id):
+    message_text = formatMessage(message_text)
+    if message_text.lower().strip() == "help":
+        sendHelpMessage(sender_id)
+        return "ok", 200
+
+    championName = getChampName(message_text)
+    if isValidChampionName(championName):
+        if isRoleSpecified(message_text):
+            role = getRole(championName, message_text)
+        else:
+            print "Please Choose a role"
+            roles = ["a"]
+            send_post_message(sender_id, roles, "hilo world")
+            return "ok", 200
+    else:
+        send_message(sender_id, "Sorry I don't recognize the champion name " + championName)
+        return "ok", 200
+
+    if isValidRole(championName, role):
+        sendPrettyBuild(championName, role, sender_id)
+    else:
+        send_message(sender_id,
+                     "Sorry " + championName + "'s " + role + " build is not available")
+        return "ok", 200
 
 
 def formatMessage(message_text):
@@ -352,8 +357,8 @@ def send_post_message(recipient_id, roles,championName):
                         },
                         {
                             "type": "postback",
-                            "title": "Start Chatting",
-                            "payload": "USER_DEFINED_PAYLOAD"
+                            "title": "Get a build for Akali Mid",
+                            "payload": "Akali Mid"
                         }
                     ]
                 }
