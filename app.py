@@ -482,10 +482,10 @@ def send_message(recipient_id, message_text):
 def send_help_post_message(recipient_id):
     text = "How BuildCrank Works:\n"
     text += "1) BuildCrank looks for champion name, role, build type in your messages\n"
-    text += "2) Champion name is the only MANDATORY input "
+    text += "2) Champion name is the only MANDATORY input \n"
     text += "3) Build types can consist of: highest winrate build or most frequent build\n"
     text += "4) Roles can consist of (Supp,Adc,Mid,Jungle,Top)\n"
-    text += "5) click 'see some examples' if you are confused!"
+    text += "5) click 'see some examples' if you are confused!\n"
     params = {
         "access_token": os.environ["PAGE_ACCESS_TOKEN"]
     }
