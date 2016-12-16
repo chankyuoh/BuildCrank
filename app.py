@@ -47,6 +47,7 @@ def webhook():
 
                 if messaging_event.get("postback"):  # user clicked/tapped "postback" button in earlier message
                     message_text = messaging_event["postback"]["payload"]  # the message's text
+                    sender_id = messaging_event["sender"]["id"]
                     sendAppropriateMessage(message_text,sender_id)
 
     return "ok", 200
