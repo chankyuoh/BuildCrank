@@ -476,8 +476,8 @@ def send_role_post_message(recipient_id, roles, championName,buildType):
                         "buttons": [
                             {
                                 "type": "postback",
-                                "title": buildTypeMsg + championName + " " + prettifyRole(roles[0]),
-                                "payload": buildTypeMsg+ championName + " " + prettifyRole(roles[0])
+                                "title": championName + " " + prettifyRole(roles[0]),
+                                "payload": championName + " " + prettifyRole(roles[0])
                             }
                         ]
                     }
@@ -499,13 +499,13 @@ def send_role_post_message(recipient_id, roles, championName,buildType):
                         "buttons": [
                             {
                                 "type": "postback",
-                                "title": buildTypeMsg+ championName + " " + prettifyRole(roles[0]),
-                                "payload": buildTypeMsg + championName + " " + prettifyRole(roles[0])
+                                "title": championName + " " + prettifyRole(roles[0]),
+                                "payload": championName + " " + prettifyRole(roles[0])
                             },
                             {
                                 "type": "postback",
-                                "title": buildTypeMsg + championName + " " + prettifyRole(roles[1]),
-                                "payload": buildTypeMsg + championName + " " + prettifyRole(roles[1])
+                                "title": championName + " " + prettifyRole(roles[1]),
+                                "payload": championName + " " + prettifyRole(roles[1])
                             }
                         ]
                     }
