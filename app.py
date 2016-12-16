@@ -160,7 +160,7 @@ def formatChampionName(message_text):
     return championName
 
 def isBuildTypeSpecified(message_text):
-    buildTypes = ['most','freq','frequent', 'frequently','common','commonly', 'highest','win', 'winning', 'winrate', 'rate']
+    buildTypes = ['most','freq','frequent', 'frequently','common','commonly', 'win%', '%','high' 'highest','win', 'winning', 'winrate', 'rate']
     msgList = message_text.split(" ")
     for msg in msgList:
         msg = msg.lower().strip()
@@ -171,7 +171,7 @@ def isBuildTypeSpecified(message_text):
 
 def getBuildType(message_text):
     frequentBuildTypeKeyWords = ['most','freq','frequent','frequently','common','commonly']
-    winBuildTypeKeyWords = ['highest','win','rate','winning','winrate']
+    winBuildTypeKeyWords = ['high','highest','win','rate','winning','winrate', 'win%', '%']
     msgList = message_text.split(" ")
     for msg in msgList:
         msg = msg.lower().strip()
@@ -434,12 +434,12 @@ def send_build_type_post_message(recipient_id, championName,role):
                     "buttons": [
                         {
                             "type": "postback",
-                            "title": "Most Frequent Build For " +championName + " " + role,
+                            "title": "Most Frequent Build",
                             "payload": "Most Frequent Build For "+ championName + " " + role
                         },
                         {
                             "type": "postback",
-                            "title": "Highest Winrate Build For "+ championName + " " + role,
+                            "title": "High Winrate Build",
                             "payload": "Highest Winrate Build For "+ championName + " " + role
                         }
                     ]
