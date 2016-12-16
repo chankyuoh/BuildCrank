@@ -176,26 +176,20 @@ def getSpecifiedChampName(message_text):
     msgList = message_text.split(" ")
     with open('champNames.json', 'r') as fp:
         champNames = json.load(fp)
-    champName = findOneWordChampName(msgList,champNames)
-    if champName == "NOT_FOUND":
-        champName = findTwoWordChampName(msgList,champNames)
-    return champName
 
-
-def findOneWordChampName(msgList,champNames):
     for msg in msgList:
         msg = msg.lower()
+        msg = convertAltNametoOriginal(msg)
         if msg in champNames:
             return msg
-    return "NOT_FOUND"
-
-def findTwoWordChampName(msgList,champNames):
     for i in range(len(msgList)-1):
         twoWordMsg = msgList[i] + msgList[i+1]
         twoWordMsg = twoWordMsg.lower().strip()
         if twoWordMsg in champNames:
             return twoWordMsg
-    return "NOT_FOUND"
+    return message_text
+
+
 
 
 
@@ -207,7 +201,6 @@ def updateChampNameFormat(message_text):
     message_text = message_text.replace("'", "")
     message_text = message_text.replace(" ", "")
     message_text = message_text.lower()
-    message_text = convertAltNametoOriginal(message_text)
     return message_text
 
 
