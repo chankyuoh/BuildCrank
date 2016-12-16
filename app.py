@@ -496,7 +496,7 @@ def send_help_post_message(recipient_id):
                 "type": "template",
                 "payload": {
                     "template_type": "button",
-                    "text": text,
+                    "text": text2,
                     "buttons": [
                         {
                             "type": "postback",
