@@ -58,13 +58,14 @@ def webhook():
                     aboutMessage += "Find the code for this bot on my Github! https://github.com/chankyuoh/fb-lol-bot"
                     feedbackMsg = "Send me any feedback or bug reports by PM'ing /u/RevTremendo on reddit! "
                     text = "Try any of these things: \n\n"
-                    text += "1) Varus\n"
-                    text += "2) Varus mid\n"
-                    text += "3) mid Varus\n"
-                    text += "4) Frequent varus mid\n"
-                    text += "5) Highest winrate varus adc\n"
-                    text += "6) winrate varus adc\n"
-                    text += "6) most frequent build for varus adc"
+                    text += "1) varus\n"
+                    text += "2) varus mid\n"
+                    text += "3) mid varus\n"
+                    text += "4) frequent varus build"
+                    text += "5) frequent varus mid\n"
+                    text += "6) highest winrate varus mid\n"
+                    text += "7) winrate varus mid\n"
+                    text += "8) most frequent build for varus mid"
                     if message_text == "example_clicked":
                         send_message(sender_id,text)
                     elif message_text == "about_clicked":
@@ -95,7 +96,7 @@ def sendAppropriateMessage(message_text,sender_id):
             return "ok", 200
         else:
             send_message(sender_id,
-                         "Sorry " + championName + "'s " + prettifyRole(role) + " build is not available")
+                         "Sorry " + championName + "'s " + prettifyRole(role) + " build is not available. Try a more common role for this champion")
             return "ok", 200
         buildType = getBuildType(message_text)
         sendPrettyBuild(championName,role,buildType,sender_id)
@@ -107,7 +108,7 @@ def sendAppropriateMessage(message_text,sender_id):
             return "ok", 200
         else:
             send_message(sender_id,
-                         "Sorry " + prettifyChampionName(championName) + "'s " + prettifyRole(role) + " build is not available")
+                         "Sorry " + prettifyChampionName(championName) + "'s " + prettifyRole(role) + " build is not available. Try a more common role for this champion")
             return "ok", 200
     elif isChampionNameSpecified(message_text) and not isRoleSpecified(message_text) and isBuildTypeSpecified(message_text):
         championName = getChampionName(message_text)
@@ -471,10 +472,10 @@ def send_message(recipient_id, message_text):
         log(r.text)
 
 def send_help_post_message(recipient_id):
-    text = "Open this menu at any time by typing help\n"
-    text += "Type any champion's name to get a build order\n"
-    text += "Don't like having to click so many buttons every time?\n"
-    text += "Then give BuildCrank all the necessary info: champion name, role/lane, and build type (frequent,winrate)\n"
+    text = "Open this menu at any time by typing help!\n\n"
+    text += "Type any champion's name to get the champion's build order\n\n"
+    text += "Don't like being prompted to specify what you want? "
+    text += "Then give BuildCrank all the necessary info (name,role,buildType) in one message\n\n"
     text += "Feel free to use common nicknames (heimer instead of heimerdinger)!\n"
     params = {
         "access_token": os.environ["PAGE_ACCESS_TOKEN"]
