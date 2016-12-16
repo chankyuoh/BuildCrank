@@ -240,7 +240,7 @@ def makeWinBuild(championName,role,data):
     prettyChampName = championName[0].upper() + championName[1:]
     prettyRoleName = prettifyRole(role)
     res = ""
-    res += "Highest Win rate Build For " + prettyChampName + " " + prettyRoleName + "\n"
+    res += "Highest Win Rate Build For " + prettyChampName + " " + prettyRoleName + "\n"
     WinFullBuild = data[championName][role]["WinFullBuild"]
     itemCount = 1
     for i in range(len(WinFullBuild)):
@@ -439,7 +439,7 @@ def send_build_type_post_message(recipient_id, championName,role):
                         },
                         {
                             "type": "postback",
-                            "title": "High Winrate Build",
+                            "title": "Highest Winrate Build",
                             "payload": "Highest Winrate Build For "+ championName + " " + role
                         }
                     ]
