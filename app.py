@@ -36,6 +36,7 @@ def webhook():
                     sender_id = messaging_event["sender"]["id"]        # the facebook ID of the person sending you the message
                     recipient_id = messaging_event["recipient"]["id"]  # the recipient's ID, which should be your page's facebook ID
                     message_text = messaging_event["message"]["text"]  # the message's text
+                    message_text = removeApostropheS(message_text)
                     message_text = "".join(c for c in message_text if c not in ('!', '.', ':','?',",","'"))
                     original_message = message_text
                     original_champion_name = getSpecifiedChampName(message_text)
@@ -69,6 +70,17 @@ def webhook():
 
     return "ok", 200
 
+def removeApostropheS(message_text):
+    msgList = message_text.split(" ")
+    for i in range(len(msgList)-1):
+        twoMsg = msgList[i] + msgList[i+1]
+        if twoMsg == "'s":
+            msgList.remove(msgList[i])
+            del msgList[i]
+            del msgList[i]
+            newMsg = "".join(msgList)
+            return newMsg
+    return message_text
 def getKeyWordList():
     keywords = []
     with open('champNames.json', 'r') as fp:
