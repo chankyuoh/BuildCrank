@@ -199,7 +199,7 @@ def sendPrettyBuild(championName,role,sender_id):
     res += "\n Starting Items: "+ "\n"
     freqStartBuild = data[championName][role]["FreqStarterBuild"]
     itemCount = 1
-    for i in range(len(freqFullBuild)):
+    for i in range(len(freqStartBuild)):
         res += str(itemCount) + ") "
         res += freqStartBuild[i] + "\n"
         itemCount += 1
