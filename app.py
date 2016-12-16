@@ -201,6 +201,7 @@ def updateChampNameFormat(message_text):
     message_text = message_text.replace("'", "")
     message_text = message_text.replace(" ", "")
     message_text = message_text.lower()
+    message_text = convertAltNametoOriginal(message_text)
     return message_text
 
 
