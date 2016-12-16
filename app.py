@@ -69,8 +69,12 @@ def sendAppropriateMessage(message_text,sender_id):
     if isValidChampionName(championName):
         if isRoleSpecified(message_text):
             role = getRole(championName, message_text)
+            if isBuildTypeSpecified(message_text):
+                buildType = getBuildType(message_text)
+            else:
+                send_post_message(sender_id,role,championName)
         else:
-            print "Please Choose a role"
+            print "Role is Unspecified for "+ championName
             roles = getRoleList(championName)
             championName = championName[0].upper() + championName[1:]
             send_post_message(sender_id, roles, championName)
@@ -80,7 +84,7 @@ def sendAppropriateMessage(message_text,sender_id):
         return "ok", 200
 
     if isValidRole(championName, role):
-        sendPrettyBuild(championName, role, sender_id)
+        sendPrettyBuild(championName, role,buildType, sender_id)
     else:
         send_message(sender_id,
                      "Sorry " + championName + "'s " + role + " build is not available")
@@ -146,6 +150,27 @@ def getChampName(message_text):
         championName = updateChampNameFormat(championName)
     return championName
 
+def isBuildTypeSpecified(message_text):
+    buildTypes = ['most','freq','frequent', 'frequently','common','commonly', 'highest','win', 'winning', 'winrate', 'rate']
+    msgList = message_text.split(" ")
+    for msg in msgList:
+        msg = msg.lower().strip()
+        if msg in buildTypes:
+            return True
+
+    return False
+
+def getBuildType(message_text):
+    frequentBuildTypeKeyWords = ['most','freq','frequent','frequently','common','commonly']
+    winBuildTypeKeyWords = ['highest','win','rate','winning','winrate']
+    msgList = message_text.split(" ")
+    for msg in msgList:
+        msg = msg.lower().strip()
+        if msg in frequentBuildTypeKeyWords:
+            return "frequent"
+        if msg in winBuildTypeKeyWords:
+            return "win"
+    return "frequent"  # default to frequent if can't find
 def isRoleSpecified(message_text):
     roles = ['sup', 'supp', 'support', "ad","bot", 'adc', 'mid', "middle", 'jg', 'jungle', 'top']
     msgList = message_text.split(" ")
@@ -183,9 +208,42 @@ def prettifyRole(role):
     else:
         return role
 
-def sendPrettyBuild(championName,role,sender_id):
+def sendPrettyBuild(championName,role,buildType,sender_id):
     with open('champData.json', 'r') as fp:
         data = json.load(fp)
+
+    if buildType == "frequent":
+        res = makeFrequentBuild(championName,role,data)
+        send_message(sender_id,res)
+        return "ok", 200
+    elif buildType == "win":
+        res = makeWinBuild(championName,role,data)
+        send_message(sender_id,res)
+        return "ok", 200
+    else:
+        send_message(sender_id,"I HAVE NO IDEA WHAT IM DOING")
+
+def makeWinBuild(championName,role,data):
+    prettyChampName = championName[0].upper() + championName[1:]
+    prettyRoleName = prettifyRole(role)
+    res = ""
+    res += "Highest Winrate Build For: " + prettyChampName + " " + prettyRoleName + "\n"
+    WinFullBuild = data[championName][role]["WinFullBuild"]
+    itemCount = 1
+    for i in range(len(WinFullBuild)):
+        res += str(itemCount) + ") "
+        res += WinFullBuild[i] + "\n"
+        itemCount += 1
+    res += "\n Starting Items: "+ "\n"
+    WinStartBuild = data[championName][role]["WinStarterBuild"]
+    itemCount = 1
+    for i in range(len(WinStartBuild)):
+        res += str(itemCount) + ") "
+        res += WinStartBuild[i] + "\n"
+        itemCount += 1
+    return res
+
+def makeFrequentBuild(championName,role,data):
     prettyChampName = championName[0].upper() + championName[1:]
     prettyRoleName = prettifyRole(role)
     res = ""
@@ -203,10 +261,7 @@ def sendPrettyBuild(championName,role,sender_id):
         res += str(itemCount) + ") "
         res += freqStartBuild[i] + "\n"
         itemCount += 1
-    send_message(sender_id, res)
-
-
-
+    return res
 
 def getSpecifiedChampName(message_text):
     """gets the specified champion's name by removing the role portion of the message"""
