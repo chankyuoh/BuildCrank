@@ -331,6 +331,9 @@ def make_role_buttons(championName,roles):
             res += "{\n\t" + '"type": "postback",\n\t"title": "' + roles[i] + ' ' + championName + '",\n\t"payload": "' + roles[i]+ " " + championName + '"\n},\n'
     return res
 
+
+
+
 def send_post_message(recipient_id, roles,championName):
 
     log("sending message to {recipient}: {text}".format(recipient=recipient_id, text=championName))
@@ -341,23 +344,56 @@ def send_post_message(recipient_id, roles,championName):
     headers = {
         "Content-Type": "application/json"
     }
-    data = json.dumps({
-        "recipient": {
-            "id": recipient_id
-        },
-        "message": {
-            "attachment": {
-                "type": "template",
-                "payload": {
-                    "template_type": "button",
-                    "text": "Choose a role for the build you want",
-                    "buttons": [
-                        make_role_buttons(championName,roles)
-                    ]
+    if len(roles) == 1:
+        data = json.dumps({
+            "recipient": {
+                "id": recipient_id
+            },
+            "message": {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": "Choose a role for the build you want",
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": roles[0] + " " + championName,
+                                "payload": roles[0] + " " + championName
+                            }
+                        ]
+                    }
                 }
             }
-        }
-    })
+        })
+    else:
+
+        data = json.dumps({
+            "recipient": {
+                "id": recipient_id
+            },
+            "message": {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": "Choose a role for the build you want",
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": roles[0] + " " + championName,
+                                "payload": roles[0] + " " + championName
+                            },
+                            {
+                                "type": "postback",
+                                "title": roles[1] + " " + championName,
+                                "payload": roles[1] + " " + championName
+                            }
+                        ]
+                    }
+                }
+            }
+        })
     r = requests.post("https://graph.facebook.com/v2.6/me/messages", params=params, headers=headers, data=data)
     if r.status_code != 200:
         log(r.status_code)
