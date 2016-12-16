@@ -82,8 +82,10 @@ def sendAppropriateMessage(message_text,sender_id):
     if isChampionNameSpecified(message_text) and isRoleSpecified(message_text) and isBuildTypeSpecified(message_text):
         championName = getChampionName(message_text)
         role = getRole(championName,message_text)
+        buildType = getBuildType(message_text)
         if isValidRole(championName,role):
-            send_build_type_post_message(sender_id, championName, role)
+            sendPrettyBuild(championName,role,buildType,sender_id)
+            return "ok", 200
         else:
             send_message(sender_id,
                          "Sorry " + championName + "'s " + prettifyRole(role) + " build is not available")
