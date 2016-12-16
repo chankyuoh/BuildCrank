@@ -48,8 +48,7 @@ def webhook():
                             role = getRole(championName, message_text)
                         else:
                             print "Please Choose a role"
-                            roles = getRoleList(championName)
-                            send_post_message(sender_id,roles,championName)
+                            send_post_message(sender_id,"hilo world")
                             return "ok", 200
                     else:
                         send_message(sender_id, "Sorry I don't recognize the champion name " + championName)
@@ -70,7 +69,8 @@ def webhook():
                     pass
 
                 if messaging_event.get("postback"):  # user clicked/tapped "postback" button in earlier message
-                    print "USER CLICKED POSTBACK IDK WHAT IM DIONG"
+                    roleList = getRoleList(championName)
+
     return "ok", 200
 
 
@@ -344,7 +344,16 @@ def send_post_message(recipient_id, roles,championName):
                     "template_type": "button",
                     "text": "Choose a role for the build you want",
                     "buttons": [
-                        make_role_buttons(championName,roles)
+                        {
+                            "type": "postback",
+                            "title": "Akali Top",
+                            "payload": "Akali Top"
+                        },
+                        {
+                            "type": "postback",
+                            "title": "Start Chatting",
+                            "payload": "USER_DEFINED_PAYLOAD"
+                        }
                     ]
                 }
             }
