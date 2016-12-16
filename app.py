@@ -56,14 +56,15 @@ def webhook():
                     aboutMessage = "BuildCrank is built using Flask, Heroku, and Python. \n"
                     aboutMessage += "All data has been web scraped from champion.gg using the BS4 python module\n"
                     aboutMessage += "Find the code for this bot on my Github! https://github.com/chankyuoh/fb-lol-bot"
-                    feedbackMsg = "Send me any feedback or bug reports by PM'ing me on reddit (/u/RevTremendo)! "
+                    feedbackMsg = "Send me any feedback or bug reports by PM'ing /u/RevTremendo on reddit! "
                     text = "Try any of these things: \n\n"
                     text += "1) Varus\n"
                     text += "2) Varus mid\n"
                     text += "3) mid Varus\n"
-                    text += "4) Frequent varus mid"
-                    text += "5) Highest winrate varus adc"
-                    text += "6) Give me the most frequent build order for varus in bot lane"
+                    text += "4) Frequent varus mid\n"
+                    text += "5) Highest winrate varus adc\n"
+                    text += "6) winrate varus adc\n"
+                    text += "6) most frequent build for varus adc"
                     if message_text == "example_clicked":
                         send_message(sender_id,text)
                     elif message_text == "about_clicked":
@@ -137,16 +138,6 @@ def removeApostropheS(message_text):
             return newMsg
     return message_text
 
-def getKeyWordList():
-    keywords = []
-    with open('champNames.json', 'r') as fp:
-        champNames = json.load(fp)
-    keywords += champNames
-    roles = ['sup','supp', 'support', "bot", 'adc', 'mid', "middle", 'jg', 'jungle', 'top']
-    buildTypes = ['frequent', 'frequently','popular','win','winning','winrate','full','core','start','starting','starter']
-    keywords += roles
-    keywords += buildTypes
-    return keywords
 
 
 def getRoleList(champName):
@@ -480,12 +471,13 @@ def send_message(recipient_id, message_text):
         log(r.text)
 
 def send_help_post_message(recipient_id):
-    text = "How BuildCrank Works:\n"
-    text += "1) BuildCrank looks for champion name, role, build type in your messages\n"
-    text += "2) Champion name is the only MANDATORY input \n"
-    text += "3) Build types can consist of: highest winrate build or most frequent build\n"
-    text += "4) Roles can consist of (Supp,Adc,Mid,Jungle,Top)\n"
-    text += "5) click 'see some examples' if you are confused!\n"
+    text = "Open this menu at any time by typing help\n"
+    text += "1) BuildCrank looks for champion name, role, and build type in your messages\n"
+    text += "2) Build types consist of: highest winrate build and most frequent build\n"
+    text += "3) Roles consist of Support, Adc, Mid, Jungle, and Top\n"
+    text += "4) Feel free to type in shorthand! (jg = jungle, heimer = heimerdinger, win = winrate, freq = frequent, etc.) "
+    text += "5) click 'see some examples' if you are still confused!\n\n"
+    text += "TL;DR: Type any champion's name!"
     params = {
         "access_token": os.environ["PAGE_ACCESS_TOKEN"]
     }
