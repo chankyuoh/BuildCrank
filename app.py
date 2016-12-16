@@ -598,7 +598,7 @@ def send_role_post_message(recipient_id, roles, championName,buildType):
                             {
                                 "type": "postback",
                                 "title": championName + " " + prettifyRole(roles[1]),
-                                "payload": championName + " " + prettifyRole(roles[1]) + buildType
+                                "payload": championName + " " + prettifyRole(roles[1]) +" "+ buildType
                             }
                         ]
                     }
