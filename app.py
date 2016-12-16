@@ -14,7 +14,6 @@ def verify():
     if request.args.get("hub.mode") == "subscribe" and request.args.get("hub.challenge"):
         if not request.args.get("hub.verify_token") == os.environ["VERIFY_TOKEN"]:
             return "Verification token mismatch", 403
-        set_get_started_button()
         return request.args["hub.challenge"], 200
 
     return "Hello world", 200
@@ -22,7 +21,7 @@ def verify():
 
 @app.route('/', methods=['POST'])
 def webhook():
-
+    set_get_started_button()
     # endpoint for processing incoming messaging events
 
     data = request.get_json()
