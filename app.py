@@ -53,13 +53,19 @@ def webhook():
                 if messaging_event.get("postback"):  # user clicked/tapped "postback" button in earlier message
                     message_text = messaging_event["postback"]["payload"]  # the message's text
                     sender_id = messaging_event["sender"]["id"]
-                    aboutMessage = "BuildCrank is built using Python. \n"
-                    aboutMessage += "All data has been web scraped from champion.gg using the BS4 python module"
-                    aboutMessage += "If you notice any bugs or the bot stops working, please message /u/RevTremendo on reddit!"
+                    aboutMessage = "BuildCrank is built using Flask, Heroku, and Python. \n"
+                    aboutMessage += "All data has been web scraped from champion.gg using the BS4 python module\n"
+                    aboutMessage += "Find the code for this bot on my Github! https://github.com/chankyuoh/fb-lol-bot"
+                    feedbackMsg = "Send me any feedback or bug reports by PM'ing me on reddit (/u/RevTremendo)! "
+                    exampleMessage = "Try any of these things:\n"
+                    exampleMessage += "1) Varus \n"
+                    exampleMessage += "2) Varus Mid"
                     if message_text == "example_clicked":
-                        send_message(sender_id,'Try something like: "give me the most frequent build for renekton top"')
+                        send_message(sender_id,'Try something like: "frequent renekton top build"')
                     elif message_text == "about_clicked":
                         send_message(sender_id,aboutMessage)
+                    elif message_text == "feedback_clicked":
+                        send_message(sender_id,feedbackMsg)
                     else:
                         sendAppropriateMessage(message_text,sender_id)
 
@@ -76,13 +82,25 @@ def sendAppropriateMessage(message_text,sender_id):
     if isChampionNameSpecified(message_text) and isRoleSpecified(message_text) and isBuildTypeSpecified(message_text):
         championName = getChampionName(message_text)
         role = getRole(championName,message_text)
+        if isValidRole(championName,role):
+            send_build_type_post_message(sender_id, championName, role)
+            return "ok", 200
+        else:
+            send_message(sender_id,
+                         "Sorry " + championName + "'s " + role + " build is not available")
+            return "ok", 200
         buildType = getBuildType(message_text)
         sendPrettyBuild(championName,role,buildType,sender_id)
     elif isChampionNameSpecified(message_text) and isRoleSpecified(message_text) and not isBuildTypeSpecified(message_text):
         championName = getChampionName(message_text)
         role = getRole(championName, message_text)
-        send_build_type_post_message(sender_id,championName,role)
-        return "ok", 200
+        if isValidRole(championName,role):
+            send_build_type_post_message(sender_id, championName, role)
+            return "ok", 200
+        else:
+            send_message(sender_id,
+                         "Sorry " + championName + "'s " + role + " build is not available")
+            return "ok", 200
     elif isChampionNameSpecified(message_text) and not isRoleSpecified(message_text) and isBuildTypeSpecified(message_text):
         championName = getChampionName(message_text)
         buildType = getBuildType(message_text)
@@ -436,6 +454,11 @@ def send_help_post_message(recipient_id):
                             "type": "postback",
                             "title": "About BuildCrank",
                             "payload": "about_clicked"
+                        },
+                        {
+                            "type": "postback",
+                            "title": "Feedback/Bug Reports",
+                            "payload": "feedback_clicked"
                         }
                     ]
                 }

@@ -224,6 +224,7 @@ def webhook():
     else:
         send_message(sender_id,
                      "Sorry " + championName + "'s " + role + " build is not available")
+        return "ok", 200
 
 
 
