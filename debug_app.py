@@ -227,4 +227,13 @@ def webhook():
 
 
 
-webhook()
+def make_role_buttons(championName,roles):
+    res = ""
+    for i in range(len(roles)):
+        if i == len(roles)-1:
+            res += "{\n\t" + '"type": "postback",\n\t"title": "' + championName + ' ' + roles[i] + '",\n\t"payload": "' + championName+ " " + roles[i] + '"\n}\n'
+        else:
+            res += "{\n\t" + '"type": "postback",\n\t"title": "' + championName + ' ' + roles[i] + '",\n\t"payload": "' + championName + " " + roles[i] + '"\n},\n'
+    return res
+#webhook()
+print make_role_buttons("Akali",["top","mid"])

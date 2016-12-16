@@ -48,7 +48,8 @@ def webhook():
                             role = getRole(championName, message_text)
                         else:
                             print "Please Choose a role"
-                            send_post_message(sender_id,"hilo world")
+                            roles = getRoleList(championName)
+                            send_post_message(sender_id,roles,championName)
                             return "ok", 200
                     else:
                         send_message(sender_id, "Sorry I don't recognize the champion name " + championName)
@@ -69,8 +70,7 @@ def webhook():
                     pass
 
                 if messaging_event.get("postback"):  # user clicked/tapped "postback" button in earlier message
-                    roleList = getRoleList(championName)
-
+                    print "USER CLICKED POSTBACK IDK WHAT IM DIONG"
     return "ok", 200
 
 
@@ -315,9 +315,17 @@ def send_message(recipient_id, message_text):
         log(r.status_code)
         log(r.text)
 
-def send_post_message(recipient_id, message_text):
+def make_role_buttons(championName,roles):
+    res = ""
+    for i in range(len(roles)):
+        if i == len(roles)-1:
+            res += "{\n\t" + '"type": "postback",\n\t"title": "' + championName + ' ' + roles[i] + '",\n\t"payload": "' + championName+ " " + roles[i] + '"\n}\n'
+        else:
+            res += "{\n\t" + '"type": "postback",\n\t"title": "' + championName + ' ' + roles[i] + '",\n\t"payload": "' + championName+ " " + roles[i] + '"\n},\n'
 
-    log("sending message to {recipient}: {text}".format(recipient=recipient_id, text=message_text))
+def send_post_message(recipient_id, roles,championName):
+
+    log("sending message to {recipient}: {text}".format(recipient=recipient_id, text=championName))
 
     params = {
         "access_token": os.environ["PAGE_ACCESS_TOKEN"]
@@ -334,18 +342,9 @@ def send_post_message(recipient_id, message_text):
                 "type": "template",
                 "payload": {
                     "template_type": "button",
-                    "text": "What do you want to do next?",
+                    "text": "Choose a role for the build you want",
                     "buttons": [
-                        {
-                            "type": "web_url",
-                            "url": "https://www.reddit.com",
-                            "title": "Show Website"
-                        },
-                        {
-                            "type": "postback",
-                            "title": "Start Chatting",
-                            "payload": "USER_DEFINED_PAYLOAD"
-                        }
+                        make_role_buttons(championName,roles)
                     ]
                 }
             }
