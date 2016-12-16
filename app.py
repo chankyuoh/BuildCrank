@@ -36,7 +36,6 @@ def webhook():
                     sender_id = messaging_event["sender"]["id"]        # the facebook ID of the person sending you the message
                     recipient_id = messaging_event["recipient"]["id"]  # the recipient's ID, which should be your page's facebook ID
                     message_text = messaging_event["message"]["text"]  # the message's text
-                    send_welcome_message(sender_id)
                     original_message = message_text
                     original_champion_name = getSpecifiedChampName(message_text)
                     if message_text == "help":
@@ -72,7 +71,7 @@ def webhook():
 
 
 def sendHelpMessage(sender_id):
-    send_message(sender_id, "type in a champion's name to get a build order. \n"
+    send_message(sender_id, "type in a champion's name to get a build order of a random common role of the champion.\n"
                             "type in a champion's name + role name to get build order for specified role \n"
                             "Ex1) annie \n"
                             "Ex2) annie mid")
@@ -219,7 +218,11 @@ def convertAltNametoOriginal(name):
     else:
         return name
 
-def send_welcome_message(recipient_id):
+# send_welcome_message
+
+def send_welcome_message():
+    welcomeText = "BuildCrank helps you find item build order for champions in LoL."
+    welcomeText += "Type in a champion's name and role to get a suggested build!"
     log("sending welcome message")
 
     params = {
@@ -231,13 +234,14 @@ def send_welcome_message(recipient_id):
     data = json.dumps({
         "setting_type":"greeting",
         "greeting": {
-            "text": "BuildCrank helps you find item build orders for champions in LoL"
+            "text": welcomeText
         }
     })
     r = requests.post("https://graph.facebook.com/v2.6/me/thread_settings", params=params, headers=headers, data=data)
     if r.status_code != 200:
         log(r.status_code)
         log(r.text)
+
 
 
 def send_message(recipient_id, message_text):
