@@ -53,7 +53,15 @@ def webhook():
                 if messaging_event.get("postback"):  # user clicked/tapped "postback" button in earlier message
                     message_text = messaging_event["postback"]["payload"]  # the message's text
                     sender_id = messaging_event["sender"]["id"]
-                    sendAppropriateMessage(message_text,sender_id)
+                    aboutMessage = "BuildCrank is built using Python. \n"
+                    aboutMessage += "All data has been web scraped from champion.gg using the BS4 python module"
+                    aboutMessage += "If you notice any bugs or the bot stops working, please message /u/RevTremendo on reddit!"
+                    if message_text == "example_clicked":
+                        send_message(sender_id,'Try something like: "give me the most frequent build for renekton top"')
+                    elif message_text == "about_clicked":
+                        send_message(sender_id,aboutMessage)
+                    else:
+                        sendAppropriateMessage(message_text,sender_id)
 
     return "ok", 200
 
@@ -62,7 +70,7 @@ def webhook():
 def sendAppropriateMessage(message_text,sender_id):
     message_text = formatMessage(message_text)
     if message_text.lower().strip() == "help":
-        sendHelpMessage(sender_id)
+        send_help_post_message(sender_id)
         return "ok", 200
 
     if isChampionNameSpecified(message_text) and isRoleSpecified(message_text) and isBuildTypeSpecified(message_text):
@@ -117,11 +125,7 @@ def getKeyWordList():
     keywords += buildTypes
     return keywords
 
-def sendHelpMessage(sender_id):
-    send_message(sender_id, "type in a champion's name to get a build order of a random common role of the champion.\n"
-                            "type in a champion's name + role name to get build order for specified role \n"
-                            "Ex1) annie \n"
-                            "Ex2) annie mid")
+
 def getRoleList(champName):
     with open('champData.json', 'r') as fp:
         data = json.load(fp)
@@ -402,6 +406,46 @@ def send_message(recipient_id, message_text):
         log(r.status_code)
         log(r.text)
 
+def send_help_post_message(recipient_id):
+    text = "I provide item builds for champions in the game League of Legends \n"
+    text += "All my data is pulled from champion.gg. Go there to get more in-depth champion information\n"
+    text += 'Hint: Press "See an example" multiple times to see multiple examples!'
+    params = {
+        "access_token": os.environ["PAGE_ACCESS_TOKEN"]
+    }
+    headers = {
+        "Content-Type": "application/json"
+    }
+    data = json.dumps({
+        "recipient": {
+            "id": recipient_id
+        },
+        "message": {
+            "attachment": {
+                "type": "template",
+                "payload": {
+                    "template_type": "button",
+                    "text": text,
+                    "buttons": [
+                        {
+                            "type": "postback",
+                            "title": "See an example",
+                            "payload": "example_clicked"
+                        },
+                        {
+                            "type": "postback",
+                            "title": "About BuildCrank",
+                            "payload": "about_clicked"
+                        }
+                    ]
+                }
+            }
+        }
+    })
+    r = requests.post("https://graph.facebook.com/v2.6/me/messages", params=params, headers=headers, data=data)
+    if r.status_code != 200:
+        log(r.status_code)
+        log(r.text)
 
 
 def send_build_type_post_message(recipient_id, championName,role):
