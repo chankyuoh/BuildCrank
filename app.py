@@ -474,11 +474,10 @@ def send_message(recipient_id, message_text):
 def send_help_post_message(recipient_id):
     text = "Open this menu at any time by typing help!\n\n"
     text += "Type any champion's name to get the champion's build order\n\n"
-    text += "Don't like being prompted to specify what you want? "
-    text += "Then give BuildCrank all the necessary info (name,role,buildType) in one message\n\n"
-    text += "roles consist of: support, adc, mid, jungle, and top\n\n"
-    text += "build types consist of: frequent, and winrate\n"
+    text += "Don't like being prompted by buttons to specify what you want? "
+    text += "Then give BuildCrank all the info (name,role,buildType) in one message\n\n"
     text += "Feel free to use common nicknames (heimer instead of heimerdinger)!\n"
+    send_message(recipient_id,"build types consist of: frequent, winrate")
     params = {
         "access_token": os.environ["PAGE_ACCESS_TOKEN"]
     }
