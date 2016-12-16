@@ -46,7 +46,7 @@ def webhook():
                     if isValidChampionName(championName):
                         role = getRole(championName, message_text)
                     else:
-                        send_message(sender_id, "Sorry I don't recognize the champion name: " + championName)
+                        send_message(sender_id, "Sorry I don't recognize the champion name " + championName)
                         return "ok", 200
 
                     if isValidRole(championName, role):
@@ -68,7 +68,16 @@ def webhook():
 
     return "ok", 200
 
-
+def getKeyWordList():
+    keywords = []
+    with open('champNames.json', 'r') as fp:
+        champNames = json.load(fp)
+    keywords += champNames
+    roles = ['sup','supp', 'support', "bot", 'adc', 'mid', "middle", 'jg', 'jungle', 'top']
+    buildTypes = ['frequent', 'frequently','win','winrate','full','core','start','starter']
+    keywords += roles
+    keywords += buildTypes
+    return keywords
 
 def sendHelpMessage(sender_id):
     send_message(sender_id, "type in a champion's name to get a build order of a random common role of the champion.\n"
@@ -138,7 +147,7 @@ def sendPrettyBuild(championName,role,sender_id,original_message):
     prettyChampName = championName[0].upper() + championName[1:]
     prettyRoleName = prettifyRole(role)
     res = ""
-    res += "Suggested build for: " + prettyChampName + " " + prettyRoleName + "\n"
+    res += "Most Frequent Build For: " + prettyChampName + " " + prettyRoleName + "\n"
     freqFullBuild = data[championName][role]["FreqFullBuild"]
     itemCount = 1
     for i in range(len(freqFullBuild)):
@@ -148,19 +157,35 @@ def sendPrettyBuild(championName,role,sender_id,original_message):
     send_message(sender_id, res)
 
 
+
+
 def getSpecifiedChampName(message_text):
     """gets the specified champion's name by removing the role portion of the message"""
     msgList = message_text.split(" ")
-    roles = ['sup','supp', 'support', "bot", 'adc', 'mid', "middle", 'jg', 'jungle', 'top']
-    itemsToRemoveList = []
+    with open('champNames.json', 'r') as fp:
+        champNames = json.load(fp)
+    champName = findOneWordChampName(msgList,champNames)
+    if champName == "NOT_FOUND":
+        champName = findTwoWordChampName(msgList,champNames)
+    return champName
+
+
+def findOneWordChampName(msgList,champNames):
     for msg in msgList:
-        original_msg = msg
         msg = msg.lower()
-        if msg in roles:
-            itemsToRemoveList.append(original_msg)
-    for item in itemsToRemoveList:
-        msgList.remove(item)
-    return "".join(msgList)
+        if msg in champNames:
+            return msg
+    return "NOT_FOUND"
+
+def findTwoWordChampName(msgList,champNames):
+    for i in range(len(msgList)-1):
+        twoWordMsg = msgList[i] + msgList[i+1]
+        twoWordMsg = twoWordMsg.lower().strip()
+        if twoWordMsg in champNames:
+            return twoWordMsg
+    return "NOT_FOUND"
+
+
 
 
 
