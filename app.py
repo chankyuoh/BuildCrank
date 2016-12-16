@@ -99,7 +99,7 @@ def sendAppropriateMessage(message_text,sender_id):
             return "ok", 200
         else:
             send_message(sender_id,
-                         "Sorry " + championName + "'s " + role + " build is not available")
+                         "Sorry " + prettifyChampionName(championName) + "'s " + role + " build is not available")
             return "ok", 200
     elif isChampionNameSpecified(message_text) and not isRoleSpecified(message_text) and isBuildTypeSpecified(message_text):
         championName = getChampionName(message_text)
@@ -254,6 +254,36 @@ def sendPrettyBuild(championName,role,buildType,sender_id):
         send_message(sender_id,"I HAVE NO IDEA WHAT IM DOING")
 
 def prettifyChampionName(championName):
+    if championName == "aurelionsol":
+        return "Aurelion Sol"
+    if championName == "chogath":
+        return "Cho'Gath"
+    if championName == "drmundo":
+        return "Dr. Mundo"
+    if championName == "jarvaniv":
+        return "Jarvan IV"
+    if championName == "khazix":
+        return "Kha'Zix"
+    if championName == "kogmaw":
+        return "Kog'Maw"
+    if championName == "leblanc":
+        return "LeBlanc"
+    if championName == "leesin":
+        return "Lee Sin"
+    if championName == "masteryi":
+        return "Master Yi"
+    if championName == "missfortune":
+        return "Miss Fortune"
+    if championName == "reksai":
+        return "Rek'Sai"
+    if championName == "tahmkench":
+        return "Tahm Kench"
+    if championName == "twistedfate":
+        return "Twisted Fate"
+    if championName == "velkoz":
+        return "Vel'Koz"
+    if championName == "xinzhao":
+        return "Xin Zhao"
     return championName[0].upper() + championName[1:]
 
 
