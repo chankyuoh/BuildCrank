@@ -38,7 +38,7 @@ def webhook():
                     message_text = messaging_event["message"]["text"]  # the message's text
                     original_message = message_text
                     original_champion_name = getSpecifiedChampName(message_text)
-                    if message_text == "help":
+                    if message_text.lower().strip() == "help":
                         sendHelpMessage(sender_id)
                         return "ok", 200
 
