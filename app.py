@@ -84,10 +84,9 @@ def sendAppropriateMessage(message_text,sender_id):
         role = getRole(championName,message_text)
         if isValidRole(championName,role):
             send_build_type_post_message(sender_id, championName, role)
-            return "ok", 200
         else:
             send_message(sender_id,
-                         "Sorry " + championName + "'s " + role + " build is not available")
+                         "Sorry " + championName + "'s " + prettifyRole(role) + " build is not available")
             return "ok", 200
         buildType = getBuildType(message_text)
         sendPrettyBuild(championName,role,buildType,sender_id)
@@ -96,23 +95,20 @@ def sendAppropriateMessage(message_text,sender_id):
         role = getRole(championName, message_text)
         if isValidRole(championName,role):
             send_build_type_post_message(sender_id, championName, role)
-            return "ok", 200
         else:
             send_message(sender_id,
-                         "Sorry " + prettifyChampionName(championName) + "'s " + role + " build is not available")
+                         "Sorry " + prettifyChampionName(championName) + "'s " + prettifyRole(role) + " build is not available")
             return "ok", 200
     elif isChampionNameSpecified(message_text) and not isRoleSpecified(message_text) and isBuildTypeSpecified(message_text):
         championName = getChampionName(message_text)
         buildType = getBuildType(message_text)
         roles = getRoleList(championName)
         send_role_post_message(sender_id,roles,championName,buildType)
-        return "ok", 200
     elif isChampionNameSpecified(message_text) and not isRoleSpecified(message_text) and not isBuildTypeSpecified(message_text):
         championName = getChampionName(message_text)
         buildType = ""
         roles = getRoleList(championName)
         send_role_post_message(sender_id,roles,championName,buildType)
-        return "ok", 200
     else:
         send_message(sender_id, "Sorry I don't recognize a champion name in your message. Type help if you're stuck!")
         return "ok", 200
