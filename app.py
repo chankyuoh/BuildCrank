@@ -65,8 +65,8 @@ def webhook():
                     text += "5: frequent varus mid\n"
                     text += "6: highest winrate varus mid\n"
                     text += "7: winrate varus mid\n"
-                    text += "8: most frequent build for varus mid"
-                    text += "9: highest winrate build for varus adc"
+                    text += "8: most frequent build for varus mid\n"
+                    text += "9: highest winrate build for varus adc\n"
                     if message_text == "example_clicked":
                         send_message(sender_id,text)
                     elif message_text == "about_clicked":
