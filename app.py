@@ -48,7 +48,8 @@ def webhook():
                             role = getRole(championName, message_text)
                         else:
                             print "Please Choose a role"
-                            send_post_message(sender_id,"hilo world")
+                            roles = ["a"]
+                            send_post_message(sender_id,roles,"hilo world")
                             return "ok", 200
                     else:
                         send_message(sender_id, "Sorry I don't recognize the champion name " + championName)
