@@ -53,8 +53,8 @@ def webhook():
                 if messaging_event.get("postback"):  # user clicked/tapped "postback" button in earlier message
                     message_text = messaging_event["postback"]["payload"]  # the message's text
                     sender_id = messaging_event["sender"]["id"]
-                    aboutMessage = "BuildCrank is built using Flask, Heroku, and Python. \n"
-                    aboutMessage += "All data has been web scraped from champion.gg using the BS4 python module\n"
+                    aboutMessage = "BuildCrank is built using Flask, Heroku, and Python. \n\n"
+                    aboutMessage += "All data has been web scraped from champion.gg using the BS4 python module\n\n"
                     aboutMessage += "Find the code for this bot on my Github! https://github.com/chankyuoh/fb-lol-bot"
                     feedbackMsg = "Send me any feedback or bug reports by PM'ing /u/RevTremendo on reddit! "
                     text = "Try any of these things: \n\n"
@@ -476,6 +476,8 @@ def send_help_post_message(recipient_id):
     text += "Type any champion's name to get the champion's build order\n\n"
     text += "Don't like being prompted to specify what you want? "
     text += "Then give BuildCrank all the necessary info (name,role,buildType) in one message\n\n"
+    text += "roles consist of: support, adc, mid, jungle, and top\n\n"
+    text += "build types consist of: frequent, and winrate\n"
     text += "Feel free to use common nicknames (heimer instead of heimerdinger)!\n"
     params = {
         "access_token": os.environ["PAGE_ACCESS_TOKEN"]
