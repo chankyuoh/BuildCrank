@@ -8,7 +8,10 @@ from bs4 import BeautifulSoup
 #TODO: add builds sorted by roles
 #TODO: Fix Aatrox Jungle build bug
 #TODO: Things learned: Logging, WebScraping, Scaling, automation, making things work for long-run
-#TODO: Making code easier to read by making methods
+#TODO: Making code easier to read by SLAP
+#TODO: Fix Jungle weapon enchantment
+#TODO: Add starter and full build options
+#TODO: Add Frequent or Highest win option
 
 
 logging.basicConfig(level=logging.INFO, format= '%(levelname)s %(lineno)d \n%(message)s')
@@ -20,6 +23,7 @@ logging.getLogger("urllib3").setLevel(logging.WARNING)
 
 def parseUrlTag(tag):
     """Given an HTML tag of href link and other HTML stuff, parses out and returns only the URL portion"""
+
     isWithinQuote = False
     count = 0
     url = ""
@@ -40,6 +44,39 @@ def parseLeaguePediaURL(url):
     begin = begin + len("/wiki/")
     return url[begin:]
 
+def parseJungleItem(jungleItem):
+    """Parses out the the item ID number by looking for the string 'data-id='"""
+    if "data-id" in jungleItem:
+        beginInd = jungleItem.index("data-id")
+        ID = jungleItem[beginInd+9:beginInd+13]
+        if ID == "1400":
+            return "Stalker's Warrior"
+        elif ID == "1401":
+            return "Stalker's Cinderhulk"
+        elif ID == "1402":
+            return "Stalker's Runic Echoes"
+        elif ID == "1408":
+            return "Tracker's Warrior"
+        elif ID == "1409":
+            return "Tracker's Cinderhulk"
+        elif ID == "1410":
+            return "Tracker's Runic Echoes"
+        elif ID == "1412":
+            return "Skirmisher's Warrior"
+        elif ID == "1413":
+            return "Skirmisher's Cinderhulk"
+        elif ID == "1414":
+            return "Skirmisher's Runic Echoes"
+        elif ID == "1416":
+            return "Skirmisher's Bloodrazor"
+        elif ID == "1418":
+            return "Tracker's Bloodrazor"
+        elif ID == "1419":
+            return "Skirmisher's Bloodrazor"
+        else:
+            return ""
+    else:
+        return ""
 
 def parseFullBuild(build):
     """
@@ -53,12 +90,23 @@ def parseFullBuild(build):
     i = 0
     while i < len(items):
         item = items[i]
-        item = str(item)
-        itemList.append(parseLeaguePediaURL(parseUrlTag(item)))
+        #print item
+        jungleItem = item.find_all("img", attrs={'class': 'possible-build tsm-tooltip'})
+        if jungleItem == []:
+            jungleItem = item.find_all("img", attrs={'class': 'tsm-tooltip possible-build'})
+        #print jungleItem
+        jungleItem = str(jungleItem)
+        jungleItem = parseJungleItem(jungleItem)
+        if jungleItem != "":
+            itemList.append(jungleItem)
+        else:
+            item = str(item)
+            itemList.append(parseLeaguePediaURL(parseUrlTag(item)))
         i += 3
         # the items list contains a pattern of [URL,PictureLink,random HTML tag], we only want URL, so skip by 3's
     if len(itemList) >= 1:
         itemList = itemList[0:len(itemList) - 1]  # remove last item which is a blank item from parsing
+    #print itemList
     return itemList
 
 
@@ -206,10 +254,15 @@ def printSpecificBuildFromJson(champName):
 
 
 
-#createChampBuildsJsonFile()
-#printEveryBuildFromJson()
-printSpecificBuildFromJson("akali")
+createChampBuildsJsonFile()
+printEveryBuildFromJson()
+#printSpecificBuildFromJson("akali")
 
+#r = requests.get("http://champion.gg/champion/hecarim")
+#soup = BeautifulSoup(r.content, "html.parser")
+#print soup.prettify()
+
+#makeChampData("hecarim")
 
 
 
