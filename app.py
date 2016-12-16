@@ -73,20 +73,19 @@ def sendAppropriateMessage(message_text,sender_id):
     elif isChampionNameSpecified(message_text) and isRoleSpecified(message_text) and not isBuildTypeSpecified(message_text):
         championName = getChampionName(message_text)
         role = getRole(championName, message_text)
-
         send_build_type_post_message(sender_id,championName,role)
         return "ok", 200
     elif isChampionNameSpecified(message_text) and not isRoleSpecified(message_text) and isBuildTypeSpecified(message_text):
         championName = getChampionName(message_text)
         buildType = getBuildType(message_text)
         roles = getRoleList(championName)
-        send_role_post_message(sender_id,roles,championName)
+        send_role_post_message(sender_id,roles,championName,buildType)
         return "ok", 200
     elif isChampionNameSpecified(message_text) and not isRoleSpecified(message_text) and not isBuildTypeSpecified(message_text):
         championName = getChampionName(message_text)
-        buildType = getBuildType(message_text)
+        buildType = ""
         roles = getRoleList(championName)
-        send_role_post_message(sender_id,roles,championName)
+        send_role_post_message(sender_id,roles,championName,buildType)
         return "ok", 200
     else:
         send_message(sender_id, "Sorry I don't recognize a champion name in your message. Type help if you're stuck!")
@@ -448,7 +447,8 @@ def send_build_type_post_message(recipient_id, championName,role):
         log(r.status_code)
         log(r.text)
 
-def send_role_post_message(recipient_id, roles, championName):
+
+def send_role_post_message(recipient_id, roles, championName,buildType):
 
     log("sending message to {recipient}: {text}".format(recipient=recipient_id, text=championName))
     championName = prettifyChampionName(championName)
@@ -473,7 +473,7 @@ def send_role_post_message(recipient_id, roles, championName):
                             {
                                 "type": "postback",
                                 "title": championName + " " + prettifyRole(roles[0]),
-                                "payload": championName + " " + prettifyRole(roles[0])
+                                "payload": championName + " " + prettifyRole(roles[0]) + buildType
                             }
                         ]
                     }
@@ -496,12 +496,12 @@ def send_role_post_message(recipient_id, roles, championName):
                             {
                                 "type": "postback",
                                 "title": championName + " " + prettifyRole(roles[0]),
-                                "payload": championName + " " + prettifyRole(roles[0])
+                                "payload": championName + " " + prettifyRole(roles[0]) + buildType
                             },
                             {
                                 "type": "postback",
                                 "title": championName + " " + prettifyRole(roles[1]),
-                                "payload": championName + " " + prettifyRole(roles[1])
+                                "payload": championName + " " + prettifyRole(roles[1]) + buildType
                             }
                         ]
                     }
