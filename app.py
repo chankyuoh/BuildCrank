@@ -476,8 +476,11 @@ def send_help_post_message(recipient_id):
     text += "Type any champion's name to get the champion's build order\n\n"
     text += "Don't like being prompted by buttons to specify what you want? "
     text += "Then give BuildCrank all the info (name,role,buildType) in one message\n\n"
-    text += "Feel free to use common nicknames (heimer instead of heimerdinger)!\n"
-    send_message(recipient_id,"build types consist of: frequent, winrate")
+    send_message(recipient_id,text)
+    text2 = "Roles consist of: support,adc,mid,jungle,top\n"
+    text2 += "Build types consist of: frequent, winrate\n"
+    text2 += "Feel free to use common nicknames (heimer instead of heimerdinger, etc.)!\n\n"
+    text2 += "nicknames are available for roles (jg = jungle, etc.) and build types (freq = frequent, win = winrate, etc.) too!"
     params = {
         "access_token": os.environ["PAGE_ACCESS_TOKEN"]
     }
