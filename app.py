@@ -476,9 +476,8 @@ def send_message(recipient_id, message_text):
         log(r.text)
 
 def send_help_post_message(recipient_id):
-    text = "I provide item builds for champions in the game League of Legends \n"
-    text += "All my data is pulled from champion.gg. Go there to get more in-depth champion information\n"
-    text += 'Hint: Press "See an example" multiple times to see multiple examples!'
+    text = "I provide item builds for champions in the game League of Legends \n\n"
+    text += "All my data is pulled from champion.gg. Go there to get more in-depth champion information!\n"
     params = {
         "access_token": os.environ["PAGE_ACCESS_TOKEN"]
     }
