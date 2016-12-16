@@ -67,6 +67,7 @@ def sendAppropriateMessage(message_text,sender_id):
         else:
             print "Please Choose a role"
             roles = getRoleList(championName)
+            championName = championName[0].upper() + championName[1:]
             send_post_message(sender_id, roles, championName)
             return "ok", 200
     else:
@@ -358,8 +359,8 @@ def send_post_message(recipient_id, roles,championName):
                         "buttons": [
                             {
                                 "type": "postback",
-                                "title": roles[0] + " " + championName,
-                                "payload": roles[0] + " " + championName
+                                "title": championName + " " + prettifyRole(roles[0]),
+                                "payload": championName + " " + prettifyRole(roles[0])
                             }
                         ]
                     }
@@ -381,13 +382,13 @@ def send_post_message(recipient_id, roles,championName):
                         "buttons": [
                             {
                                 "type": "postback",
-                                "title": roles[0] + " " + championName,
-                                "payload": roles[0] + " " + championName
+                                "title": championName + " " + prettifyRole(roles[0]),
+                                "payload": championName + " " + prettifyRole(roles[0])
                             },
                             {
                                 "type": "postback",
-                                "title": roles[1] + " " + championName,
-                                "payload": roles[1] + " " + championName
+                                "title": championName + " " + prettifyRole(roles[1]),
+                                "payload": championName + " " + prettifyRole(roles[1])
                             }
                         ]
                     }
