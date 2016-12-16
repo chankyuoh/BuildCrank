@@ -58,14 +58,15 @@ def webhook():
                     aboutMessage += "Find the code for this bot on my Github! https://github.com/chankyuoh/fb-lol-bot"
                     feedbackMsg = "Send me any feedback or bug reports by PM'ing /u/RevTremendo on reddit! "
                     text = "Try any of these things: \n\n"
-                    text += "1) varus\n"
-                    text += "2) varus mid\n"
-                    text += "3) mid varus\n"
-                    text += "4) frequent varus build"
-                    text += "5) frequent varus mid\n"
-                    text += "6) highest winrate varus mid\n"
-                    text += "7) winrate varus mid\n"
-                    text += "8) most frequent build for varus mid"
+                    text += "1: varus\n"
+                    text += "2: varus mid\n"
+                    text += "3: mid varus\n"
+                    text += "4: frequent varus\n"
+                    text += "5: frequent varus mid\n"
+                    text += "6: highest winrate varus mid\n"
+                    text += "7: winrate varus mid\n"
+                    text += "8: most frequent build for varus mid"
+                    text += "9: highest winrate build for varus adc"
                     if message_text == "example_clicked":
                         send_message(sender_id,text)
                     elif message_text == "about_clicked":
@@ -477,10 +478,9 @@ def send_help_post_message(recipient_id):
     text += "Don't like being prompted by buttons to specify what you want? "
     text += "Then give BuildCrank all the info (name,role,buildType) in one message\n\n"
     send_message(recipient_id,text)
-    text2 = "Roles consist of: support,adc,mid,jungle,top\n"
-    text2 += "Build types consist of: frequent, winrate\n"
-    text2 += "Feel free to use common nicknames (heimer instead of heimerdinger, etc.)!\n\n"
-    text2 += "nicknames are available for roles (jg = jungle, etc.) and build types (freq = frequent, win = winrate, etc.) too!"
+    text2 = "Roles consist of: support,adc,mid,jungle,top\n\n"
+    text2 += "Build types consist of: frequent, winrate (frequent = most frequently used build, winrate = highest winrate build)\n\n"
+    text2 += "Feel free to use common nicknames (heimer = heimerdinger, jg = jungle, freq = frequent, win = winrate, etc)\n\n"
     params = {
         "access_token": os.environ["PAGE_ACCESS_TOKEN"]
     }
