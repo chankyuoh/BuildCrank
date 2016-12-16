@@ -65,29 +65,31 @@ def sendAppropriateMessage(message_text,sender_id):
         sendHelpMessage(sender_id)
         return "ok", 200
 
-    championName = getChampName(message_text)
-    if isValidChampionName(championName):
-        if isRoleSpecified(message_text):
-            role = getRole(championName, message_text)
-            if isBuildTypeSpecified(message_text):
-                buildType = getBuildType(message_text)
-            else:
-                send_post_message(sender_id,role,championName)
-        else:
-            print "Role is Unspecified for "+ championName
-            roles = getRoleList(championName)
-            championName = championName[0].upper() + championName[1:]
-            send_post_message(sender_id, roles, championName)
-            return "ok", 200
-    else:
-        send_message(sender_id, "Sorry I don't recognize the champion name " + championName)
-        return "ok", 200
+    if isChampionNameSpecified(message_text) and isRoleSpecified(message_text) and isBuildTypeSpecified(message_text):
+        championName = getChampionName(message_text)
+        role = getRole(championName,message_text)
+        buildType = getBuildType(message_text)
+        sendPrettyBuild(championName,role,buildType,sender_id)
+    elif isChampionNameSpecified(message_text) and isRoleSpecified(message_text) and not isBuildTypeSpecified(message_text):
+        championName = getChampionName(message_text)
+        role = getRole(championName, message_text)
 
-    if isValidRole(championName, role):
-        sendPrettyBuild(championName, role,buildType, sender_id)
+        send_build_type_post_message(sender_id,championName,role)
+        return "ok", 200
+    elif isChampionNameSpecified(message_text) and not isRoleSpecified(message_text) and isBuildTypeSpecified(message_text):
+        championName = getChampionName(message_text)
+        buildType = getBuildType(message_text)
+        roles = getRoleList(championName)
+        send_role_post_message(sender_id,roles,championName,buildType)
+        return "ok", 200
+    elif isChampionNameSpecified(message_text) and not isRoleSpecified(message_text) and not isBuildTypeSpecified(message_text):
+        championName = getChampionName(message_text)
+        buildType = getBuildType(message_text)
+        roles = getRoleList(championName)
+        send_role_post_message(sender_id,roles,championName,buildType)
+        return "ok", 200
     else:
-        send_message(sender_id,
-                     "Sorry " + championName + "'s " + role + " build is not available")
+        send_message(sender_id, "Sorry I don't recognize a champion name in your message. Type help if you're stuck!")
         return "ok", 200
 
 
@@ -127,13 +129,20 @@ def getRoleList(champName):
     roleList = data[champName].keys()
     return roleList
 
-def isValidChampionName(championName):
+def isChampionNameSpecified(message_text):
     with open('champNames.json', 'r') as fp:
         champNames = json.load(fp)
+    championName = formatChampionName(message_text)
     if championName in champNames:
         return True
     else:
         return False
+def getChampionName(message_text):
+    with open('champNames.json', 'r') as fp:
+        champNames = json.load(fp)
+    championName = formatChampionName(message_text)
+    if championName in champNames:
+        return championName
 def isValidRole(championName,role):
     roleList = getRoleList(championName)
     if role in roleList:
@@ -141,7 +150,7 @@ def isValidRole(championName,role):
     else:
         return False
 
-def getChampName(message_text):
+def formatChampionName(message_text):
     msgList = message_text.split(" ")
     if len(msgList) == 1:
         championName = updateChampNameFormat(message_text)
@@ -223,11 +232,15 @@ def sendPrettyBuild(championName,role,buildType,sender_id):
     else:
         send_message(sender_id,"I HAVE NO IDEA WHAT IM DOING")
 
+def prettifyChampionName(championName):
+    return championName[0].upper() + championName[1:]
+
+
 def makeWinBuild(championName,role,data):
     prettyChampName = championName[0].upper() + championName[1:]
     prettyRoleName = prettifyRole(role)
     res = ""
-    res += "Highest Winrate Build For: " + prettyChampName + " " + prettyRoleName + "\n"
+    res += "Highest Win rate Build For " + prettyChampName + " " + prettyRoleName + "\n"
     WinFullBuild = data[championName][role]["WinFullBuild"]
     itemCount = 1
     for i in range(len(WinFullBuild)):
@@ -390,22 +403,59 @@ def send_message(recipient_id, message_text):
         log(r.status_code)
         log(r.text)
 
-def make_role_buttons(championName,roles):
-    res = ""
-    for i in range(len(roles)):
-        if i == len(roles)-1:
-            res += "{\n\t" + '"type": "postback",\n\t"title": "' + roles[i] + ' ' + championName + '",\n\t"payload": "' + roles[i]+ " " + championName + '"\n}\n'
-        else:
-            res += "{\n\t" + '"type": "postback",\n\t"title": "' + roles[i] + ' ' + championName + '",\n\t"payload": "' + roles[i]+ " " + championName + '"\n},\n'
-    return res
+def generateBuildTypeMsg(buildType):
+    if buildType == "frequent":
+        return "Most Frequent Build For "
+    else:
+        return "Highest Win Rate Build For "
 
-
-
-
-def send_post_message(recipient_id, roles,championName):
+def send_build_type_post_message(recipient_id, championName,role):
 
     log("sending message to {recipient}: {text}".format(recipient=recipient_id, text=championName))
+    championName = prettifyChampionName(championName)
+    role = prettifyRole(role)
 
+    params = {
+        "access_token": os.environ["PAGE_ACCESS_TOKEN"]
+    }
+    headers = {
+        "Content-Type": "application/json"
+    }
+    data = json.dumps({
+        "recipient": {
+            "id": recipient_id
+        },
+        "message": {
+            "attachment": {
+                "type": "template",
+                "payload": {
+                    "template_type": "button",
+                    "text": "What type of build you want?",
+                    "buttons": [
+                        {
+                            "type": "postback",
+                            "title": "Most Frequent Build For " +championName + " " + role,
+                            "payload": "Most Frequent Build For "+ championName + " " + role
+                        },
+                        {
+                            "type": "postback",
+                            "title": "Highest Winrate Build For "+ championName + " " + role,
+                            "payload": "Highest Winrate Build For "+ championName + " " + role
+                        }
+                    ]
+                }
+            }
+        }
+    })
+    r = requests.post("https://graph.facebook.com/v2.6/me/messages", params=params, headers=headers, data=data)
+    if r.status_code != 200:
+        log(r.status_code)
+        log(r.text)
+
+def send_role_post_message(recipient_id, roles, championName,buildType):
+
+    log("sending message to {recipient}: {text}".format(recipient=recipient_id, text=championName))
+    buildTypeMsg = generateBuildTypeMsg(buildType)
     params = {
         "access_token": os.environ["PAGE_ACCESS_TOKEN"]
     }
@@ -426,8 +476,8 @@ def send_post_message(recipient_id, roles,championName):
                         "buttons": [
                             {
                                 "type": "postback",
-                                "title": championName + " " + prettifyRole(roles[0]),
-                                "payload": championName + " " + prettifyRole(roles[0])
+                                "title": buildTypeMsg + championName + " " + prettifyRole(roles[0]),
+                                "payload": buildTypeMsg+ championName + " " + prettifyRole(roles[0])
                             }
                         ]
                     }
@@ -449,13 +499,13 @@ def send_post_message(recipient_id, roles,championName):
                         "buttons": [
                             {
                                 "type": "postback",
-                                "title": championName + " " + prettifyRole(roles[0]),
-                                "payload": championName + " " + prettifyRole(roles[0])
+                                "title": buildTypeMsg+ championName + " " + prettifyRole(roles[0]),
+                                "payload": buildTypeMsg + championName + " " + prettifyRole(roles[0])
                             },
                             {
                                 "type": "postback",
-                                "title": championName + " " + prettifyRole(roles[1]),
-                                "payload": championName + " " + prettifyRole(roles[1])
+                                "title": buildTypeMsg + championName + " " + prettifyRole(roles[1]),
+                                "payload": buildTypeMsg + championName + " " + prettifyRole(roles[1])
                             }
                         ]
                     }
