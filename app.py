@@ -70,17 +70,16 @@ def webhook():
 
     return "ok", 200
 
+
 def removeApostropheS(message_text):
-    msgList = message_text.split(" ")
-    for i in range(len(msgList)-1):
-        twoMsg = msgList[i] + msgList[i+1]
+    for i in range(len(message_text)-1):
+        twoMsg = message_text[i] + message_text[i+1]
+        print twoMsg
         if twoMsg == "'s":
-            msgList.remove(msgList[i])
-            del msgList[i]
-            del msgList[i]
-            newMsg = "".join(msgList)
+            newMsg = message_text[0:i] + message_text[i+2:]
             return newMsg
     return message_text
+
 def getKeyWordList():
     keywords = []
     with open('champNames.json', 'r') as fp:
