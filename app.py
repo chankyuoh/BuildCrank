@@ -57,11 +57,15 @@ def webhook():
                     aboutMessage += "All data has been web scraped from champion.gg using the BS4 python module\n"
                     aboutMessage += "Find the code for this bot on my Github! https://github.com/chankyuoh/fb-lol-bot"
                     feedbackMsg = "Send me any feedback or bug reports by PM'ing me on reddit (/u/RevTremendo)! "
-                    exampleMessage = "Try any of these things:\n"
-                    exampleMessage += "1) Varus \n"
-                    exampleMessage += "2) Varus Mid"
+                    text = "Try any of these things: \n\n"
+                    text += "1) Varus\n"
+                    text += "2) Varus mid\n"
+                    text += "3) mid Varus\n"
+                    text += "4) Frequent varus mid"
+                    text += "5) Highest winrate varus adc"
+                    text += "6) Give me the most frequent build order for varus in bot lane"
                     if message_text == "example_clicked":
-                        send_message(sender_id,'Try something like: "frequent renekton top build"')
+                        send_message(sender_id,text)
                     elif message_text == "about_clicked":
                         send_message(sender_id,aboutMessage)
                     elif message_text == "feedback_clicked":
@@ -476,8 +480,12 @@ def send_message(recipient_id, message_text):
         log(r.text)
 
 def send_help_post_message(recipient_id):
-    text = "I provide item builds for champions in the game League of Legends \n\n"
-    text += "All my data is pulled from champion.gg. Go there to get more in-depth champion information!\n"
+    text = "How BuildCrank Works:"
+    text += "1) BuildCrank looks for champion name, role, build type in your messages\n"
+    text += "2) Champion name is the only MANDATORY input "
+    text += "3) Build types can consist of: highest winrate build or most frequent build\n"
+    text += "4) Roles can consist of (Supp,Adc,Mid,Jungle,Top)\n"
+    text += "5) click 'see some examples' if you are confused!"
     params = {
         "access_token": os.environ["PAGE_ACCESS_TOKEN"]
     }
@@ -497,7 +505,7 @@ def send_help_post_message(recipient_id):
                     "buttons": [
                         {
                             "type": "postback",
-                            "title": "See an example",
+                            "title": "See some examples",
                             "payload": "example_clicked"
                         },
                         {
