@@ -78,12 +78,14 @@ def sendAppropriateMessage(message_text,sender_id):
     elif isChampionNameSpecified(message_text) and not isRoleSpecified(message_text) and isBuildTypeSpecified(message_text):
         championName = getChampionName(message_text)
         buildType = getBuildType(message_text)
+        print "TFT :" + buildType
         roles = getRoleList(championName)
         send_role_post_message(sender_id,roles,championName,buildType)
         return "ok", 200
     elif isChampionNameSpecified(message_text) and not isRoleSpecified(message_text) and not isBuildTypeSpecified(message_text):
         championName = getChampionName(message_text)
         buildType = ""
+        print "TFF : NO BUILD TYPE"
         roles = getRoleList(championName)
         send_role_post_message(sender_id,roles,championName,buildType)
         return "ok", 200
