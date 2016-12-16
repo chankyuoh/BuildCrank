@@ -458,6 +458,7 @@ def send_role_post_message(recipient_id, roles, championName,buildType):
     headers = {
         "Content-Type": "application/json"
     }
+    print "BUILD TYPE FOR " + championName + " " + roles[0] + " is " + buildType
     if len(roles) == 1:
         data = json.dumps({
             "recipient": {
