@@ -66,8 +66,8 @@ def sendAppropriateMessage(message_text,sender_id):
             role = getRole(championName, message_text)
         else:
             print "Please Choose a role"
-            roles = ["a"]
-            send_post_message(sender_id, roles, "hilo world")
+            roles = getRoleList(championName)
+            send_post_message(sender_id, roles, championName)
             return "ok", 200
     else:
         send_message(sender_id, "Sorry I don't recognize the champion name " + championName)
@@ -326,9 +326,10 @@ def make_role_buttons(championName,roles):
     res = ""
     for i in range(len(roles)):
         if i == len(roles)-1:
-            res += "{\n\t" + '"type": "postback",\n\t"title": "' + championName + ' ' + roles[i] + '",\n\t"payload": "' + championName+ " " + roles[i] + '"\n}\n'
+            res += "{\n\t" + '"type": "postback",\n\t"title": "' + roles[i] + ' ' + championName + '",\n\t"payload": "' + roles[i]+ " " + championName + '"\n}\n'
         else:
-            res += "{\n\t" + '"type": "postback",\n\t"title": "' + championName + ' ' + roles[i] + '",\n\t"payload": "' + championName+ " " + roles[i] + '"\n},\n'
+            res += "{\n\t" + '"type": "postback",\n\t"title": "' + roles[i] + ' ' + championName + '",\n\t"payload": "' + roles[i]+ " " + championName + '"\n},\n'
+    return res
 
 def send_post_message(recipient_id, roles,championName):
 
@@ -351,16 +352,7 @@ def send_post_message(recipient_id, roles,championName):
                     "template_type": "button",
                     "text": "Choose a role for the build you want",
                     "buttons": [
-                        {
-                            "type": "postback",
-                            "title": "Akali Top",
-                            "payload": "Akali Top"
-                        },
-                        {
-                            "type": "postback",
-                            "title": "Get a build for Akali Mid",
-                            "payload": "Akali Mid"
-                        }
+                        make_role_buttons(championName,roles)
                     ]
                 }
             }
