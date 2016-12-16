@@ -35,11 +35,12 @@ def webhook():
 
                     sender_id = messaging_event["sender"]["id"]        # the facebook ID of the person sending you the message
                     recipient_id = messaging_event["recipient"]["id"]  # the recipient's ID, which should be your page's facebook ID
-                    if "text" not in messaging_event["message"]:
+                    if "text" not in messaging_event["message"]:  # don't let users send me stickers/images
                         send_message(sender_id,"I only accept text-based communications :(")
                         return "ok", 200
                     else:
                         message_text = messaging_event["message"]["text"]  # the message's text
+
                     sendAppropriateMessage(message_text,sender_id)
 
 
@@ -146,7 +147,7 @@ def getChampName(message_text):
     return championName
 
 def isRoleSpecified(message_text):
-    roles = ['sup', 'supp', 'support', "bot", 'adc', 'mid', "middle", 'jg', 'jungle', 'top']
+    roles = ['sup', 'supp', 'support', "ad","bot", 'adc', 'mid', "middle", 'jg', 'jungle', 'top']
     msgList = message_text.split(" ")
     for msg in msgList:
         msg = msg.lower()
@@ -194,6 +195,13 @@ def sendPrettyBuild(championName,role,sender_id):
     for i in range(len(freqFullBuild)):
         res += str(itemCount) + ") "
         res += freqFullBuild[i] + "\n"
+        itemCount += 1
+    res += "\n Starting Items: "+ "\n"
+    freqStartBuild = data[championName][role]["FreqStarterBuild"]
+    itemCount = 1
+    for i in range(len(freqFullBuild)):
+        res += str(itemCount) + ") "
+        res += freqStartBuild[i] + "\n"
         itemCount += 1
     send_message(sender_id, res)
 
