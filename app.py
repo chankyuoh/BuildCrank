@@ -66,6 +66,8 @@ def webhook():
                         send_message(sender_id,aboutMessage)
                     elif message_text == "feedback_clicked":
                         send_message(sender_id,feedbackMsg)
+                    elif message_text == "get_started_clicked":
+                        send_help_post_message(sender_id)
                     else:
                         sendAppropriateMessage(message_text,sender_id)
 
@@ -429,6 +431,26 @@ def send_welcome_message():
         log(r.text)
 
 
+def set_get_started_button():
+    params = {
+        "access_token": os.environ["PAGE_ACCESS_TOKEN"]
+    }
+    headers = {
+        "Content-Type": "application/json"
+    }
+    data = json.dumps({
+        "setting_type": "call_to_actions",
+        "thread_state": "new_thread",
+        "call_to_actions": [
+            {
+                "payload": "get_started_clicked"
+            }
+        ]
+    })
+    r = requests.post("https://graph.facebook.com/v2.6/me/thread_settings", params=params, headers=headers, data=data)
+    if r.status_code != 200:
+        log(r.status_code)
+        log(r.text)
 
 def send_message(recipient_id, message_text):
 
