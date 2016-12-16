@@ -434,7 +434,7 @@ def send_build_type_post_message(recipient_id, championName,role):
                         },
                         {
                             "type": "postback",
-                            "title": "Highest Winrate Build",
+                            "title": "High Winrate Build",
                             "payload": "Highest Winrate Build For "+ championName + " " + role
                         }
                     ]
@@ -469,7 +469,7 @@ def send_role_post_message(recipient_id, roles, championName,buildType):
                     "type": "template",
                     "payload": {
                         "template_type": "button",
-                        "text": "Choose a role for the build you want",
+                        "text": "Please specify which role you want",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -492,7 +492,7 @@ def send_role_post_message(recipient_id, roles, championName,buildType):
                     "type": "template",
                     "payload": {
                         "template_type": "button",
-                        "text": "Choose a role for the build you want",
+                        "text": "Please specify which role you want",
                         "buttons": [
                             {
                                 "type": "postback",
