@@ -17,13 +17,11 @@ def verify():
             return "Verification token mismatch", 403
         return request.args["hub.challenge"], 200
 
-    send_welcome_message()
     return "We can do whatever we want with BuildCrank", 200
 
 
 @app.route('/', methods=['POST'])
 def webhook():
-    send_welcome_message()
     set_get_started_button()
     # endpoint for processing incoming messaging events
 
@@ -43,7 +41,7 @@ def webhook():
                         return "ok", 200
                     else:
                         message_text = messaging_event["message"]["text"]  # the message's text
-
+                    send_welcome_message()
                     sendAppropriateMessage(message_text,sender_id)
 
 
@@ -411,8 +409,7 @@ def convertAltNametoOriginal(name):
 # send_welcome_message
 
 def send_welcome_message():
-    welcomeText = "BuildCrank helps you find item build paths for champions in the game League of Legends Get Started and give me a champion's name!."
-    welcomeText += "Type in a champion's name and role to get a suggested build!"
+    welcomeText = "BuildCrank helps you find item build paths for champions in the game League of Legends\nh Get Started and give me a champion's name!."
     log("sending welcome message")
 
     params = {
