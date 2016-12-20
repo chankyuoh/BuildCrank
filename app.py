@@ -409,8 +409,7 @@ def convertAltNametoOriginal(name):
 # send_welcome_message
 
 def send_welcome_message():
-    welcomeText = "BuildCrank helps you find item build paths for champions in the game League of Legends\nh Get Started and give me a champion's name!."
-    log("sending welcome message")
+    welcomeText = "BuildCrank helps you find item build paths for champions in the game League of Legends"
 
     params = {
         "access_token": os.environ["PAGE_ACCESS_TOKEN"]
@@ -421,7 +420,7 @@ def send_welcome_message():
     data = json.dumps({
         "setting_type":"greeting",
         "greeting": {
-            "text": welcomeText
+            "text": "BuildCrank helps you find item build orders for champions in LoL"
         }
     })
     r = requests.post("https://graph.facebook.com/v2.6/me/thread_settings", params=params, headers=headers, data=data)
