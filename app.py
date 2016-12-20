@@ -16,7 +16,7 @@ def verify():
             return "Verification token mismatch", 403
         return request.args["hub.challenge"], 200
 
-    return "Hello world", 200
+    return "We can do whatever we want with BuildCrank", 200
 
 
 @app.route('/', methods=['POST'])
@@ -368,6 +368,8 @@ def convertAltNametoOriginal(name):
         return "cassiopeia"
     if name == "cho":
         return "chogath"
+    if name == "cait":
+        return "caitlyn"
     if name == "mundo":
         return "drmundo"
     if name in ["eve","evelyn"]:
@@ -479,8 +481,8 @@ def send_help_post_message(recipient_id):
     text += "Then give BuildCrank all the info (name,role,buildType) in one message\n\n"
     send_message(recipient_id,text)
     text2 = "Roles consist of: support,adc,mid,jungle,top\n\n"
-    text2 += "Build types consist of: frequent(most frequently used build), and winrate (highest winrate build)\n\n"
-    text2 += "Feel free to use common nicknames (heimer = heimerdinger, jg = jungle, freq = frequent, win = winrate, etc)\n\n"
+    text2 += "Build types consist of: frequent (most frequently used build), and winrate (highest winrate build)\n\n"
+    text2 += "Feel free to use common nicknames (heimer, jg, j4, asol, etc.)\n\n"
     params = {
         "access_token": os.environ["PAGE_ACCESS_TOKEN"]
     }
