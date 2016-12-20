@@ -420,7 +420,7 @@ def send_welcome_message():
     data = json.dumps({
         "setting_type":"greeting",
         "greeting": {
-            "text": "BuildCrank helps you find build paths in LoL"
+            "text": "BuildCrank helps you find item builds for champions in League of Legends"
         }
     })
     r = requests.post("https://graph.facebook.com/v2.6/me/thread_settings", params=params, headers=headers, data=data)
