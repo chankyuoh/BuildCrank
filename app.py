@@ -479,7 +479,7 @@ def send_help_post_message(recipient_id):
     text += "Then give BuildCrank all the info (name,role,buildType) in one message\n\n"
     send_message(recipient_id,text)
     text2 = "Roles consist of: support,adc,mid,jungle,top\n\n"
-    text2 += "Build types consist of: frequent, winrate (frequent = most frequently used build, winrate = highest winrate build)\n\n"
+    text2 += "Build types consist of: frequent(most frequently used build), and winrate (highest winrate build)\n\n"
     text2 += "Feel free to use common nicknames (heimer = heimerdinger, jg = jungle, freq = frequent, win = winrate, etc)\n\n"
     params = {
         "access_token": os.environ["PAGE_ACCESS_TOKEN"]
