@@ -22,6 +22,7 @@ def verify():
 
 @app.route('/', methods=['POST'])
 def webhook():
+    send_welcome_message()
     set_get_started_button()
     # endpoint for processing incoming messaging events
 
@@ -41,7 +42,6 @@ def webhook():
                         return "ok", 200
                     else:
                         message_text = messaging_event["message"]["text"]  # the message's text
-                    send_welcome_message()
                     sendAppropriateMessage(message_text,sender_id)
 
 
@@ -420,7 +420,7 @@ def send_welcome_message():
     data = json.dumps({
         "setting_type":"greeting",
         "greeting": {
-            "text": "BuildCrank helps you find item build orders for champions in LoL"
+            "text": "BuildCrank helps you find build paths in LoL"
         }
     })
     r = requests.post("https://graph.facebook.com/v2.6/me/thread_settings", params=params, headers=headers, data=data)
