@@ -4,6 +4,8 @@ import json
 import string
 import requests
 from flask import Flask, request
+import random
+from collections import Counter
 
 def send_message(sender_id,msg):
     print msg
@@ -237,4 +239,105 @@ def make_role_buttons(championName,roles):
             res += "{\n\t" + '"type": "postback",\n\t"title": "' + championName + ' ' + roles[i] + '",\n\t"payload": "' + championName + " " + roles[i] + '"\n},\n'
     return res
 #webhook()
-print make_role_buttons("Akali",["top","mid"])
+#print make_role_buttons("Akali",["top","mid"])
+
+
+def isUnique(s):
+    L = []
+    for char in s:
+        if char in L:
+            return False
+        else:
+            L.append(char)
+    return True
+
+def isUnique2(s):
+    for i in range(len(s)):
+        if s[i] in s[(i+1):]:
+            return False
+    return True
+
+def isPermutation(s1,s2):
+    counter1 = Counter(s1)
+    counter2 = Counter(s2)
+    if len(list(counter1)) == 0:
+        if len(list(counter2)) == 0:
+            return True
+        else:
+            return False
+    for key in counter1:
+        if key not in counter2:
+            return False
+        if counter1[key] != counter2[key]:
+            return False
+    return True
+
+def replaceSpace(s):
+    s = s.strip()
+    L = list(s)
+    for i in range(len(L)):
+        if L[i] == " ":
+            L[i] = "%20"
+    return "".join(L)
+
+def compress(s):
+    res = ""
+    currChar = s[0]
+    count = 0
+    for i in range(len(s)):
+        if s[i] == currChar:
+            count+=1
+        else:
+            res+= currChar + str(count)
+            currChar = s[i]
+            count = 1
+    res += currChar + str(count)
+    if len(res) < len(s):
+        return res
+    else:
+        return s
+
+def rotate(L):
+    A = []
+    B = []
+    for col in range(len(L)):
+        A.append(B)
+        B = []
+        for row in range(len(L)-1,-1,-1):
+            B.append(L[row][col])
+    A = A[1:]
+    A.append(B)
+    return A
+
+
+def markRowZero(row,L):
+    L[row] = [0 for i in range(len(L[0]))]
+    return L
+def markColZero(col,L):
+    for row in range(len(L)):
+        L[row][col] = 0
+    return L
+def markZero(L):
+    zeroes = []
+    for row in range(len(L)):
+        for col in range(len(L[0])):
+            if L[row][col] == 0:
+                zeroes.append((row,col))
+    for pair in zeroes:
+        L = markRowZero(pair[0],L)
+        L = markColZero(pair[1],L)
+    return L
+
+def isRotate(s1,s2):
+    if len(s1) != len(s2):
+        return False
+    for i in range(len(s1)):
+        if s1[i:] in s2 and s1[0:i] in s2:
+            return True
+    return False
+
+s1 = "waterbottle"
+s2 = "erbottlewat"
+L = [[0,1,2],[3,4,5],[6,7,0]]
+zeroL = [[0,0,0],[0,4,5],[0,7,8]]
+print isRotate(s1,s2)

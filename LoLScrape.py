@@ -255,7 +255,9 @@ def printSpecificBuildFromJson(champName):
 
 
 createChampBuildsJsonFile()
-printEveryBuildFromJson()
+#printEveryBuildFromJson()
+#makeChampData("Fiora")
+
 #printSpecificBuildFromJson("akali")
 
 #r = requests.get("http://champion.gg/champion/hecarim")

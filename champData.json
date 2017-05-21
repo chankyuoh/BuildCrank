@@ -5,8 +5,8 @@
                 "Skirmisher's Bloodrazor", 
                 "Ninja Tabi", 
                 "Blade of the Ruined King", 
-                "Randuin's Omen", 
-                "Thornmail", 
+                "Spirit Visage", 
+                "Guardian Angel", 
                 "Death's Dance"
             ], 
             "FreqStarterBuild": [
@@ -17,9 +17,9 @@
                 "Skirmisher's Bloodrazor", 
                 "Mercury's Treads", 
                 "Blade of the Ruined King", 
-                "Death's Dance", 
                 "Spirit Visage", 
-                "Zz'Rot Portal"
+                "Death's Dance", 
+                "Guardian Angel"
             ], 
             "WinStarterBuild": [
                 "Hunter's Machete", 
@@ -31,9 +31,9 @@
                 "Blade of the Ruined King", 
                 "Ninja Tabi", 
                 "Ravenous Hydra", 
-                "Frozen Mallet", 
-                "Thornmail", 
-                "Guardian Angel"
+                "The Black Cleaver", 
+                "Spirit Visage", 
+                "The Bloodthirster"
             ], 
             "FreqStarterBuild": [
                 "Doran's Blade", 
@@ -44,8 +44,8 @@
                 "Ninja Tabi", 
                 "Ravenous Hydra", 
                 "The Black Cleaver", 
-                "Guardian Angel", 
-                "Frozen Mallet"
+                "Spirit Visage", 
+                "The Bloodthirster"
             ], 
             "WinStarterBuild": [
                 "Doran's Blade", 
@@ -74,7 +74,7 @@
                 "Sorcerer's Shoes", 
                 "Rabadon's Deathcap", 
                 "Void Staff", 
-                "Lich Bane"
+                "Abyssal Scepter"
             ], 
             "WinStarterBuild": [
                 "Doran's Ring", 
@@ -90,7 +90,7 @@
                 "Sorcerer's Shoes", 
                 "Lich Bane", 
                 "Zhonya's Hourglass", 
-                "Rabadon's Deathcap", 
+                "Void Staff", 
                 "Guardian Angel"
             ], 
             "FreqStarterBuild": [
@@ -101,16 +101,15 @@
                 "Health Potion"
             ], 
             "WinFullBuild": [
-                "Sorcerer's Shoes", 
                 "Hextech Gunblade", 
-                "Abyssal Scepter", 
+                "Sorcerer's Shoes", 
                 "Lich Bane", 
                 "Zhonya's Hourglass", 
-                "Void Staff"
+                "Void Staff", 
+                "Rabadon's Deathcap"
             ], 
             "WinStarterBuild": [
-                "Boots of Speed", 
-                "Health Potion", 
+                "Long Sword", 
                 "Health Potion", 
                 "Health Potion", 
                 "Health Potion"
@@ -122,7 +121,7 @@
                 "Sorcerer's Shoes", 
                 "Zhonya's Hourglass", 
                 "Lich Bane", 
-                "Rylai's Crystal Scepter", 
+                "Rabadon's Deathcap", 
                 "Void Staff"
             ], 
             "FreqStarterBuild": [
@@ -134,11 +133,11 @@
             ], 
             "WinFullBuild": [
                 "Hextech Gunblade", 
+                "Lich Bane", 
                 "Sorcerer's Shoes", 
                 "Zhonya's Hourglass", 
-                "Abyssal Scepter", 
-                "Void Staff", 
-                "Lich Bane"
+                "Rabadon's Deathcap", 
+                "Guardian Angel"
             ], 
             "WinStarterBuild": [
                 "Boots of Speed", 
@@ -157,7 +156,7 @@
                 "Face of the Mountain", 
                 "Locket of the Iron Solari", 
                 "Redemption", 
-                "Iceborn Gauntlet"
+                "Frozen Heart"
             ], 
             "FreqStarterBuild": [
                 "Total Biscuit of Rejuvenation", 
@@ -167,16 +166,16 @@
             ], 
             "WinFullBuild": [
                 "Sightstone", 
-                "Boots of Mobility", 
                 "Face of the Mountain", 
+                "Boots of Mobility", 
                 "Locket of the Iron Solari", 
                 "Redemption", 
-                "Iceborn Gauntlet"
+                "Randuin's Omen"
             ], 
             "WinStarterBuild": [
-                "Total Biscuit of Rejuvenation", 
-                "Total Biscuit of Rejuvenation", 
-                "Total Biscuit of Rejuvenation", 
+                "Health Potion", 
+                "Health Potion", 
+                "Health Potion", 
                 "Relic Shield"
             ]
         }
@@ -201,7 +200,7 @@
                 "Frozen Heart", 
                 "Banshee's Veil", 
                 "Thornmail", 
-                "Abyssal Scepter"
+                "Guardian Angel"
             ], 
             "WinStarterBuild": [
                 "Hunter's Talisman", 
@@ -219,7 +218,7 @@
                 "Archangel's Staff", 
                 "Rabadon's Deathcap", 
                 "Void Staff", 
-                "Zhonya's Hourglass"
+                "Liandry's Torment"
             ], 
             "FreqStarterBuild": [
                 "Doran's Ring", 
@@ -232,24 +231,24 @@
                 "Sorcerer's Shoes", 
                 "Rabadon's Deathcap", 
                 "Void Staff", 
-                "Void Staff"
+                "Liandry's Torment"
             ], 
             "WinStarterBuild": [
                 "Doran's Ring", 
-                "Total Biscuit of Rejuvenation", 
-                "Total Biscuit of Rejuvenation"
+                "Health Potion", 
+                "Health Potion"
             ]
         }
     }, 
     "annie": {
         "Middle": {
             "FreqFullBuild": [
-                "Rod of Ages", 
+                "Morellonomicon", 
                 "Sorcerer's Shoes", 
                 "Luden's Echo", 
                 "Rabadon's Deathcap", 
-                "Zhonya's Hourglass", 
-                "Void Staff"
+                "Void Staff", 
+                "Zhonya's Hourglass"
             ], 
             "FreqStarterBuild": [
                 "Doran's Ring", 
@@ -266,18 +265,18 @@
             ], 
             "WinStarterBuild": [
                 "Doran's Ring", 
-                "Total Biscuit of Rejuvenation", 
-                "Total Biscuit of Rejuvenation"
+                "Health Potion", 
+                "Health Potion"
             ]
         }, 
         "Support": {
             "FreqFullBuild": [
+                "Sightstone", 
                 "Frost Queen's Claim", 
                 "Sorcerer's Shoes", 
                 "Luden's Echo", 
-                "Rylai's Crystal Scepter", 
                 "Zhonya's Hourglass", 
-                "Void Staff"
+                "Rylai's Crystal Scepter"
             ], 
             "FreqStarterBuild": [
                 "Total Biscuit of Rejuvenation", 
@@ -287,16 +286,16 @@
             ], 
             "WinFullBuild": [
                 "Sightstone", 
-                "Frost Queen's Claim", 
                 "Sorcerer's Shoes", 
                 "Luden's Echo", 
+                "Rabadon's Deathcap", 
                 "Zhonya's Hourglass", 
-                "Void Staff"
+                "Abyssal Scepter"
             ], 
             "WinStarterBuild": [
-                "Health Potion", 
-                "Health Potion", 
-                "Health Potion", 
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation", 
                 "Spellthief's Edge"
             ]
         }
@@ -304,12 +303,12 @@
     "ashe": {
         "ADC": {
             "FreqFullBuild": [
+                "Essence Reaver", 
                 "Berserker's Greaves", 
                 "Runaan's Hurricane", 
                 "Infinity Edge", 
-                "Phantom Dancer", 
-                "The Bloodthirster", 
-                "Guardian Angel"
+                "Lord Dominik's Regards", 
+                "Mercurial Scimitar"
             ], 
             "FreqStarterBuild": [
                 "Doran's Blade", 
@@ -317,11 +316,11 @@
             ], 
             "WinFullBuild": [
                 "Essence Reaver", 
-                "Berserker's Greaves", 
                 "Runaan's Hurricane", 
+                "Berserker's Greaves", 
                 "Infinity Edge", 
-                "Mercurial Scimitar", 
-                "Banshee's Veil"
+                "Lord Dominik's Regards", 
+                "Guardian Angel"
             ], 
             "WinStarterBuild": [
                 "Doran's Blade", 
@@ -332,23 +331,23 @@
     "aurelionsol": {
         "Middle": {
             "FreqFullBuild": [
-                "Hextech GLP-800", 
                 "Boots of Swiftness", 
+                "Hextech GLP-800", 
                 "Rylai's Crystal Scepter", 
                 "Liandry's Torment", 
-                "Rabadon's Deathcap", 
-                "Zhonya's Hourglass"
+                "Zhonya's Hourglass", 
+                "Rabadon's Deathcap"
             ], 
             "FreqStarterBuild": [
                 "Corrupting Potion"
             ], 
             "WinFullBuild": [
-                "Boots of Swiftness", 
                 "Hextech GLP-800", 
+                "Boots of Swiftness", 
                 "Rylai's Crystal Scepter", 
                 "Liandry's Torment", 
-                "Rabadon's Deathcap", 
-                "Zhonya's Hourglass"
+                "Mejai's Soulstealer", 
+                "Void Staff"
             ], 
             "WinStarterBuild": [
                 "Corrupting Potion"
@@ -361,9 +360,9 @@
                 "Nashor's Tooth", 
                 "Sorcerer's Shoes", 
                 "Rylai's Crystal Scepter", 
-                "Rabadon's Deathcap", 
                 "Void Staff", 
-                "Guardian Angel"
+                "Rabadon's Deathcap", 
+                "Zhonya's Hourglass"
             ], 
             "FreqStarterBuild": [
                 "Doran's Ring", 
@@ -375,8 +374,8 @@
                 "Sorcerer's Shoes", 
                 "Rylai's Crystal Scepter", 
                 "Rabadon's Deathcap", 
-                "Void Staff", 
-                "Zhonya's Hourglass"
+                "Zhonya's Hourglass", 
+                "Guardian Angel"
             ], 
             "WinStarterBuild": [
                 "Doran's Ring", 
@@ -392,7 +391,7 @@
                 "Boots of Mobility", 
                 "Redemption", 
                 "Locket of the Iron Solari", 
-                "Frost Queen's Claim", 
+                "Frozen Heart", 
                 "Banshee's Veil"
             ], 
             "FreqStarterBuild": [
@@ -403,11 +402,11 @@
             ], 
             "WinFullBuild": [
                 "Sightstone", 
-                "Boots of Mobility", 
+                "Ionian Boots of Lucidity", 
                 "Redemption", 
                 "Locket of the Iron Solari", 
-                "Frost Queen's Claim", 
-                "Banshee's Veil"
+                "Randuin's Omen", 
+                "Knight's Vow"
             ], 
             "WinStarterBuild": [
                 "Health Potion", 
@@ -438,11 +437,13 @@
                 "Boots of Mobility", 
                 "Face of the Mountain", 
                 "Iceborn Gauntlet", 
-                "Knight's Vow", 
-                "Locket of the Iron Solari"
+                "Abyssal Scepter", 
+                "Dead Man's Plate"
             ], 
             "WinStarterBuild": [
-                "Refillable Potion", 
+                "Health Potion", 
+                "Health Potion", 
+                "Health Potion", 
                 "Relic Shield"
             ]
         }
@@ -483,7 +484,7 @@
                 "Rylai's Crystal Scepter", 
                 "Liandry's Torment", 
                 "Void Staff", 
-                "Zhonya's Hourglass"
+                "Morellonomicon"
             ], 
             "FreqStarterBuild": [
                 "Total Biscuit of Rejuvenation", 
@@ -496,12 +497,13 @@
                 "Sorcerer's Shoes", 
                 "Rylai's Crystal Scepter", 
                 "Liandry's Torment", 
-                "Rabadon's Deathcap", 
-                "Locket of the Iron Solari"
+                "Void Staff", 
+                "Guardian Angel"
             ], 
             "WinStarterBuild": [
-                "Refillable Potion", 
-                "Spellthief's Edge"
+                "Doran's Ring", 
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation"
             ]
         }
     }, 
@@ -512,8 +514,8 @@
                 "Boots of Mobility", 
                 "Face of the Mountain", 
                 "Locket of the Iron Solari", 
-                "Knight's Vow", 
-                "Redemption"
+                "Redemption", 
+                "Knight's Vow"
             ], 
             "FreqStarterBuild": [
                 "Total Biscuit of Rejuvenation", 
@@ -523,16 +525,14 @@
             ], 
             "WinFullBuild": [
                 "Sightstone", 
-                "Boots of Mobility", 
                 "Face of the Mountain", 
-                "Knight's Vow", 
+                "Boots of Mobility", 
                 "Locket of the Iron Solari", 
-                "Zeke's Harbinger"
+                "Redemption", 
+                "Knight's Vow"
             ], 
             "WinStarterBuild": [
-                "Health Potion", 
-                "Health Potion", 
-                "Health Potion", 
+                "Refillable Potion", 
                 "Relic Shield"
             ]
         }
@@ -540,8 +540,8 @@
     "caitlyn": {
         "ADC": {
             "FreqFullBuild": [
-                "Runaan's Hurricane", 
                 "Berserker's Greaves", 
+                "Runaan's Hurricane", 
                 "Infinity Edge", 
                 "Rapid Firecannon", 
                 "The Bloodthirster", 
@@ -556,8 +556,8 @@
                 "Infinity Edge", 
                 "Berserker's Greaves", 
                 "Rapid Firecannon", 
-                "The Bloodthirster", 
-                "Lord Dominik's Regards"
+                "Lord Dominik's Regards", 
+                "The Bloodthirster"
             ], 
             "WinStarterBuild": [
                 "Doran's Blade", 
@@ -584,9 +584,9 @@
                 "Morellonomicon", 
                 "Rylai's Crystal Scepter", 
                 "Archangel's Staff", 
-                "Void Staff", 
                 "Rabadon's Deathcap", 
-                "Zhonya's Hourglass"
+                "Void Staff", 
+                "Liandry's Torment"
             ], 
             "WinStarterBuild": [
                 "Doran's Ring", 
@@ -612,9 +612,9 @@
             "FreqFullBuild": [
                 "Rod of Ages", 
                 "Mercury's Treads", 
-                "Frozen Heart", 
-                "Abyssal Scepter", 
                 "Rylai's Crystal Scepter", 
+                "Rabadon's Deathcap", 
+                "Abyssal Scepter", 
                 "Dead Man's Plate"
             ], 
             "FreqStarterBuild": [
@@ -625,10 +625,10 @@
             "WinFullBuild": [
                 "Rod of Ages", 
                 "Mercury's Treads", 
-                "Spirit Visage", 
-                "Frozen Heart", 
                 "Rylai's Crystal Scepter", 
-                "Abyssal Scepter"
+                "Rabadon's Deathcap", 
+                "Zhonya's Hourglass", 
+                "Luden's Echo"
             ], 
             "WinStarterBuild": [
                 "Doran's Ring", 
@@ -642,8 +642,8 @@
                 "Mercury's Treads", 
                 "Frozen Heart", 
                 "Spirit Visage", 
-                "Rylai's Crystal Scepter", 
-                "Void Staff"
+                "Dead Man's Plate", 
+                "Abyssal Scepter"
             ], 
             "FreqStarterBuild": [
                 "Doran's Ring", 
@@ -652,16 +652,14 @@
             ], 
             "WinFullBuild": [
                 "Rod of Ages", 
-                "Mercury's Treads", 
                 "Rylai's Crystal Scepter", 
-                "Zz'Rot Portal", 
-                "Dead Man's Plate", 
+                "Mercury's Treads", 
+                "Spirit Visage", 
+                "Frozen Heart", 
                 "Spirit Visage"
             ], 
             "WinStarterBuild": [
-                "Doran's Ring", 
-                "Total Biscuit of Rejuvenation", 
-                "Total Biscuit of Rejuvenation"
+                "Corrupting Potion"
             ]
         }
     }, 
@@ -672,7 +670,7 @@
                 "Sorcerer's Shoes", 
                 "Hextech Gunblade", 
                 "Infinity Edge", 
-                "Void Staff", 
+                "Rapid Firecannon", 
                 "Guardian Angel"
             ], 
             "FreqStarterBuild": [
@@ -683,9 +681,9 @@
                 "Trinity Force", 
                 "Sorcerer's Shoes", 
                 "Hextech Gunblade", 
-                "Rapid Firecannon", 
                 "Infinity Edge", 
-                "Rapid Firecannon"
+                "Rapid Firecannon", 
+                "Guardian Angel"
             ], 
             "WinStarterBuild": [
                 "Doran's Blade", 
@@ -706,16 +704,15 @@
                 "Total Biscuit of Rejuvenation"
             ], 
             "WinFullBuild": [
-                "Trinity Force", 
                 "Sorcerer's Shoes", 
+                "Trinity Force", 
                 "Hextech Gunblade", 
                 "Infinity Edge", 
                 "Rapid Firecannon", 
                 "Void Staff"
             ], 
             "WinStarterBuild": [
-                "Doran's Blade", 
-                "Total Biscuit of Rejuvenation"
+                "Corrupting Potion"
             ]
         }
     }, 
@@ -739,11 +736,11 @@
                 "Dead Man's Plate", 
                 "Spirit Visage", 
                 "Randuin's Omen", 
-                "Guardian Angel"
+                "Thornmail"
             ], 
             "WinStarterBuild": [
-                "Long Sword", 
-                "Refillable Potion"
+                "Doran's Blade", 
+                "Total Biscuit of Rejuvenation"
             ]
         }
     }, 
@@ -755,7 +752,7 @@
                 "Nashor's Tooth", 
                 "Lich Bane", 
                 "Zhonya's Hourglass", 
-                "Void Staff"
+                "Rabadon's Deathcap"
             ], 
             "FreqStarterBuild": [
                 "Hunter's Talisman", 
@@ -765,11 +762,11 @@
             ], 
             "WinFullBuild": [
                 "Stalker's Runic Echoes", 
-                "Nashor's Tooth", 
                 "Sorcerer's Shoes", 
+                "Nashor's Tooth", 
                 "Lich Bane", 
                 "Zhonya's Hourglass", 
-                "Void Staff"
+                "Rabadon's Deathcap"
             ], 
             "WinStarterBuild": [
                 "Hunter's Talisman", 
@@ -784,8 +781,8 @@
                 "Sorcerer's Shoes", 
                 "Nashor's Tooth", 
                 "Zhonya's Hourglass", 
-                "Lich Bane", 
-                "Void Staff"
+                "Void Staff", 
+                "Rabadon's Deathcap"
             ], 
             "FreqStarterBuild": [
                 "Doran's Ring", 
@@ -794,11 +791,11 @@
             ], 
             "WinFullBuild": [
                 "Rod of Ages", 
-                "Sorcerer's Shoes", 
                 "Nashor's Tooth", 
+                "Sorcerer's Shoes", 
                 "Zhonya's Hourglass", 
-                "Lich Bane", 
-                "Banshee's Veil"
+                "Void Staff", 
+                "Rabadon's Deathcap"
             ], 
             "WinStarterBuild": [
                 "Doran's Ring", 
@@ -810,8 +807,8 @@
     "draven": {
         "ADC": {
             "FreqFullBuild": [
-                "Infinity Edge", 
                 "Berserker's Greaves", 
+                "Infinity Edge", 
                 "Phantom Dancer", 
                 "The Bloodthirster", 
                 "Lord Dominik's Regards", 
@@ -837,28 +834,14 @@
     }, 
     "drmundo": {
         "Jungle": {
-            "FreqFullBuild": [
-                "Skirmisher's Cinderhulk", 
-                "Boots of Swiftness", 
-                "Spirit Visage", 
-                "Dead Man's Plate", 
-                "Warmog's Armor", 
-                "Thornmail"
-            ], 
+            "FreqFullBuild": [], 
             "FreqStarterBuild": [
                 "Hunter's Machete", 
                 "Health Potion", 
                 "Health Potion", 
                 "Health Potion"
             ], 
-            "WinFullBuild": [
-                "Skirmisher's Cinderhulk", 
-                "Boots of Swiftness", 
-                "Spirit Visage", 
-                "Dead Man's Plate", 
-                "Warmog's Armor", 
-                "Thornmail"
-            ], 
+            "WinFullBuild": [], 
             "WinStarterBuild": [
                 "Hunter's Machete", 
                 "Health Potion", 
@@ -869,23 +852,23 @@
         "Top": {
             "FreqFullBuild": [
                 "Sunfire Cape", 
-                "Ninja Tabi", 
+                "Boots of Swiftness", 
                 "Spirit Visage", 
                 "Warmog's Armor", 
-                "Randuin's Omen", 
-                "Thornmail"
+                "Thornmail", 
+                "Randuin's Omen"
             ], 
             "FreqStarterBuild": [
                 "Doran's Shield", 
                 "Health Potion"
             ], 
             "WinFullBuild": [
-                "Sunfire Cape", 
                 "Spirit Visage", 
                 "Boots of Swiftness", 
+                "Sunfire Cape", 
                 "Warmog's Armor", 
-                "Zz'Rot Portal", 
-                "Guardian Angel"
+                "Dead Man's Plate", 
+                "Thornmail"
             ], 
             "WinStarterBuild": [
                 "Doran's Shield", 
@@ -894,32 +877,6 @@
         }
     }, 
     "ekko": {
-        "Jungle": {
-            "FreqFullBuild": [
-                "Stalker's Runic Echoes", 
-                "Sorcerer's Shoes", 
-                "Lich Bane", 
-                "Zhonya's Hourglass", 
-                "Hextech Protobelt-01", 
-                "Abyssal Scepter"
-            ], 
-            "FreqStarterBuild": [
-                "Hunter's Talisman", 
-                "Refillable Potion"
-            ], 
-            "WinFullBuild": [
-                "Stalker's Runic Echoes", 
-                "Hextech Protobelt-01", 
-                "Sorcerer's Shoes", 
-                "Lich Bane", 
-                "Abyssal Scepter", 
-                "Zhonya's Hourglass"
-            ], 
-            "WinStarterBuild": [
-                "Hunter's Talisman", 
-                "Refillable Potion"
-            ]
-        }, 
         "Middle": {
             "FreqFullBuild": [
                 "Hextech Protobelt-01", 
@@ -936,15 +893,14 @@
             ], 
             "WinFullBuild": [
                 "Hextech Protobelt-01", 
-                "Sorcerer's Shoes", 
                 "Lich Bane", 
+                "Sorcerer's Shoes", 
                 "Rabadon's Deathcap", 
                 "Zhonya's Hourglass", 
-                "Luden's Echo"
+                "Void Staff"
             ], 
             "WinStarterBuild": [
-                "The Dark Seal", 
-                "Refillable Potion"
+                "Corrupting Potion"
             ]
         }, 
         "Top": {
@@ -953,8 +909,8 @@
                 "Sorcerer's Shoes", 
                 "Lich Bane", 
                 "Zhonya's Hourglass", 
-                "Rabadon's Deathcap", 
-                "Guardian Angel"
+                "Void Staff", 
+                "Rabadon's Deathcap"
             ], 
             "FreqStarterBuild": [
                 "Doran's Ring", 
@@ -963,16 +919,14 @@
             ], 
             "WinFullBuild": [
                 "Hextech Protobelt-01", 
-                "Sorcerer's Shoes", 
                 "Lich Bane", 
+                "Sorcerer's Shoes", 
                 "Zhonya's Hourglass", 
                 "Rabadon's Deathcap", 
-                "Guardian Angel"
+                "Void Staff"
             ], 
             "WinStarterBuild": [
-                "Doran's Ring", 
-                "Health Potion", 
-                "Health Potion"
+                "Corrupting Potion"
             ]
         }
     }, 
@@ -983,8 +937,8 @@
                 "Sorcerer's Shoes", 
                 "Rylai's Crystal Scepter", 
                 "Liandry's Torment", 
-                "Zhonya's Hourglass", 
-                "Void Staff"
+                "Hextech Protobelt-01", 
+                "Zhonya's Hourglass"
             ], 
             "FreqStarterBuild": [
                 "Hunter's Talisman", 
@@ -992,14 +946,14 @@
             ], 
             "WinFullBuild": [
                 "Stalker's Runic Echoes", 
-                "Rylai's Crystal Scepter", 
                 "Sorcerer's Shoes", 
-                "Hextech Protobelt-01", 
+                "Rylai's Crystal Scepter", 
                 "Liandry's Torment", 
-                "Dead Man's Plate"
+                "Hextech Protobelt-01", 
+                "Abyssal Scepter"
             ], 
             "WinStarterBuild": [
-                "Hunter's Talisman", 
+                "Hunter's Machete", 
                 "Refillable Potion"
             ]
         }
@@ -1019,15 +973,15 @@
                 "Refillable Potion"
             ], 
             "WinFullBuild": [
-                "Stalker's Runic Echoes", 
+                "Skirmisher's Runic Echoes", 
+                "Boots of Mobility", 
                 "Hextech Protobelt-01", 
-                "Sorcerer's Shoes", 
                 "Lich Bane", 
-                "Zhonya's Hourglass", 
-                "Rabadon's Deathcap"
+                "Rylai's Crystal Scepter", 
+                "Guardian Angel"
             ], 
             "WinStarterBuild": [
-                "Hunter's Talisman", 
+                "Hunter's Machete", 
                 "Refillable Potion"
             ]
         }
@@ -1056,7 +1010,7 @@
             ], 
             "WinStarterBuild": [
                 "Doran's Blade", 
-                "Health Potion"
+                "Total Biscuit of Rejuvenation"
             ]
         }
     }, 
@@ -1066,9 +1020,9 @@
                 "Stalker's Runic Echoes", 
                 "Sorcerer's Shoes", 
                 "Zhonya's Hourglass", 
-                "Rylai's Crystal Scepter", 
-                "Rabadon's Deathcap", 
-                "Hextech Protobelt-01"
+                "Abyssal Scepter", 
+                "Void Staff", 
+                "Rylai's Crystal Scepter"
             ], 
             "FreqStarterBuild": [
                 "Hunter's Talisman", 
@@ -1076,15 +1030,14 @@
             ], 
             "WinFullBuild": [
                 "Stalker's Runic Echoes", 
-                "Hextech Protobelt-01", 
-                "Sorcerer's Shoes", 
+                "Ionian Boots of Lucidity", 
                 "Zhonya's Hourglass", 
+                "Rabadon's Deathcap", 
                 "Rylai's Crystal Scepter", 
                 "Void Staff"
             ], 
             "WinStarterBuild": [
                 "Hunter's Talisman", 
-                "Health Potion", 
                 "Control Ward"
             ]
         }, 
@@ -1092,14 +1045,14 @@
             "FreqFullBuild": [], 
             "FreqStarterBuild": [
                 "Doran's Ring", 
-                "Health Potion", 
-                "Health Potion"
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation"
             ], 
             "WinFullBuild": [], 
             "WinStarterBuild": [
                 "Doran's Ring", 
-                "Health Potion", 
-                "Health Potion"
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation"
             ]
         }, 
         "Support": {
@@ -1127,54 +1080,27 @@
                 "The Black Cleaver", 
                 "The Bloodthirster", 
                 "Guardian Angel", 
-                "Randuin's Omen"
+                "Spirit Visage"
             ], 
             "FreqStarterBuild": [
                 "Doran's Blade", 
                 "Health Potion"
             ], 
             "WinFullBuild": [
-                "Ravenous Hydra", 
                 "The Black Cleaver", 
+                "Ravenous Hydra", 
                 "Mercury's Treads", 
                 "The Bloodthirster", 
                 "Guardian Angel", 
-                "Sterak's Gage"
+                "Lord Dominik's Regards"
             ], 
             "WinStarterBuild": [
-                "Corrupting Potion"
+                "Doran's Blade", 
+                "Health Potion"
             ]
         }
     }, 
     "fizz": {
-        "Jungle": {
-            "FreqFullBuild": [
-                "Skirmisher's Runic Echoes", 
-                "Sorcerer's Shoes", 
-                "Lich Bane", 
-                "Zhonya's Hourglass", 
-                "Abyssal Scepter", 
-                "Luden's Echo"
-            ], 
-            "FreqStarterBuild": [
-                "Hunter's Machete", 
-                "Health Potion", 
-                "Health Potion", 
-                "Health Potion"
-            ], 
-            "WinFullBuild": [
-                "Skirmisher's Runic Echoes", 
-                "Sorcerer's Shoes", 
-                "Lich Bane", 
-                "Zhonya's Hourglass", 
-                "Abyssal Scepter", 
-                "Luden's Echo"
-            ], 
-            "WinStarterBuild": [
-                "Hunter's Machete", 
-                "Refillable Potion"
-            ]
-        }, 
         "Middle": {
             "FreqFullBuild": [
                 "Lich Bane", 
@@ -1186,16 +1112,16 @@
             ], 
             "FreqStarterBuild": [
                 "Doran's Ring", 
-                "Total Biscuit of Rejuvenation", 
-                "Total Biscuit of Rejuvenation"
+                "Health Potion", 
+                "Health Potion"
             ], 
             "WinFullBuild": [
                 "Abyssal Scepter", 
                 "Sorcerer's Shoes", 
                 "Lich Bane", 
                 "Zhonya's Hourglass", 
-                "Void Staff", 
-                "Rabadon's Deathcap"
+                "Rabadon's Deathcap", 
+                "Void Staff"
             ], 
             "WinStarterBuild": [
                 "Corrupting Potion"
@@ -1210,7 +1136,7 @@
                 "Abyssal Scepter", 
                 "Spirit Visage", 
                 "Zhonya's Hourglass", 
-                "Rylai's Crystal Scepter"
+                "Void Staff"
             ], 
             "FreqStarterBuild": [
                 "Doran's Ring", 
@@ -1218,27 +1144,41 @@
                 "Total Biscuit of Rejuvenation"
             ], 
             "WinFullBuild": [
-                "Mercury's Treads", 
                 "Rod of Ages", 
                 "Abyssal Scepter", 
+                "Mercury's Treads", 
                 "Spirit Visage", 
-                "Rabadon's Deathcap", 
-                "Void Staff"
+                "Thornmail", 
+                "Locket of the Iron Solari"
             ], 
             "WinStarterBuild": [
                 "Doran's Ring", 
-                "Health Potion", 
-                "Health Potion"
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation"
             ]
         }, 
         "Top": {
-            "FreqFullBuild": [], 
+            "FreqFullBuild": [
+                "Rod of Ages", 
+                "Mercury's Treads", 
+                "Abyssal Scepter", 
+                "Spirit Visage", 
+                "Hextech Protobelt-01", 
+                "Zz'Rot Portal"
+            ], 
             "FreqStarterBuild": [
                 "Doran's Ring", 
-                "Health Potion", 
-                "Health Potion"
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation"
             ], 
-            "WinFullBuild": [], 
+            "WinFullBuild": [
+                "Rod of Ages", 
+                "Mercury's Treads", 
+                "Abyssal Scepter", 
+                "Zhonya's Hourglass", 
+                "Spirit Visage", 
+                "Rabadon's Deathcap"
+            ], 
             "WinStarterBuild": [
                 "Doran's Ring", 
                 "Health Potion", 
@@ -1253,24 +1193,26 @@
                 "Ionian Boots of Lucidity", 
                 "Infinity Edge", 
                 "Statikk Shiv", 
-                "Lord Dominik's Regards", 
-                "Phantom Dancer"
+                "Phantom Dancer", 
+                "Lord Dominik's Regards"
             ], 
             "FreqStarterBuild": [
                 "Sapphire Crystal", 
                 "Refillable Potion"
             ], 
             "WinFullBuild": [
-                "Ionian Boots of Lucidity", 
                 "Trinity Force", 
+                "Youmuu's Ghostblade", 
+                "Boots of Swiftness", 
                 "Infinity Edge", 
                 "Statikk Shiv", 
-                "Phantom Dancer", 
                 "Lord Dominik's Regards"
             ], 
             "WinStarterBuild": [
                 "Sapphire Crystal", 
-                "Refillable Potion"
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation"
             ]
         }, 
         "Top": {
@@ -1295,8 +1237,10 @@
                 "Lord Dominik's Regards"
             ], 
             "WinStarterBuild": [
-                "Rejuvenation Bead", 
-                "Sapphire Crystal"
+                "Sapphire Crystal", 
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation"
             ]
         }
     }, 
@@ -1308,7 +1252,7 @@
                 "Sunfire Cape", 
                 "Spirit Visage", 
                 "Dead Man's Plate", 
-                "Sterak's Gage"
+                "Warmog's Armor"
             ], 
             "FreqStarterBuild": [
                 "Doran's Shield", 
@@ -1316,15 +1260,15 @@
             ], 
             "WinFullBuild": [
                 "Sunfire Cape", 
-                "Mercury's Treads", 
                 "The Black Cleaver", 
+                "Mercury's Treads", 
                 "Spirit Visage", 
-                "Sterak's Gage", 
-                "Randuin's Omen"
+                "Dead Man's Plate", 
+                "Banshee's Veil"
             ], 
             "WinStarterBuild": [
-                "Long Sword", 
-                "Refillable Potion"
+                "Doran's Blade", 
+                "Health Potion"
             ]
         }
     }, 
@@ -1335,24 +1279,24 @@
                 "Mercury's Treads", 
                 "Frozen Mallet", 
                 "Randuin's Omen", 
-                "Spirit Visage", 
-                "Guardian Angel"
+                "Banshee's Veil", 
+                "Maw of Malmortius"
             ], 
             "FreqStarterBuild": [
                 "Doran's Blade", 
                 "Health Potion"
             ], 
             "WinFullBuild": [
-                "The Black Cleaver", 
                 "Frozen Mallet", 
                 "Mercury's Treads", 
-                "Dead Man's Plate", 
-                "Banshee's Veil", 
+                "The Black Cleaver", 
+                "Randuin's Omen", 
+                "Sunfire Cape", 
                 "Thornmail"
             ], 
             "WinStarterBuild": [
                 "Doran's Blade", 
-                "Health Potion"
+                "Total Biscuit of Rejuvenation"
             ]
         }
     }, 
@@ -1373,30 +1317,16 @@
                 "Health Potion"
             ], 
             "WinFullBuild": [
-                "Stalker's Cinderhulk", 
-                "Ionian Boots of Lucidity", 
+                "Tracker's Runic Echoes", 
+                "Mercury's Treads", 
                 "Iceborn Gauntlet", 
                 "Spirit Visage", 
                 "Dead Man's Plate", 
-                "Thornmail"
+                "Randuin's Omen"
             ], 
             "WinStarterBuild": [
                 "Hunter's Talisman", 
                 "Refillable Potion"
-            ]
-        }, 
-        "Middle": {
-            "FreqFullBuild": [], 
-            "FreqStarterBuild": [
-                "Doran's Ring", 
-                "Total Biscuit of Rejuvenation", 
-                "Total Biscuit of Rejuvenation"
-            ], 
-            "WinFullBuild": [], 
-            "WinStarterBuild": [
-                "Doran's Ring", 
-                "Health Potion", 
-                "Health Potion"
             ]
         }
     }, 
@@ -1416,11 +1346,11 @@
             ], 
             "WinFullBuild": [
                 "Skirmisher's Warrior", 
-                "Phantom Dancer", 
                 "Berserker's Greaves", 
+                "Phantom Dancer", 
                 "Death's Dance", 
                 "Maw of Malmortius", 
-                "Lord Dominik's Regards"
+                "Guardian Angel"
             ], 
             "WinStarterBuild": [
                 "Hunter's Machete", 
@@ -1442,24 +1372,24 @@
             ], 
             "WinFullBuild": [
                 "Death's Dance", 
-                "Phantom Dancer", 
                 "Berserker's Greaves", 
+                "Phantom Dancer", 
                 "Infinity Edge", 
-                "Guardian Angel", 
-                "The Black Cleaver"
+                "Lord Dominik's Regards", 
+                "Guardian Angel"
             ], 
             "WinStarterBuild": [
                 "Doran's Blade", 
-                "Total Biscuit of Rejuvenation"
+                "Health Potion"
             ]
         }
     }, 
     "hecarim": {
         "Jungle": {
             "FreqFullBuild": [
-                "Stalker's Cinderhulk", 
                 "Boots of Swiftness", 
                 "Trinity Force", 
+                "Stalker's Cinderhulk", 
                 "Dead Man's Plate", 
                 "Spirit Visage", 
                 "Guardian Angel"
@@ -1480,7 +1410,7 @@
             ], 
             "WinStarterBuild": [
                 "Hunter's Talisman", 
-                "Refillable Potion"
+                "Health Potion"
             ]
         }
     }, 
@@ -1490,8 +1420,8 @@
                 "Morellonomicon", 
                 "Sorcerer's Shoes", 
                 "Zhonya's Hourglass", 
-                "Rabadon's Deathcap", 
-                "Abyssal Scepter", 
+                "Rylai's Crystal Scepter", 
+                "Liandry's Torment", 
                 "Void Staff"
             ], 
             "FreqStarterBuild": [
@@ -1500,12 +1430,12 @@
                 "Total Biscuit of Rejuvenation"
             ], 
             "WinFullBuild": [
-                "Morellonomicon", 
-                "Sorcerer's Shoes", 
                 "Zhonya's Hourglass", 
-                "Rabadon's Deathcap", 
-                "Abyssal Scepter", 
-                "Void Staff"
+                "Sorcerer's Shoes", 
+                "Rylai's Crystal Scepter", 
+                "Morellonomicon", 
+                "Morellonomicon", 
+                "Rabadon's Deathcap"
             ], 
             "WinStarterBuild": [
                 "Doran's Ring", 
@@ -1517,10 +1447,10 @@
             "FreqFullBuild": [
                 "Zhonya's Hourglass", 
                 "Sorcerer's Shoes", 
-                "Rylai's Crystal Scepter", 
-                "Void Staff", 
                 "Morellonomicon", 
-                "Rabadon's Deathcap"
+                "Rylai's Crystal Scepter", 
+                "Rabadon's Deathcap", 
+                "Void Staff"
             ], 
             "FreqStarterBuild": [
                 "Doran's Ring", 
@@ -1528,17 +1458,17 @@
                 "Total Biscuit of Rejuvenation"
             ], 
             "WinFullBuild": [
-                "Zhonya's Hourglass", 
+                "Morellonomicon", 
                 "Sorcerer's Shoes", 
+                "Zhonya's Hourglass", 
                 "Rylai's Crystal Scepter", 
-                "Rabadon's Deathcap", 
-                "Void Staff", 
-                "Luden's Echo"
+                "Liandry's Torment", 
+                "Liandry's Torment"
             ], 
             "WinStarterBuild": [
                 "Doran's Ring", 
-                "Health Potion", 
-                "Health Potion"
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation"
             ]
         }
     }, 
@@ -1548,8 +1478,8 @@
                 "The Black Cleaver", 
                 "Mercury's Treads", 
                 "Sterak's Gage", 
-                "Dead Man's Plate", 
                 "Spirit Visage", 
+                "Dead Man's Plate", 
                 "Death's Dance"
             ], 
             "FreqStarterBuild": [
@@ -1558,11 +1488,11 @@
             ], 
             "WinFullBuild": [
                 "The Black Cleaver", 
-                "Sterak's Gage", 
                 "Mercury's Treads", 
+                "Sterak's Gage", 
                 "Death's Dance", 
                 "Spirit Visage", 
-                "Randuin's Omen"
+                "Guardian Angel"
             ], 
             "WinStarterBuild": [
                 "Corrupting Potion"
@@ -1586,12 +1516,13 @@
                 "Trinity Force", 
                 "Ninja Tabi", 
                 "Blade of the Ruined King", 
-                "Sterak's Gage", 
+                "Randuin's Omen", 
                 "Guardian Angel", 
-                "Titanic Hydra"
+                "Sterak's Gage"
             ], 
             "WinStarterBuild": [
-                "Corrupting Potion"
+                "Doran's Blade", 
+                "Health Potion"
             ]
         }
     }, 
@@ -1615,11 +1546,13 @@
                 "Redemption", 
                 "Locket of the Iron Solari", 
                 "Guardian Angel", 
-                "Tracker's Cinderhulk"
+                "Zz'Rot Portal"
             ], 
             "WinStarterBuild": [
                 "Hunter's Talisman", 
-                "Refillable Potion"
+                "Health Potion", 
+                "Health Potion", 
+                "Health Potion"
             ]
         }
     }, 
@@ -1641,17 +1574,15 @@
             ], 
             "WinFullBuild": [
                 "Sightstone", 
-                "Talisman of Ascension", 
                 "Boots of Mobility", 
                 "Redemption", 
                 "Locket of the Iron Solari", 
-                "Ardent Censer"
+                "Ardent Censer", 
+                "Mejai's Soulstealer"
             ], 
             "WinStarterBuild": [
-                "Total Biscuit of Rejuvenation", 
-                "Total Biscuit of Rejuvenation", 
-                "Total Biscuit of Rejuvenation", 
-                "Spellthief's Edge"
+                "Refillable Potion", 
+                "Ancient Coin"
             ]
         }
     }, 
@@ -1661,21 +1592,21 @@
                 "Stalker's Warrior", 
                 "Mercury's Treads", 
                 "The Black Cleaver", 
+                "Titanic Hydra", 
                 "Randuin's Omen", 
-                "Locket of the Iron Solari", 
-                "Titanic Hydra"
+                "Maw of Malmortius"
             ], 
             "FreqStarterBuild": [
                 "Hunter's Talisman", 
                 "Refillable Potion"
             ], 
             "WinFullBuild": [
-                "Stalker's Warrior", 
-                "Mercury's Treads", 
+                "Skirmisher's Warrior", 
+                "Ninja Tabi", 
                 "The Black Cleaver", 
                 "Titanic Hydra", 
-                "Randuin's Omen", 
-                "Maw of Malmortius"
+                "Thornmail", 
+                "Sunfire Cape"
             ], 
             "WinStarterBuild": [
                 "Hunter's Machete", 
@@ -1688,19 +1619,19 @@
                 "Mercury's Treads", 
                 "Titanic Hydra", 
                 "Dead Man's Plate", 
-                "Maw of Malmortius", 
-                "Mortal Reminder"
+                "Randuin's Omen", 
+                "Youmuu's Ghostblade"
             ], 
             "FreqStarterBuild": [
                 "Corrupting Potion"
             ], 
             "WinFullBuild": [
-                "The Black Cleaver", 
-                "Mercury's Treads", 
                 "Titanic Hydra", 
+                "Mercury's Treads", 
+                "The Black Cleaver", 
                 "Dead Man's Plate", 
-                "Randuin's Omen", 
-                "Youmuu's Ghostblade"
+                "Dead Man's Plate", 
+                "Maw of Malmortius"
             ], 
             "WinStarterBuild": [
                 "Long Sword", 
@@ -1726,11 +1657,11 @@
             ], 
             "WinFullBuild": [
                 "Skirmisher's Bloodrazor", 
-                "Trinity Force", 
-                "Mercury's Treads", 
                 "Hextech Gunblade", 
-                "Randuin's Omen", 
-                "Guardian Angel"
+                "Mercury's Treads", 
+                "Trinity Force", 
+                "Guardian Angel", 
+                "Youmuu's Ghostblade"
             ], 
             "WinStarterBuild": [
                 "Hunter's Machete", 
@@ -1742,20 +1673,20 @@
                 "Trinity Force", 
                 "Mercury's Treads", 
                 "Hextech Gunblade", 
-                "Sterak's Gage", 
-                "Guardian Angel", 
-                "Randuin's Omen"
+                "Randuin's Omen", 
+                "Spirit Visage", 
+                "Guinsoo's Rageblade"
             ], 
             "FreqStarterBuild": [
                 "Corrupting Potion"
             ], 
             "WinFullBuild": [
-                "Hextech Gunblade", 
                 "Trinity Force", 
+                "Hextech Gunblade", 
                 "Mercury's Treads", 
-                "Guinsoo's Rageblade", 
-                "Maw of Malmortius", 
-                "Guardian Angel"
+                "Sterak's Gage", 
+                "Dead Man's Plate", 
+                "Maw of Malmortius"
             ], 
             "WinStarterBuild": [
                 "Doran's Blade", 
@@ -1770,8 +1701,8 @@
                 "Ionian Boots of Lucidity", 
                 "The Black Cleaver", 
                 "The Bloodthirster", 
-                "Guardian Angel", 
-                "Lord Dominik's Regards"
+                "Lord Dominik's Regards", 
+                "Guardian Angel"
             ], 
             "FreqStarterBuild": [
                 "Doran's Blade", 
@@ -1781,12 +1712,14 @@
                 "Youmuu's Ghostblade", 
                 "The Black Cleaver", 
                 "Ionian Boots of Lucidity", 
-                "Mercury's Treads", 
-                "Maw of Malmortius", 
-                "Lord Dominik's Regards"
+                "Lord Dominik's Regards", 
+                "Duskblade of Draktharr", 
+                "Duskblade of Draktharr"
             ], 
             "WinStarterBuild": [
-                "Doran's Blade", 
+                "Long Sword", 
+                "Health Potion", 
+                "Health Potion", 
                 "Health Potion"
             ]
         }, 
@@ -1807,12 +1740,13 @@
                 "Youmuu's Ghostblade", 
                 "The Black Cleaver", 
                 "Ionian Boots of Lucidity", 
-                "Lord Dominik's Regards", 
                 "The Bloodthirster", 
-                "Maw of Malmortius"
+                "Lord Dominik's Regards", 
+                "Guardian Angel"
             ], 
             "WinStarterBuild": [
-                "Corrupting Potion"
+                "Long Sword", 
+                "Refillable Potion"
             ]
         }
     }, 
@@ -1824,7 +1758,7 @@
                 "Rapid Firecannon", 
                 "Infinity Edge", 
                 "Lord Dominik's Regards", 
-                "The Bloodthirster"
+                "Mercurial Scimitar"
             ], 
             "FreqStarterBuild": [
                 "Doran's Blade", 
@@ -1840,7 +1774,7 @@
             ], 
             "WinStarterBuild": [
                 "Doran's Blade", 
-                "Total Biscuit of Rejuvenation"
+                "Health Potion"
             ]
         }
     }, 
@@ -1864,7 +1798,7 @@
                 "Berserker's Greaves", 
                 "Rapid Firecannon", 
                 "The Bloodthirster", 
-                "Guardian Angel"
+                "Lord Dominik's Regards"
             ], 
             "WinStarterBuild": [
                 "Doran's Blade", 
@@ -1887,12 +1821,12 @@
                 "Total Biscuit of Rejuvenation"
             ], 
             "WinFullBuild": [
+                "Blade of the Ruined King", 
                 "Runaan's Hurricane", 
                 "Berserker's Greaves", 
-                "Blade of the Ruined King", 
                 "The Bloodthirster", 
-                "Lord Dominik's Regards", 
-                "Infinity Edge"
+                "Mercurial Scimitar", 
+                "Guardian Angel"
             ], 
             "WinStarterBuild": [
                 "Doran's Blade", 
@@ -1908,7 +1842,7 @@
                 "Luden's Echo", 
                 "Rabadon's Deathcap", 
                 "Void Staff", 
-                "Rylai's Crystal Scepter"
+                "Zhonya's Hourglass"
             ], 
             "FreqStarterBuild": [
                 "Doran's Ring", 
@@ -1917,16 +1851,16 @@
             ], 
             "WinFullBuild": [
                 "Morellonomicon", 
-                "Sorcerer's Shoes", 
                 "Luden's Echo", 
+                "Sorcerer's Shoes", 
                 "Rabadon's Deathcap", 
                 "Void Staff", 
-                "Mejai's Soulstealer"
+                "Zhonya's Hourglass"
             ], 
             "WinStarterBuild": [
                 "Doran's Ring", 
-                "Health Potion", 
-                "Health Potion"
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation"
             ]
         }, 
         "Support": {
@@ -1949,11 +1883,13 @@
                 "Ionian Boots of Lucidity", 
                 "Redemption", 
                 "Locket of the Iron Solari", 
-                "Ardent Censer", 
-                "Mikael's Crucible"
+                "Mikael's Crucible", 
+                "Ardent Censer"
             ], 
             "WinStarterBuild": [
-                "Refillable Potion", 
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation", 
                 "Spellthief's Edge"
             ]
         }
@@ -1977,14 +1913,14 @@
                 "Rod of Ages", 
                 "Archangel's Staff", 
                 "Sorcerer's Shoes", 
-                "Rylai's Crystal Scepter", 
                 "Rabadon's Deathcap", 
+                "Void Staff", 
                 "Zhonya's Hourglass"
             ], 
             "WinStarterBuild": [
                 "Doran's Ring", 
-                "Health Potion", 
-                "Health Potion"
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation"
             ]
         }
     }, 
@@ -2011,7 +1947,9 @@
             ], 
             "WinStarterBuild": [
                 "The Dark Seal", 
-                "Refillable Potion"
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation"
             ]
         }
     }, 
@@ -2020,10 +1958,10 @@
             "FreqFullBuild": [
                 "Hextech Gunblade", 
                 "Sorcerer's Shoes", 
-                "Luden's Echo", 
                 "Zhonya's Hourglass", 
                 "Void Staff", 
-                "Rabadon's Deathcap"
+                "Rabadon's Deathcap", 
+                "Rylai's Crystal Scepter"
             ], 
             "FreqStarterBuild": [
                 "The Dark Seal", 
@@ -2032,48 +1970,20 @@
                 "Health Potion"
             ], 
             "WinFullBuild": [
-                "Hextech Gunblade", 
                 "Sorcerer's Shoes", 
+                "Hextech Gunblade", 
                 "Luden's Echo", 
                 "Rabadon's Deathcap", 
                 "Void Staff", 
-                "Zhonya's Hourglass"
+                "Rylai's Crystal Scepter"
             ], 
             "WinStarterBuild": [
-                "Long Sword", 
-                "Refillable Potion"
+                "Doran's Shield", 
+                "Health Potion"
             ]
         }
     }, 
     "kayle": {
-        "Jungle": {
-            "FreqFullBuild": [
-                "Skirmisher's Bloodrazor", 
-                "Berserker's Greaves", 
-                "Nashor's Tooth", 
-                "Guinsoo's Rageblade", 
-                "Runaan's Hurricane", 
-                "Guardian Angel"
-            ], 
-            "FreqStarterBuild": [
-                "Hunter's Talisman", 
-                "Health Potion", 
-                "Health Potion", 
-                "Health Potion"
-            ], 
-            "WinFullBuild": [
-                "Skirmisher's Bloodrazor", 
-                "Berserker's Greaves", 
-                "Nashor's Tooth", 
-                "Guinsoo's Rageblade", 
-                "Runaan's Hurricane", 
-                "Blade of the Ruined King"
-            ], 
-            "WinStarterBuild": [
-                "Hunter's Talisman", 
-                "Refillable Potion"
-            ]
-        }, 
         "Middle": {
             "FreqFullBuild": [
                 "Nashor's Tooth", 
@@ -2089,12 +1999,12 @@
                 "Health Potion"
             ], 
             "WinFullBuild": [
-                "Nashor's Tooth", 
                 "Berserker's Greaves", 
+                "Nashor's Tooth", 
                 "Guinsoo's Rageblade", 
                 "Runaan's Hurricane", 
-                "Rylai's Crystal Scepter", 
-                "Guardian Angel"
+                "Guardian Angel", 
+                "Rylai's Crystal Scepter"
             ], 
             "WinStarterBuild": [
                 "Doran's Ring", 
@@ -2120,12 +2030,14 @@
                 "Berserker's Greaves", 
                 "Nashor's Tooth", 
                 "Guinsoo's Rageblade", 
-                "Runaan's Hurricane", 
-                "Rylai's Crystal Scepter", 
-                "Guardian Angel"
+                "Lich Bane", 
+                "Rabadon's Deathcap", 
+                "Rylai's Crystal Scepter"
             ], 
             "WinStarterBuild": [
-                "Corrupting Potion"
+                "Doran's Ring", 
+                "Health Potion", 
+                "Health Potion"
             ]
         }
     }, 
@@ -2137,7 +2049,7 @@
                 "Zhonya's Hourglass", 
                 "Rabadon's Deathcap", 
                 "Void Staff", 
-                "Luden's Echo"
+                "Rylai's Crystal Scepter"
             ], 
             "FreqStarterBuild": [
                 "Doran's Blade", 
@@ -2147,13 +2059,13 @@
                 "Hextech Protobelt-01", 
                 "Zhonya's Hourglass", 
                 "Sorcerer's Shoes", 
-                "Rylai's Crystal Scepter", 
                 "Rabadon's Deathcap", 
-                "Void Staff"
+                "Void Staff", 
+                "Guardian Angel"
             ], 
             "WinStarterBuild": [
                 "Doran's Blade", 
-                "Total Biscuit of Rejuvenation"
+                "Health Potion"
             ]
         }, 
         "Top": {
@@ -2161,9 +2073,9 @@
                 "Hextech Protobelt-01", 
                 "Sorcerer's Shoes", 
                 "Zhonya's Hourglass", 
-                "Rylai's Crystal Scepter", 
+                "Rabadon's Deathcap", 
                 "Void Staff", 
-                "Rabadon's Deathcap"
+                "Rylai's Crystal Scepter"
             ], 
             "FreqStarterBuild": [
                 "Doran's Blade", 
@@ -2173,13 +2085,13 @@
                 "Hextech Protobelt-01", 
                 "Zhonya's Hourglass", 
                 "Sorcerer's Shoes", 
-                "Void Staff", 
                 "Rabadon's Deathcap", 
-                "Abyssal Scepter"
+                "Abyssal Scepter", 
+                "Rylai's Crystal Scepter"
             ], 
             "WinStarterBuild": [
                 "Doran's Blade", 
-                "Health Potion"
+                "Total Biscuit of Rejuvenation"
             ]
         }
     }, 
@@ -2188,16 +2100,14 @@
             "FreqFullBuild": [
                 "Stalker's Warrior", 
                 "Ninja Tabi", 
-                "Ravenous Hydra", 
                 "The Black Cleaver", 
                 "Duskblade of Draktharr", 
-                "Guardian Angel"
+                "Ravenous Hydra", 
+                "Lord Dominik's Regards"
             ], 
             "FreqStarterBuild": [
                 "Hunter's Talisman", 
-                "Health Potion", 
-                "Health Potion", 
-                "Health Potion"
+                "Refillable Potion"
             ], 
             "WinFullBuild": [
                 "Skirmisher's Warrior", 
@@ -2205,7 +2115,7 @@
                 "Mercury's Treads", 
                 "Duskblade of Draktharr", 
                 "Maw of Malmortius", 
-                "Edge of Night"
+                "Guardian Angel"
             ], 
             "WinStarterBuild": [
                 "Hunter's Talisman", 
@@ -2230,16 +2140,18 @@
                 "Health Potion"
             ], 
             "WinFullBuild": [
+                "Boots of Mobility", 
                 "Skirmisher's Bloodrazor", 
-                "Berserker's Greaves", 
-                "Runaan's Hurricane", 
                 "The Black Cleaver", 
+                "Runaan's Hurricane", 
                 "Blade of the Ruined King", 
-                "Maw of Malmortius"
+                "Guardian Angel"
             ], 
             "WinStarterBuild": [
                 "Hunter's Machete", 
-                "Refillable Potion"
+                "Health Potion", 
+                "Health Potion", 
+                "Health Potion"
             ]
         }
     }, 
@@ -2251,23 +2163,23 @@
                 "Blade of the Ruined King", 
                 "Runaan's Hurricane", 
                 "Infinity Edge", 
-                "Mercurial Scimitar"
+                "Banshee's Veil"
             ], 
             "FreqStarterBuild": [
                 "Doran's Blade", 
                 "Total Biscuit of Rejuvenation"
             ], 
             "WinFullBuild": [
-                "Blade of the Ruined King", 
+                "Guinsoo's Rageblade", 
                 "Berserker's Greaves", 
                 "Runaan's Hurricane", 
-                "Infinity Edge", 
-                "Wit's End", 
-                "Mortal Reminder"
+                "Blade of the Ruined King", 
+                "Frozen Mallet", 
+                "Wit's End"
             ], 
             "WinStarterBuild": [
                 "Doran's Blade", 
-                "Health Potion"
+                "Total Biscuit of Rejuvenation"
             ]
         }
     }, 
@@ -2276,29 +2188,28 @@
             "FreqFullBuild": [
                 "Morellonomicon", 
                 "Sorcerer's Shoes", 
-                "Abyssal Scepter", 
-                "Rabadon's Deathcap", 
+                "Luden's Echo", 
                 "Void Staff", 
+                "Rabadon's Deathcap", 
                 "Zhonya's Hourglass"
             ], 
             "FreqStarterBuild": [
                 "Doran's Ring", 
-                "Total Biscuit of Rejuvenation", 
-                "Total Biscuit of Rejuvenation"
+                "Health Potion", 
+                "Health Potion"
             ], 
             "WinFullBuild": [
-                "Sorcerer's Shoes", 
                 "Morellonomicon", 
                 "Luden's Echo", 
-                "Rabadon's Deathcap", 
+                "Sorcerer's Shoes", 
                 "Void Staff", 
+                "Rabadon's Deathcap", 
                 "Zhonya's Hourglass"
             ], 
             "WinStarterBuild": [
-                "The Dark Seal", 
-                "Total Biscuit of Rejuvenation", 
-                "Total Biscuit of Rejuvenation", 
-                "Total Biscuit of Rejuvenation"
+                "Doran's Ring", 
+                "Health Potion", 
+                "Health Potion"
             ]
         }
     }, 
@@ -2318,11 +2229,11 @@
             ], 
             "WinFullBuild": [
                 "Tracker's Warrior", 
+                "Boots of Mobility", 
                 "The Black Cleaver", 
-                "Mercury's Treads", 
                 "Dead Man's Plate", 
                 "Maw of Malmortius", 
-                "Randuin's Omen"
+                "Guardian Angel"
             ], 
             "WinStarterBuild": [
                 "Hunter's Machete", 
@@ -2337,8 +2248,8 @@
                 "Face of the Mountain", 
                 "Boots of Mobility", 
                 "Locket of the Iron Solari", 
-                "Knight's Vow", 
-                "Redemption"
+                "Redemption", 
+                "Knight's Vow"
             ], 
             "FreqStarterBuild": [
                 "Total Biscuit of Rejuvenation", 
@@ -2348,14 +2259,16 @@
             ], 
             "WinFullBuild": [
                 "Sightstone", 
-                "Boots of Mobility", 
                 "Face of the Mountain", 
+                "Boots of Mobility", 
                 "Locket of the Iron Solari", 
-                "Redemption", 
-                "Knight's Vow"
+                "Randuin's Omen", 
+                "Redemption"
             ], 
             "WinStarterBuild": [
-                "Refillable Potion", 
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation", 
                 "Relic Shield"
             ]
         }
@@ -2365,9 +2278,9 @@
             "FreqFullBuild": [
                 "Rod of Ages", 
                 "Sorcerer's Shoes", 
-                "Zhonya's Hourglass", 
                 "Abyssal Scepter", 
-                "Rabadon's Deathcap", 
+                "Zhonya's Hourglass", 
+                "Liandry's Torment", 
                 "Void Staff"
             ], 
             "FreqStarterBuild": [
@@ -2376,17 +2289,17 @@
                 "Total Biscuit of Rejuvenation"
             ], 
             "WinFullBuild": [
-                "Rod of Ages", 
-                "Abyssal Scepter", 
+                "Morellonomicon", 
                 "Sorcerer's Shoes", 
                 "Zhonya's Hourglass", 
                 "Rabadon's Deathcap", 
-                "Liandry's Torment"
+                "Liandry's Torment", 
+                "Void Staff"
             ], 
             "WinStarterBuild": [
                 "Doran's Ring", 
-                "Total Biscuit of Rejuvenation", 
-                "Total Biscuit of Rejuvenation"
+                "Health Potion", 
+                "Health Potion"
             ]
         }, 
         "Top": {
@@ -2396,7 +2309,7 @@
                 "Zhonya's Hourglass", 
                 "Rabadon's Deathcap", 
                 "Void Staff", 
-                "Liandry's Torment"
+                "Abyssal Scepter"
             ], 
             "FreqStarterBuild": [
                 "Doran's Ring", 
@@ -2454,7 +2367,7 @@
                 "Redemption", 
                 "Locket of the Iron Solari", 
                 "Ardent Censer", 
-                "Zeke's Harbinger"
+                "Mikael's Crucible"
             ], 
             "FreqStarterBuild": [
                 "Total Biscuit of Rejuvenation", 
@@ -2466,15 +2379,15 @@
                 "Sightstone", 
                 "Ionian Boots of Lucidity", 
                 "Redemption", 
+                "Ardent Censer", 
                 "Locket of the Iron Solari", 
-                "Mikael's Crucible", 
-                "Ardent Censer"
+                "Zz'Rot Portal"
             ], 
             "WinStarterBuild": [
                 "Total Biscuit of Rejuvenation", 
                 "Total Biscuit of Rejuvenation", 
                 "Total Biscuit of Rejuvenation", 
-                "Spellthief's Edge"
+                "Ancient Coin"
             ]
         }
     }, 
@@ -2494,17 +2407,17 @@
                 "Total Biscuit of Rejuvenation"
             ], 
             "WinFullBuild": [
-                "Morellonomicon", 
                 "Luden's Echo", 
                 "Sorcerer's Shoes", 
+                "Morellonomicon", 
+                "Zhonya's Hourglass", 
                 "Rabadon's Deathcap", 
-                "Void Staff", 
-                "Zhonya's Hourglass"
+                "Void Staff"
             ], 
             "WinStarterBuild": [
                 "Doran's Ring", 
-                "Health Potion", 
-                "Health Potion"
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation"
             ]
         }, 
         "Support": {
@@ -2514,7 +2427,7 @@
                 "Morellonomicon", 
                 "Luden's Echo", 
                 "Zhonya's Hourglass", 
-                "Rabadon's Deathcap"
+                "Void Staff"
             ], 
             "FreqStarterBuild": [
                 "Total Biscuit of Rejuvenation", 
@@ -2523,44 +2436,36 @@
                 "Spellthief's Edge"
             ], 
             "WinFullBuild": [
-                "Morellonomicon", 
                 "Sorcerer's Shoes", 
+                "Morellonomicon", 
+                "Luden's Echo", 
+                "Mejai's Soulstealer", 
                 "Rabadon's Deathcap", 
-                "Void Staff", 
-                "Frost Queen's Claim", 
-                "Mejai's Soulstealer"
+                "Void Staff"
             ], 
             "WinStarterBuild": [
-                "Refillable Potion", 
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation", 
                 "Spellthief's Edge"
             ]
         }
     }, 
     "malphite": {
-        "Jungle": {
-            "FreqFullBuild": [
-                "Stalker's Cinderhulk", 
-                "Ninja Tabi", 
-                "Dead Man's Plate", 
-                "Randuin's Omen", 
-                "Banshee's Veil", 
-                "Spirit Visage"
-            ], 
+        "Support": {
+            "FreqFullBuild": [], 
             "FreqStarterBuild": [
-                "Hunter's Talisman", 
-                "Refillable Potion"
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation", 
+                "Relic Shield"
             ], 
-            "WinFullBuild": [
-                "Stalker's Cinderhulk", 
-                "Ninja Tabi", 
-                "Frozen Heart", 
-                "Abyssal Scepter", 
-                "Thornmail", 
-                "Dead Man's Plate"
-            ], 
+            "WinFullBuild": [], 
             "WinStarterBuild": [
-                "Hunter's Talisman", 
-                "Refillable Potion"
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation", 
+                "Relic Shield"
             ]
         }, 
         "Top": {
@@ -2568,9 +2473,9 @@
                 "Sunfire Cape", 
                 "Ninja Tabi", 
                 "Iceborn Gauntlet", 
-                "Abyssal Scepter", 
-                "Dead Man's Plate", 
-                "Titanic Hydra"
+                "Spirit Visage", 
+                "Randuin's Omen", 
+                "Guardian Angel"
             ], 
             "FreqStarterBuild": [
                 "Corrupting Potion"
@@ -2578,15 +2483,13 @@
             "WinFullBuild": [
                 "Sunfire Cape", 
                 "Iceborn Gauntlet", 
-                "Mercury's Treads", 
+                "Ninja Tabi", 
+                "Abyssal Scepter", 
                 "Dead Man's Plate", 
-                "Banshee's Veil", 
-                "Guardian Angel"
+                "Banshee's Veil"
             ], 
             "WinStarterBuild": [
-                "Doran's Ring", 
-                "Total Biscuit of Rejuvenation", 
-                "Total Biscuit of Rejuvenation"
+                "Corrupting Potion"
             ]
         }
     }, 
@@ -2607,11 +2510,11 @@
             ], 
             "WinFullBuild": [
                 "Morellonomicon", 
-                "Sorcerer's Shoes", 
+                "Ionian Boots of Lucidity", 
                 "Rylai's Crystal Scepter", 
                 "Liandry's Torment", 
                 "Void Staff", 
-                "Rabadon's Deathcap"
+                "Zhonya's Hourglass"
             ], 
             "WinStarterBuild": [
                 "Doran's Ring", 
@@ -2638,9 +2541,9 @@
                 "Ionian Boots of Lucidity", 
                 "Rylai's Crystal Scepter", 
                 "Liandry's Torment", 
-                "Void Staff", 
-                "Rabadon's Deathcap", 
-                "Morellonomicon"
+                "Redemption", 
+                "Frost Queen's Claim", 
+                "Rabadon's Deathcap"
             ], 
             "WinStarterBuild": [
                 "Refillable Potion", 
@@ -2649,32 +2552,6 @@
         }
     }, 
     "maokai": {
-        "Jungle": {
-            "FreqFullBuild": [
-                "Tracker's Cinderhulk", 
-                "Boots of Mobility", 
-                "Dead Man's Plate", 
-                "Spirit Visage", 
-                "Frozen Heart", 
-                "Randuin's Omen"
-            ], 
-            "FreqStarterBuild": [
-                "Hunter's Talisman", 
-                "Refillable Potion"
-            ], 
-            "WinFullBuild": [
-                "Tracker's Cinderhulk", 
-                "Boots of Mobility", 
-                "Dead Man's Plate", 
-                "Spirit Visage", 
-                "Frozen Heart", 
-                "Randuin's Omen"
-            ], 
-            "WinStarterBuild": [
-                "Hunter's Talisman", 
-                "Refillable Potion"
-            ]
-        }, 
         "Top": {
             "FreqFullBuild": [
                 "Sunfire Cape", 
@@ -2692,15 +2569,13 @@
             "WinFullBuild": [
                 "Sunfire Cape", 
                 "Mercury's Treads", 
-                "Iceborn Gauntlet", 
                 "Spirit Visage", 
+                "Iceborn Gauntlet", 
                 "Guardian Angel", 
-                "Locket of the Iron Solari"
+                "Righteous Glory"
             ], 
             "WinStarterBuild": [
-                "Doran's Ring", 
-                "Health Potion", 
-                "Health Potion"
+                "Corrupting Potion"
             ]
         }
     }, 
@@ -2710,9 +2585,9 @@
                 "Skirmisher's Bloodrazor", 
                 "Berserker's Greaves", 
                 "Blade of the Ruined King", 
-                "Guinsoo's Rageblade", 
-                "Guardian Angel", 
-                "Spirit Visage"
+                "Frozen Mallet", 
+                "Maw of Malmortius", 
+                "Dead Man's Plate"
             ], 
             "FreqStarterBuild": [
                 "Hunter's Machete", 
@@ -2723,14 +2598,13 @@
             "WinFullBuild": [
                 "Skirmisher's Bloodrazor", 
                 "Blade of the Ruined King", 
-                "Mercury's Treads", 
+                "Berserker's Greaves", 
                 "Guinsoo's Rageblade", 
-                "Guardian Angel", 
-                "Randuin's Omen"
+                "Frozen Mallet", 
+                "Guardian Angel"
             ], 
             "WinStarterBuild": [
-                "Hunter's Machete", 
-                "Health Potion"
+                "Hunter's Machete"
             ]
         }
     }, 
@@ -2750,15 +2624,43 @@
             ], 
             "WinFullBuild": [
                 "Duskblade of Draktharr", 
-                "Berserker's Greaves", 
                 "Youmuu's Ghostblade", 
+                "Berserker's Greaves", 
                 "The Black Cleaver", 
-                "Lord Dominik's Regards", 
-                "Death's Dance"
+                "Mortal Reminder", 
+                "Rapid Firecannon"
             ], 
             "WinStarterBuild": [
                 "Doran's Blade", 
                 "Total Biscuit of Rejuvenation"
+            ]
+        }, 
+        "Support": {
+            "FreqFullBuild": [
+                "Sightstone", 
+                "Ionian Boots of Lucidity", 
+                "The Black Cleaver", 
+                "Mortal Reminder", 
+                "Liandry's Torment", 
+                "Rylai's Crystal Scepter"
+            ], 
+            "FreqStarterBuild": [
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation", 
+                "Spellthief's Edge"
+            ], 
+            "WinFullBuild": [
+                "Sightstone", 
+                "Ionian Boots of Lucidity", 
+                "The Black Cleaver", 
+                "Mortal Reminder", 
+                "Liandry's Torment", 
+                "Frozen Mallet"
+            ], 
+            "WinStarterBuild": [
+                "Refillable Potion", 
+                "Spellthief's Edge"
             ]
         }
     }, 
@@ -2770,7 +2672,7 @@
                 "The Black Cleaver", 
                 "Dead Man's Plate", 
                 "Maw of Malmortius", 
-                "Death's Dance"
+                "Guardian Angel"
             ], 
             "FreqStarterBuild": [
                 "Hunter's Talisman", 
@@ -2783,24 +2685,24 @@
                 "Mercury's Treads", 
                 "The Black Cleaver", 
                 "Dead Man's Plate", 
-                "Guardian Angel", 
-                "Maw of Malmortius"
+                "Randuin's Omen", 
+                "Guardian Angel"
             ], 
             "WinStarterBuild": [
-                "Hunter's Talisman", 
-                "Total Biscuit of Rejuvenation", 
-                "Total Biscuit of Rejuvenation", 
-                "Total Biscuit of Rejuvenation"
+                "Hunter's Machete", 
+                "Health Potion", 
+                "Health Potion", 
+                "Health Potion"
             ]
         }, 
         "Top": {
             "FreqFullBuild": [
                 "The Black Cleaver", 
                 "Mercury's Treads", 
-                "Ravenous Hydra", 
+                "Youmuu's Ghostblade", 
                 "Dead Man's Plate", 
-                "Guardian Angel", 
-                "Thornmail"
+                "Lord Dominik's Regards", 
+                "Randuin's Omen"
             ], 
             "FreqStarterBuild": [
                 "Doran's Blade", 
@@ -2808,11 +2710,11 @@
             ], 
             "WinFullBuild": [
                 "Ravenous Hydra", 
-                "Mercury's Treads", 
                 "The Black Cleaver", 
+                "Mercury's Treads", 
                 "Maw of Malmortius", 
-                "Mercurial Scimitar", 
-                "Guardian Angel"
+                "Thornmail", 
+                "Dead Man's Plate"
             ], 
             "WinStarterBuild": [
                 "Corrupting Potion"
@@ -2826,8 +2728,8 @@
                 "Sorcerer's Shoes", 
                 "Rylai's Crystal Scepter", 
                 "Liandry's Torment", 
-                "Spirit Visage", 
-                "Guardian Angel"
+                "Rabadon's Deathcap", 
+                "Void Staff"
             ], 
             "FreqStarterBuild": [
                 "Doran's Shield", 
@@ -2837,9 +2739,9 @@
                 "Hextech Gunblade", 
                 "Sorcerer's Shoes", 
                 "Rylai's Crystal Scepter", 
-                "Spirit Visage", 
-                "Abyssal Scepter", 
-                "Zhonya's Hourglass"
+                "Liandry's Torment", 
+                "Rabadon's Deathcap", 
+                "Abyssal Scepter"
             ], 
             "WinStarterBuild": [
                 "Doran's Shield", 
@@ -2854,8 +2756,8 @@
                 "Sorcerer's Shoes", 
                 "Zhonya's Hourglass", 
                 "Rabadon's Deathcap", 
-                "Void Staff", 
-                "Abyssal Scepter"
+                "Abyssal Scepter", 
+                "Void Staff"
             ], 
             "FreqStarterBuild": [
                 "Doran's Ring", 
@@ -2863,17 +2765,17 @@
                 "Total Biscuit of Rejuvenation"
             ], 
             "WinFullBuild": [
-                "Morellonomicon", 
+                "Rod of Ages", 
                 "Zhonya's Hourglass", 
                 "Sorcerer's Shoes", 
                 "Rabadon's Deathcap", 
-                "Luden's Echo", 
-                "Liandry's Torment"
+                "Void Staff", 
+                "Morellonomicon"
             ], 
             "WinStarterBuild": [
                 "Doran's Ring", 
-                "Total Biscuit of Rejuvenation", 
-                "Total Biscuit of Rejuvenation"
+                "Health Potion", 
+                "Health Potion"
             ]
         }, 
         "Support": {
@@ -2893,16 +2795,14 @@
             ], 
             "WinFullBuild": [
                 "Sightstone", 
-                "Boots of Mobility", 
                 "Frost Queen's Claim", 
+                "Boots of Mobility", 
                 "Redemption", 
                 "Zhonya's Hourglass", 
                 "Locket of the Iron Solari"
             ], 
             "WinStarterBuild": [
-                "Total Biscuit of Rejuvenation", 
-                "Total Biscuit of Rejuvenation", 
-                "Total Biscuit of Rejuvenation", 
+                "Refillable Potion", 
                 "Spellthief's Edge"
             ]
         }
@@ -2925,11 +2825,11 @@
             ], 
             "WinFullBuild": [
                 "Sightstone", 
-                "Frost Queen's Claim", 
                 "Boots of Mobility", 
                 "Redemption", 
                 "Locket of the Iron Solari", 
-                "Frozen Heart"
+                "Mikael's Crucible", 
+                "Ardent Censer"
             ], 
             "WinStarterBuild": [
                 "Total Biscuit of Rejuvenation", 
@@ -2947,23 +2847,21 @@
                 "Trinity Force", 
                 "Spirit Visage", 
                 "Dead Man's Plate", 
-                "Guardian Angel"
+                "Thornmail"
             ], 
             "FreqStarterBuild": [
                 "Corrupting Potion"
             ], 
             "WinFullBuild": [
-                "Frozen Heart", 
                 "Trinity Force", 
                 "Mercury's Treads", 
                 "Spirit Visage", 
-                "Mercurial Scimitar", 
-                "Thornmail"
+                "Dead Man's Plate", 
+                "Thornmail", 
+                "Randuin's Omen"
             ], 
             "WinStarterBuild": [
-                "Cloth Armor", 
-                "Health Potion", 
-                "Health Potion", 
+                "Doran's Ring", 
                 "Health Potion", 
                 "Health Potion"
             ]
@@ -2973,8 +2871,8 @@
         "Support": {
             "FreqFullBuild": [
                 "Sightstone", 
-                "Boots of Mobility", 
                 "Face of the Mountain", 
+                "Boots of Mobility", 
                 "Locket of the Iron Solari", 
                 "Redemption", 
                 "Knight's Vow"
@@ -2991,7 +2889,7 @@
                 "Face of the Mountain", 
                 "Locket of the Iron Solari", 
                 "Redemption", 
-                "Guardian Angel"
+                "Zz'Rot Portal"
             ], 
             "WinStarterBuild": [
                 "Total Biscuit of Rejuvenation", 
@@ -3006,8 +2904,8 @@
                 "Mercury's Treads", 
                 "Iceborn Gauntlet", 
                 "Spirit Visage", 
-                "Zz'Rot Portal", 
-                "Thornmail"
+                "Randuin's Omen", 
+                "Guardian Angel"
             ], 
             "FreqStarterBuild": [
                 "Corrupting Potion"
@@ -3017,8 +2915,8 @@
                 "Mercury's Treads", 
                 "Iceborn Gauntlet", 
                 "Spirit Visage", 
-                "Randuin's Omen", 
-                "Abyssal Scepter"
+                "Zz'Rot Portal", 
+                "Guardian Angel"
             ], 
             "WinStarterBuild": [
                 "Relic Shield"
@@ -3030,10 +2928,10 @@
             "FreqFullBuild": [
                 "Skirmisher's Runic Echoes", 
                 "Ionian Boots of Lucidity", 
+                "Rod of Ages", 
                 "Rylai's Crystal Scepter", 
-                "Lich Bane", 
                 "Void Staff", 
-                "Rabadon's Deathcap"
+                "Mejai's Soulstealer"
             ], 
             "FreqStarterBuild": [
                 "Hunter's Talisman", 
@@ -3042,12 +2940,12 @@
                 "Health Potion"
             ], 
             "WinFullBuild": [
-                "Tracker's Runic Echoes", 
+                "Stalker's Runic Echoes", 
                 "Ionian Boots of Lucidity", 
-                "Rylai's Crystal Scepter", 
+                "Lich Bane", 
                 "Rabadon's Deathcap", 
-                "Zhonya's Hourglass", 
-                "Void Staff"
+                "Abyssal Scepter", 
+                "Rylai's Crystal Scepter"
             ], 
             "WinStarterBuild": [
                 "Hunter's Talisman", 
@@ -3063,7 +2961,7 @@
                 "Blade of the Ruined King", 
                 "Frozen Mallet", 
                 "Dead Man's Plate", 
-                "Maw of Malmortius"
+                "Banshee's Veil"
             ], 
             "FreqStarterBuild": [
                 "Hunter's Machete", 
@@ -3074,8 +2972,8 @@
                 "Mercury's Treads", 
                 "Blade of the Ruined King", 
                 "Frozen Mallet", 
-                "Dead Man's Plate", 
-                "Edge of Night"
+                "Banshee's Veil", 
+                "Titanic Hydra"
             ], 
             "WinStarterBuild": [
                 "Hunter's Machete", 
@@ -3102,22 +3000,22 @@
             "FreqFullBuild": [
                 "Stalker's Cinderhulk", 
                 "Ionian Boots of Lucidity", 
-                "Dead Man's Plate", 
                 "Spirit Visage", 
+                "Dead Man's Plate", 
                 "Guardian Angel", 
-                "Titanic Hydra"
+                "Randuin's Omen"
             ], 
             "FreqStarterBuild": [
                 "Hunter's Talisman", 
                 "Refillable Potion"
             ], 
             "WinFullBuild": [
-                "Ionian Boots of Lucidity", 
                 "Stalker's Cinderhulk", 
-                "Righteous Glory", 
-                "Dead Man's Plate", 
+                "Ionian Boots of Lucidity", 
                 "Spirit Visage", 
-                "Guardian Angel"
+                "Dead Man's Plate", 
+                "Guardian Angel", 
+                "Randuin's Omen"
             ], 
             "WinStarterBuild": [
                 "Hunter's Machete", 
@@ -3127,10 +3025,10 @@
         "Top": {
             "FreqFullBuild": [
                 "The Black Cleaver", 
-                "Boots of Swiftness", 
+                "Ninja Tabi", 
                 "Dead Man's Plate", 
                 "Spirit Visage", 
-                "Randuin's Omen", 
+                "Titanic Hydra", 
                 "Guardian Angel"
             ], 
             "FreqStarterBuild": [
@@ -3140,13 +3038,12 @@
                 "The Black Cleaver", 
                 "Boots of Swiftness", 
                 "Spirit Visage", 
-                "Maw of Malmortius", 
                 "Dead Man's Plate", 
-                "Guardian Angel"
+                "Titanic Hydra", 
+                "Randuin's Omen"
             ], 
             "WinStarterBuild": [
-                "Doran's Shield", 
-                "Health Potion"
+                "Corrupting Potion"
             ]
         }
     }, 
@@ -3187,8 +3084,8 @@
                 "Boots of Mobility", 
                 "The Black Cleaver", 
                 "Dead Man's Plate", 
-                "Guardian Angel", 
-                "Death's Dance"
+                "Maw of Malmortius", 
+                "Guardian Angel"
             ], 
             "FreqStarterBuild": [
                 "Hunter's Talisman", 
@@ -3199,10 +3096,10 @@
             "WinFullBuild": [
                 "Stalker's Warrior", 
                 "Boots of Mobility", 
+                "Youmuu's Ghostblade", 
                 "The Black Cleaver", 
-                "Death's Dance", 
-                "Boots of Mobility", 
-                "Boots of Mobility"
+                "Dead Man's Plate", 
+                "Guardian Angel"
             ], 
             "WinStarterBuild": [
                 "Hunter's Talisman", 
@@ -3223,10 +3120,10 @@
             ], 
             "WinFullBuild": [
                 "Youmuu's Ghostblade", 
-                "The Black Cleaver", 
                 "Mercury's Treads", 
-                "Duskblade of Draktharr", 
-                "Edge of Night", 
+                "The Black Cleaver", 
+                "Dead Man's Plate", 
+                "Maw of Malmortius", 
                 "Guardian Angel"
             ], 
             "WinStarterBuild": [
@@ -3235,32 +3132,6 @@
         }
     }, 
     "poppy": {
-        "Jungle": {
-            "FreqFullBuild": [
-                "Stalker's Cinderhulk", 
-                "Ninja Tabi", 
-                "Dead Man's Plate", 
-                "Spirit Visage", 
-                "Iceborn Gauntlet", 
-                "Guardian Angel"
-            ], 
-            "FreqStarterBuild": [
-                "Hunter's Talisman", 
-                "Refillable Potion"
-            ], 
-            "WinFullBuild": [
-                "Stalker's Cinderhulk", 
-                "Ninja Tabi", 
-                "Iceborn Gauntlet", 
-                "Dead Man's Plate", 
-                "Guardian Angel", 
-                "Spirit Visage"
-            ], 
-            "WinStarterBuild": [
-                "Hunter's Talisman", 
-                "Refillable Potion"
-            ]
-        }, 
         "Top": {
             "FreqFullBuild": [
                 "Sunfire Cape", 
@@ -3268,7 +3139,7 @@
                 "Iceborn Gauntlet", 
                 "Spirit Visage", 
                 "Guardian Angel", 
-                "Dead Man's Plate"
+                "Thornmail"
             ], 
             "FreqStarterBuild": [
                 "Corrupting Potion"
@@ -3278,8 +3149,8 @@
                 "Mercury's Treads", 
                 "Iceborn Gauntlet", 
                 "Spirit Visage", 
-                "Guardian Angel", 
-                "Dead Man's Plate"
+                "Dead Man's Plate", 
+                "Thornmail"
             ], 
             "WinStarterBuild": [
                 "Corrupting Potion"
@@ -3319,8 +3190,8 @@
                 "Berserker's Greaves", 
                 "Duskblade of Draktharr", 
                 "Statikk Shiv", 
-                "Maw of Malmortius", 
-                "Guardian Angel"
+                "Infinity Edge", 
+                "Lord Dominik's Regards"
             ], 
             "FreqStarterBuild": [
                 "Doran's Blade", 
@@ -3329,9 +3200,9 @@
             "WinFullBuild": [
                 "Duskblade of Draktharr", 
                 "Berserker's Greaves", 
-                "Statikk Shiv", 
+                "Youmuu's Ghostblade", 
+                "Phantom Dancer", 
                 "Infinity Edge", 
-                "The Bloodthirster", 
                 "Lord Dominik's Regards"
             ], 
             "WinStarterBuild": [
@@ -3348,7 +3219,7 @@
                 "Thornmail", 
                 "Dead Man's Plate", 
                 "Randuin's Omen", 
-                "Guardian Angel"
+                "Spirit Visage"
             ], 
             "FreqStarterBuild": [
                 "Hunter's Talisman", 
@@ -3361,35 +3232,21 @@
                 "Ninja Tabi", 
                 "Thornmail", 
                 "Dead Man's Plate", 
-                "Guardian Angel", 
-                "Spirit Visage"
+                "Banshee's Veil", 
+                "Dead Man's Plate"
             ], 
             "WinStarterBuild": [
-                "Hunter's Machete", 
+                "Hunter's Talisman", 
                 "Refillable Potion"
             ]
         }, 
         "Top": {
-            "FreqFullBuild": [
-                "Sunfire Cape", 
-                "Ninja Tabi", 
-                "Thornmail", 
-                "Dead Man's Plate", 
-                "Randuin's Omen", 
-                "Zz'Rot Portal"
-            ], 
+            "FreqFullBuild": [], 
             "FreqStarterBuild": [
                 "Doran's Shield", 
                 "Health Potion"
             ], 
-            "WinFullBuild": [
-                "Sunfire Cape", 
-                "Ninja Tabi", 
-                "Thornmail", 
-                "Dead Man's Plate", 
-                "Locket of the Iron Solari", 
-                "Randuin's Omen"
-            ], 
+            "WinFullBuild": [], 
             "WinStarterBuild": [
                 "Doran's Shield", 
                 "Health Potion"
@@ -3412,15 +3269,17 @@
             ], 
             "WinFullBuild": [
                 "Stalker's Cinderhulk", 
+                "Mercury's Treads", 
                 "Titanic Hydra", 
-                "Ninja Tabi", 
                 "Dead Man's Plate", 
                 "Spirit Visage", 
-                "Thornmail"
+                "Guardian Angel"
             ], 
             "WinStarterBuild": [
                 "Hunter's Machete", 
-                "Refillable Potion"
+                "Health Potion", 
+                "Health Potion", 
+                "Health Potion"
             ]
         }
     }, 
@@ -3430,9 +3289,9 @@
                 "The Black Cleaver", 
                 "Ninja Tabi", 
                 "Titanic Hydra", 
-                "Locket of the Iron Solari", 
                 "Randuin's Omen", 
-                "Death's Dance"
+                "Spirit Visage", 
+                "Guardian Angel"
             ], 
             "FreqStarterBuild": [
                 "Doran's Blade", 
@@ -3440,11 +3299,11 @@
             ], 
             "WinFullBuild": [
                 "The Black Cleaver", 
-                "Mercury's Treads", 
+                "Ninja Tabi", 
                 "Titanic Hydra", 
-                "Dead Man's Plate", 
-                "Spirit Visage", 
-                "Youmuu's Ghostblade"
+                "Randuin's Omen", 
+                "Death's Dance", 
+                "Thornmail"
             ], 
             "WinStarterBuild": [
                 "Long Sword", 
@@ -3487,12 +3346,12 @@
     "riven": {
         "Top": {
             "FreqFullBuild": [
-                "The Black Cleaver", 
+                "Youmuu's Ghostblade", 
                 "Ionian Boots of Lucidity", 
+                "Edge of Night", 
+                "Duskblade of Draktharr", 
                 "Ravenous Hydra", 
-                "The Bloodthirster", 
-                "Guardian Angel", 
-                "Sterak's Gage"
+                "Guardian Angel"
             ], 
             "FreqStarterBuild": [
                 "Long Sword", 
@@ -3501,16 +3360,18 @@
                 "Health Potion"
             ], 
             "WinFullBuild": [
-                "The Black Cleaver", 
                 "Youmuu's Ghostblade", 
-                "Mercury's Treads", 
+                "Ionian Boots of Lucidity", 
                 "Edge of Night", 
-                "Lord Dominik's Regards", 
+                "Duskblade of Draktharr", 
+                "Ravenous Hydra", 
                 "Guardian Angel"
             ], 
             "WinStarterBuild": [
                 "Long Sword", 
-                "Refillable Potion"
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation"
             ]
         }
     }, 
@@ -3522,19 +3383,19 @@
                 "Rylai's Crystal Scepter", 
                 "Liandry's Torment", 
                 "Zhonya's Hourglass", 
-                "Void Staff"
+                "Guardian Angel"
             ], 
             "FreqStarterBuild": [
                 "Hunter's Talisman", 
                 "Refillable Potion"
             ], 
             "WinFullBuild": [
-                "Stalker's Runic Echoes", 
+                "Skirmisher's Runic Echoes", 
                 "Sorcerer's Shoes", 
                 "Liandry's Torment", 
                 "Rylai's Crystal Scepter", 
                 "Zhonya's Hourglass", 
-                "Guardian Angel"
+                "Void Staff"
             ], 
             "WinStarterBuild": [
                 "Hunter's Talisman", 
@@ -3555,15 +3416,15 @@
                 "Health Potion"
             ], 
             "WinFullBuild": [
-                "Hextech Protobelt-01", 
+                "Liandry's Torment", 
                 "Sorcerer's Shoes", 
                 "Zhonya's Hourglass", 
-                "Liandry's Torment", 
-                "Void Staff", 
-                "Guardian Angel"
+                "Rabadon's Deathcap", 
+                "Rylai's Crystal Scepter", 
+                "Void Staff"
             ], 
             "WinStarterBuild": [
-                "Doran's Shield", 
+                "Amplifying Tome", 
                 "Health Potion"
             ]
         }
@@ -3580,15 +3441,17 @@
             ], 
             "FreqStarterBuild": [
                 "Sapphire Crystal", 
-                "Refillable Potion"
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation"
             ], 
             "WinFullBuild": [
                 "Rod of Ages", 
                 "Archangel's Staff", 
                 "Ionian Boots of Lucidity", 
                 "Morellonomicon", 
-                "Void Staff", 
-                "Rabadon's Deathcap"
+                "Rabadon's Deathcap", 
+                "Guardian Angel"
             ], 
             "WinStarterBuild": [
                 "Sapphire Crystal", 
@@ -3599,8 +3462,8 @@
             "FreqFullBuild": [
                 "Rod of Ages", 
                 "Ionian Boots of Lucidity", 
-                "Archangel's Staff", 
                 "Morellonomicon", 
+                "Archangel's Staff", 
                 "Void Staff", 
                 "Rabadon's Deathcap"
             ], 
@@ -3612,9 +3475,9 @@
             ], 
             "WinFullBuild": [
                 "Rod of Ages", 
+                "Archangel's Staff", 
                 "Ionian Boots of Lucidity", 
                 "Morellonomicon", 
-                "Archangel's Staff", 
                 "Void Staff", 
                 "Rabadon's Deathcap"
             ], 
@@ -3632,7 +3495,7 @@
                 "Dead Man's Plate", 
                 "Banshee's Veil", 
                 "Warmog's Armor", 
-                "Thornmail"
+                "Guardian Angel"
             ], 
             "FreqStarterBuild": [
                 "Hunter's Talisman", 
@@ -3640,11 +3503,11 @@
             ], 
             "WinFullBuild": [
                 "Stalker's Cinderhulk", 
-                "Ninja Tabi", 
+                "Boots of Swiftness", 
                 "Dead Man's Plate", 
-                "Banshee's Veil", 
-                "Warmog's Armor", 
-                "Guardian Angel"
+                "Spirit Visage", 
+                "Iceborn Gauntlet", 
+                "Thornmail"
             ], 
             "WinStarterBuild": [
                 "Hunter's Talisman", 
@@ -3655,28 +3518,28 @@
     "shaco": {
         "Jungle": {
             "FreqFullBuild": [
-                "Stalker's Runic Echoes", 
-                "Sorcerer's Shoes", 
-                "Hextech Gunblade", 
-                "Lich Bane", 
-                "Rabadon's Deathcap", 
-                "Void Staff"
+                "Stalker's Warrior", 
+                "Boots of Mobility", 
+                "Duskblade of Draktharr", 
+                "Infinity Edge", 
+                "The Black Cleaver", 
+                "Guardian Angel"
             ], 
             "FreqStarterBuild": [
                 "Hunter's Machete", 
                 "Refillable Potion"
             ], 
             "WinFullBuild": [
-                "Stalker's Runic Echoes", 
-                "Sorcerer's Shoes", 
-                "Hextech Gunblade", 
-                "Lich Bane", 
-                "Rabadon's Deathcap", 
-                "Void Staff"
+                "Berserker's Greaves", 
+                "Duskblade of Draktharr", 
+                "Edge of Night", 
+                "Infinity Edge", 
+                "Lord Dominik's Regards", 
+                "Ravenous Hydra"
             ], 
             "WinStarterBuild": [
-                "Hunter's Machete", 
-                "Refillable Potion"
+                "Rejuvenation Bead", 
+                "Hunter's Machete"
             ]
         }, 
         "Top": {
@@ -3684,9 +3547,9 @@
                 "Hextech Protobelt-01", 
                 "Ionian Boots of Lucidity", 
                 "Lich Bane", 
-                "Luden's Echo", 
+                "Zhonya's Hourglass", 
                 "Rabadon's Deathcap", 
-                "Void Staff"
+                "Guardian Angel"
             ], 
             "FreqStarterBuild": [
                 "Corrupting Potion"
@@ -3696,33 +3559,17 @@
                 "Ionian Boots of Lucidity", 
                 "Lich Bane", 
                 "Zhonya's Hourglass", 
-                "Luden's Echo", 
-                "Rabadon's Deathcap"
+                "Rabadon's Deathcap", 
+                "Infinity Edge"
             ], 
             "WinStarterBuild": [
                 "Doran's Ring", 
-                "Total Biscuit of Rejuvenation", 
-                "Total Biscuit of Rejuvenation"
+                "Health Potion", 
+                "Health Potion"
             ]
         }
     }, 
     "shen": {
-        "Support": {
-            "FreqFullBuild": [], 
-            "FreqStarterBuild": [
-                "Total Biscuit of Rejuvenation", 
-                "Total Biscuit of Rejuvenation", 
-                "Total Biscuit of Rejuvenation", 
-                "Relic Shield"
-            ], 
-            "WinFullBuild": [], 
-            "WinStarterBuild": [
-                "Total Biscuit of Rejuvenation", 
-                "Total Biscuit of Rejuvenation", 
-                "Total Biscuit of Rejuvenation", 
-                "Relic Shield"
-            ]
-        }, 
         "Top": {
             "FreqFullBuild": [
                 "Sunfire Cape", 
@@ -3741,11 +3588,13 @@
                 "Mercury's Treads", 
                 "Titanic Hydra", 
                 "Spirit Visage", 
-                "Randuin's Omen", 
+                "Redemption", 
                 "Guardian Angel"
             ], 
             "WinStarterBuild": [
-                "Ruby Crystal", 
+                "Cloth Armor", 
+                "Health Potion", 
+                "Health Potion", 
                 "Health Potion", 
                 "Health Potion"
             ]
@@ -3771,10 +3620,10 @@
                 "Mercury's Treads", 
                 "Dead Man's Plate", 
                 "Spirit Visage", 
-                "Thornmail"
+                "Banshee's Veil"
             ], 
             "WinStarterBuild": [
-                "Hunter's Talisman", 
+                "Hunter's Machete", 
                 "Refillable Potion"
             ]
         }
@@ -3786,20 +3635,20 @@
                 "Righteous Glory", 
                 "Zz'Rot Portal", 
                 "Rylai's Crystal Scepter", 
-                "Dead Man's Plate", 
-                "Thornmail"
+                "Liandry's Torment", 
+                "Dead Man's Plate"
             ], 
             "FreqStarterBuild": [
                 "The Dark Seal", 
                 "Refillable Potion"
             ], 
             "WinFullBuild": [
+                "Rod of Ages", 
                 "Boots of Swiftness", 
                 "Zz'Rot Portal", 
                 "Rylai's Crystal Scepter", 
-                "Liandry's Torment", 
-                "Dead Man's Plate", 
-                "Spirit Visage"
+                "Thornmail", 
+                "Dead Man's Plate"
             ], 
             "WinStarterBuild": [
                 "The Dark Seal", 
@@ -3808,41 +3657,15 @@
         }
     }, 
     "sion": {
-        "Jungle": {
-            "FreqFullBuild": [], 
-            "FreqStarterBuild": [
-                "Hunter's Talisman", 
-                "Refillable Potion"
-            ], 
-            "WinFullBuild": [], 
-            "WinStarterBuild": [
-                "Hunter's Talisman", 
-                "Refillable Potion"
-            ]
-        }, 
         "Support": {
-            "FreqFullBuild": [
-                "Sightstone", 
-                "Face of the Mountain", 
-                "Mercury's Treads", 
-                "Knight's Vow", 
-                "Dead Man's Plate", 
-                "Spirit Visage"
-            ], 
+            "FreqFullBuild": [], 
             "FreqStarterBuild": [
                 "Total Biscuit of Rejuvenation", 
                 "Total Biscuit of Rejuvenation", 
                 "Total Biscuit of Rejuvenation", 
                 "Relic Shield"
             ], 
-            "WinFullBuild": [
-                "Sightstone", 
-                "Face of the Mountain", 
-                "Mercury's Treads", 
-                "Knight's Vow", 
-                "Sunfire Cape", 
-                "Banshee's Veil"
-            ], 
+            "WinFullBuild": [], 
             "WinStarterBuild": [
                 "Refillable Potion", 
                 "Relic Shield"
@@ -3850,23 +3673,23 @@
         }, 
         "Top": {
             "FreqFullBuild": [
-                "Ninja Tabi", 
                 "Sunfire Cape", 
+                "Ninja Tabi", 
                 "Spirit Visage", 
-                "Randuin's Omen", 
                 "Zz'Rot Portal", 
-                "Warmog's Armor"
+                "Warmog's Armor", 
+                "Frozen Heart"
             ], 
             "FreqStarterBuild": [
                 "Corrupting Potion"
             ], 
             "WinFullBuild": [
                 "Sunfire Cape", 
-                "Ninja Tabi", 
+                "Mercury's Treads", 
+                "Iceborn Gauntlet", 
+                "Titanic Hydra", 
                 "Spirit Visage", 
-                "Frozen Heart", 
-                "Randuin's Omen", 
-                "Guardian Angel"
+                "Thornmail"
             ], 
             "WinStarterBuild": [
                 "Corrupting Potion"
@@ -3880,8 +3703,8 @@
                 "Berserker's Greaves", 
                 "Phantom Dancer", 
                 "Infinity Edge", 
-                "The Bloodthirster", 
-                "Lord Dominik's Regards"
+                "Lord Dominik's Regards", 
+                "The Bloodthirster"
             ], 
             "FreqStarterBuild": [
                 "Doran's Blade", 
@@ -3892,12 +3715,12 @@
                 "Phantom Dancer", 
                 "Berserker's Greaves", 
                 "Infinity Edge", 
-                "The Bloodthirster", 
-                "Mercurial Scimitar"
+                "Maw of Malmortius", 
+                "Mortal Reminder"
             ], 
             "WinStarterBuild": [
                 "Doran's Blade", 
-                "Health Potion"
+                "Total Biscuit of Rejuvenation"
             ]
         }
     }, 
@@ -3909,22 +3732,22 @@
                 "Trinity Force", 
                 "Dead Man's Plate", 
                 "Spirit Visage", 
-                "Guardian Angel"
+                "Warmog's Armor"
             ], 
             "FreqStarterBuild": [
                 "Hunter's Talisman", 
                 "Refillable Potion"
             ], 
             "WinFullBuild": [
-                "Stalker's Warrior", 
+                "Stalker's Cinderhulk", 
+                "Boots of Swiftness", 
                 "Trinity Force", 
-                "Mercury's Treads", 
                 "Dead Man's Plate", 
-                "Randuin's Omen", 
-                "Thornmail"
+                "Spirit Visage", 
+                "Iceborn Gauntlet"
             ], 
             "WinStarterBuild": [
-                "Hunter's Talisman", 
+                "Hunter's Machete", 
                 "Refillable Potion"
             ]
         }
@@ -3935,9 +3758,9 @@
                 "Sightstone", 
                 "Sorcerer's Shoes", 
                 "Lich Bane", 
-                "Luden's Echo", 
-                "Athene's Unholy Grail", 
-                "Mikael's Crucible"
+                "Redemption", 
+                "Frost Queen's Claim", 
+                "Athene's Unholy Grail"
             ], 
             "FreqStarterBuild": [
                 "Total Biscuit of Rejuvenation", 
@@ -3948,13 +3771,13 @@
             "WinFullBuild": [
                 "Sightstone", 
                 "Sorcerer's Shoes", 
-                "Lich Bane", 
+                "Athene's Unholy Grail", 
                 "Redemption", 
-                "Frost Queen's Claim", 
-                "Luden's Echo"
+                "Ardent Censer", 
+                "Lich Bane"
             ], 
             "WinStarterBuild": [
-                "Refillable Potion", 
+                "Faerie Charm", 
                 "Spellthief's Edge"
             ]
         }
@@ -3966,8 +3789,8 @@
                 "Ionian Boots of Lucidity", 
                 "Redemption", 
                 "Locket of the Iron Solari", 
-                "Talisman of Ascension", 
-                "Warmog's Armor"
+                "Ardent Censer", 
+                "Mikael's Crucible"
             ], 
             "FreqStarterBuild": [
                 "Total Biscuit of Rejuvenation", 
@@ -3977,11 +3800,11 @@
             ], 
             "WinFullBuild": [
                 "Sightstone", 
-                "Redemption", 
                 "Ionian Boots of Lucidity", 
+                "Redemption", 
                 "Locket of the Iron Solari", 
-                "Talisman of Ascension", 
-                "Banner of Command"
+                "Ardent Censer", 
+                "Mikael's Crucible"
             ], 
             "WinStarterBuild": [
                 "Total Biscuit of Rejuvenation", 
@@ -3997,8 +3820,8 @@
                 "Rod of Ages", 
                 "Sorcerer's Shoes", 
                 "Zhonya's Hourglass", 
-                "Rylai's Crystal Scepter", 
-                "Liandry's Torment", 
+                "Spirit Visage", 
+                "Rabadon's Deathcap", 
                 "Void Staff"
             ], 
             "FreqStarterBuild": [
@@ -4007,12 +3830,12 @@
                 "Health Potion"
             ], 
             "WinFullBuild": [
-                "Ionian Boots of Lucidity", 
                 "Rod of Ages", 
-                "Hextech Protobelt-01", 
+                "Ionian Boots of Lucidity", 
+                "Zhonya's Hourglass", 
                 "Spirit Visage", 
-                "Archangel's Staff", 
-                "Archangel's Staff"
+                "Rabadon's Deathcap", 
+                "Rylai's Crystal Scepter"
             ], 
             "WinStarterBuild": [
                 "Doran's Ring", 
@@ -4027,7 +3850,7 @@
                 "Zhonya's Hourglass", 
                 "Spirit Visage", 
                 "Rylai's Crystal Scepter", 
-                "Liandry's Torment"
+                "Void Staff"
             ], 
             "FreqStarterBuild": [
                 "Doran's Ring", 
@@ -4036,11 +3859,11 @@
             ], 
             "WinFullBuild": [
                 "Rod of Ages", 
-                "Sorcerer's Shoes", 
                 "Zhonya's Hourglass", 
+                "Sorcerer's Shoes", 
+                "Spirit Visage", 
                 "Rylai's Crystal Scepter", 
-                "Liandry's Torment", 
-                "Spirit Visage"
+                "Void Staff"
             ], 
             "WinStarterBuild": [
                 "Doran's Ring", 
@@ -4074,8 +3897,8 @@
             ], 
             "WinStarterBuild": [
                 "Doran's Ring", 
-                "Health Potion", 
-                "Health Potion"
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation"
             ]
         }
     }, 
@@ -4087,7 +3910,7 @@
                 "Face of the Mountain", 
                 "Locket of the Iron Solari", 
                 "Dead Man's Plate", 
-                "Thornmail"
+                "Righteous Glory"
             ], 
             "FreqStarterBuild": [
                 "Refillable Potion", 
@@ -4095,11 +3918,11 @@
             ], 
             "WinFullBuild": [
                 "Sightstone", 
-                "Boots of Swiftness", 
                 "Face of the Mountain", 
+                "Boots of Swiftness", 
                 "Redemption", 
-                "Locket of the Iron Solari", 
-                "Banshee's Veil"
+                "Knight's Vow", 
+                "Dead Man's Plate"
             ], 
             "WinStarterBuild": [
                 "Total Biscuit of Rejuvenation", 
@@ -4109,11 +3932,25 @@
             ]
         }, 
         "Top": {
-            "FreqFullBuild": [], 
+            "FreqFullBuild": [
+                "Sunfire Cape", 
+                "Mercury's Treads", 
+                "Dead Man's Plate", 
+                "Spirit Visage", 
+                "Titanic Hydra", 
+                "Trinity Force"
+            ], 
             "FreqStarterBuild": [
                 "Corrupting Potion"
             ], 
-            "WinFullBuild": [], 
+            "WinFullBuild": [
+                "Sunfire Cape", 
+                "Mercury's Treads", 
+                "Dead Man's Plate", 
+                "Spirit Visage", 
+                "Titanic Hydra", 
+                "Trinity Force"
+            ], 
             "WinStarterBuild": [
                 "Corrupting Potion"
             ]
@@ -4125,9 +3962,9 @@
                 "Morellonomicon", 
                 "Sorcerer's Shoes", 
                 "Rylai's Crystal Scepter", 
+                "Liandry's Torment", 
                 "Rabadon's Deathcap", 
-                "Void Staff", 
-                "Zhonya's Hourglass"
+                "Void Staff"
             ], 
             "FreqStarterBuild": [
                 "Doran's Ring", 
@@ -4135,49 +3972,21 @@
                 "Total Biscuit of Rejuvenation"
             ], 
             "WinFullBuild": [
-                "Sorcerer's Shoes", 
                 "Morellonomicon", 
+                "Sorcerer's Shoes", 
                 "Rylai's Crystal Scepter", 
                 "Liandry's Torment", 
                 "Void Staff", 
-                "Rabadon's Deathcap"
+                "Void Staff"
             ], 
             "WinStarterBuild": [
                 "Doran's Ring", 
-                "Health Potion", 
-                "Health Potion"
-            ]
-        }, 
-        "Support": {
-            "FreqFullBuild": [], 
-            "FreqStarterBuild": [
                 "Total Biscuit of Rejuvenation", 
-                "Total Biscuit of Rejuvenation", 
-                "Total Biscuit of Rejuvenation", 
-                "Spellthief's Edge"
-            ], 
-            "WinFullBuild": [], 
-            "WinStarterBuild": [
-                "Total Biscuit of Rejuvenation", 
-                "Total Biscuit of Rejuvenation", 
-                "Total Biscuit of Rejuvenation", 
-                "Spellthief's Edge"
+                "Total Biscuit of Rejuvenation"
             ]
         }
     }, 
     "talon": {
-        "Jungle": {
-            "FreqFullBuild": [], 
-            "FreqStarterBuild": [
-                "Long Sword", 
-                "Refillable Potion"
-            ], 
-            "WinFullBuild": [], 
-            "WinStarterBuild": [
-                "Hunter's Machete", 
-                "Refillable Potion"
-            ]
-        }, 
         "Middle": {
             "FreqFullBuild": [
                 "Youmuu's Ghostblade", 
@@ -4192,26 +4001,41 @@
                 "Refillable Potion"
             ], 
             "WinFullBuild": [
-                "Ionian Boots of Lucidity", 
                 "Youmuu's Ghostblade", 
-                "The Black Cleaver", 
                 "Duskblade of Draktharr", 
-                "Maw of Malmortius", 
-                "Edge of Night"
+                "Ionian Boots of Lucidity", 
+                "Edge of Night", 
+                "Lord Dominik's Regards", 
+                "Death's Dance"
             ], 
             "WinStarterBuild": [
                 "Corrupting Potion"
             ]
         }, 
         "Top": {
-            "FreqFullBuild": [], 
+            "FreqFullBuild": [
+                "Youmuu's Ghostblade", 
+                "Ionian Boots of Lucidity", 
+                "The Black Cleaver", 
+                "Duskblade of Draktharr", 
+                "Maw of Malmortius", 
+                "Guardian Angel"
+            ], 
             "FreqStarterBuild": [
                 "Long Sword", 
                 "Refillable Potion"
             ], 
-            "WinFullBuild": [], 
+            "WinFullBuild": [
+                "Youmuu's Ghostblade", 
+                "The Black Cleaver", 
+                "Ionian Boots of Lucidity", 
+                "Duskblade of Draktharr", 
+                "Edge of Night", 
+                "Lord Dominik's Regards"
+            ], 
             "WinStarterBuild": [
-                "Corrupting Potion"
+                "Long Sword", 
+                "Refillable Potion"
             ]
         }
     }, 
@@ -4233,16 +4057,14 @@
             ], 
             "WinFullBuild": [
                 "Sightstone", 
-                "Face of the Mountain", 
                 "Boots of Swiftness", 
-                "Knight's Vow", 
-                "Locket of the Iron Solari", 
-                "Redemption"
+                "Frozen Heart", 
+                "Spirit Visage", 
+                "Face of the Mountain", 
+                "Warmog's Armor"
             ], 
             "WinStarterBuild": [
-                "Total Biscuit of Rejuvenation", 
-                "Total Biscuit of Rejuvenation", 
-                "Total Biscuit of Rejuvenation", 
+                "Refillable Potion", 
                 "Relic Shield"
             ]
         }
@@ -4266,12 +4088,13 @@
                 "Liandry's Torment", 
                 "Sorcerer's Shoes", 
                 "Nashor's Tooth", 
-                "Rylai's Crystal Scepter", 
+                "Rabadon's Deathcap", 
                 "Void Staff", 
-                "Rabadon's Deathcap"
+                "Luden's Echo"
             ], 
             "WinStarterBuild": [
-                "Corrupting Potion"
+                "Doran's Blade", 
+                "Total Biscuit of Rejuvenation"
             ]
         }
     }, 
@@ -4281,8 +4104,8 @@
                 "Sightstone", 
                 "Boots of Mobility", 
                 "Face of the Mountain", 
-                "Redemption", 
                 "Locket of the Iron Solari", 
+                "Redemption", 
                 "Knight's Vow"
             ], 
             "FreqStarterBuild": [
@@ -4310,8 +4133,8 @@
     "tristana": {
         "ADC": {
             "FreqFullBuild": [
-                "Runaan's Hurricane", 
                 "Berserker's Greaves", 
+                "Runaan's Hurricane", 
                 "Infinity Edge", 
                 "Rapid Firecannon", 
                 "The Bloodthirster", 
@@ -4327,7 +4150,7 @@
                 "Berserker's Greaves", 
                 "Rapid Firecannon", 
                 "The Bloodthirster", 
-                "Lord Dominik's Regards"
+                "Mercurial Scimitar"
             ], 
             "WinStarterBuild": [
                 "Doran's Blade", 
@@ -4347,7 +4170,9 @@
             "WinFullBuild": [], 
             "WinStarterBuild": [
                 "Hunter's Machete", 
-                "Refillable Potion"
+                "Health Potion", 
+                "Health Potion", 
+                "Health Potion"
             ]
         }, 
         "Top": {
@@ -4356,19 +4181,19 @@
                 "Trinity Force", 
                 "Dead Man's Plate", 
                 "Spirit Visage", 
-                "Thornmail", 
-                "Guardian Angel"
+                "Death's Dance", 
+                "Frozen Heart"
             ], 
             "FreqStarterBuild": [
                 "Corrupting Potion"
             ], 
             "WinFullBuild": [
-                "Ravenous Hydra", 
-                "Mercury's Treads", 
-                "Iceborn Gauntlet", 
-                "Spirit Visage", 
+                "Ninja Tabi", 
+                "Trinity Force", 
                 "Dead Man's Plate", 
-                "Locket of the Iron Solari"
+                "Spirit Visage", 
+                "Death's Dance", 
+                "Frozen Heart"
             ], 
             "WinStarterBuild": [
                 "Doran's Blade", 
@@ -4384,7 +4209,7 @@
                 "Statikk Shiv", 
                 "Infinity Edge", 
                 "Blade of the Ruined King", 
-                "Guardian Angel"
+                "Phantom Dancer"
             ], 
             "FreqStarterBuild": [
                 "Hunter's Machete", 
@@ -4397,7 +4222,7 @@
                 "Statikk Shiv", 
                 "Berserker's Greaves", 
                 "Infinity Edge", 
-                "Blade of the Ruined King", 
+                "Phantom Dancer", 
                 "The Bloodthirster"
             ], 
             "WinStarterBuild": [
@@ -4439,8 +4264,8 @@
                 "Sorcerer's Shoes", 
                 "Luden's Echo", 
                 "Zhonya's Hourglass", 
-                "Rabadon's Deathcap", 
-                "Void Staff"
+                "Void Staff", 
+                "Rabadon's Deathcap"
             ], 
             "FreqStarterBuild": [
                 "Doran's Ring", 
@@ -4448,12 +4273,12 @@
                 "Total Biscuit of Rejuvenation"
             ], 
             "WinFullBuild": [
-                "Rod of Ages", 
                 "Ionian Boots of Lucidity", 
+                "Rod of Ages", 
                 "Lich Bane", 
-                "Luden's Echo", 
+                "Zhonya's Hourglass", 
                 "Void Staff", 
-                "Rapid Firecannon"
+                "Luden's Echo"
             ], 
             "WinStarterBuild": [
                 "Doran's Ring", 
@@ -4506,8 +4331,8 @@
             ], 
             "WinFullBuild": [
                 "Skirmisher's Bloodrazor", 
-                "Berserker's Greaves", 
                 "Runaan's Hurricane", 
+                "Berserker's Greaves", 
                 "Infinity Edge", 
                 "The Bloodthirster", 
                 "Mercurial Scimitar"
@@ -4533,15 +4358,15 @@
                 "Refillable Potion"
             ], 
             "WinFullBuild": [
-                "Stalker's Cinderhulk", 
-                "Mercury's Treads", 
+                "Skirmisher's Bloodrazor", 
+                "Boots of Swiftness", 
                 "Trinity Force", 
-                "Dead Man's Plate", 
                 "Zz'Rot Portal", 
-                "Wit's End"
+                "Dead Man's Plate", 
+                "Titanic Hydra"
             ], 
             "WinStarterBuild": [
-                "Hunter's Machete", 
+                "Hunter's Talisman", 
                 "Refillable Potion"
             ]
         }
@@ -4579,8 +4404,8 @@
                 "Berserker's Greaves", 
                 "Runaan's Hurricane", 
                 "Infinity Edge", 
-                "The Bloodthirster", 
-                "Lord Dominik's Regards"
+                "Lord Dominik's Regards", 
+                "Mercurial Scimitar"
             ], 
             "FreqStarterBuild": [
                 "Doran's Blade", 
@@ -4591,7 +4416,7 @@
                 "Runaan's Hurricane", 
                 "Berserker's Greaves", 
                 "Infinity Edge", 
-                "The Bloodthirster", 
+                "Lord Dominik's Regards", 
                 "Death's Dance"
             ], 
             "WinStarterBuild": [
@@ -4620,7 +4445,7 @@
                 "Berserker's Greaves", 
                 "Phantom Dancer", 
                 "The Bloodthirster", 
-                "Mercurial Scimitar"
+                "Lord Dominik's Regards"
             ], 
             "WinStarterBuild": [
                 "Doran's Blade", 
@@ -4662,9 +4487,9 @@
                 "Sightstone", 
                 "Sorcerer's Shoes", 
                 "Morellonomicon", 
-                "Void Staff", 
-                "Rabadon's Deathcap", 
-                "Void Staff"
+                "Luden's Echo", 
+                "Liandry's Torment", 
+                "Rabadon's Deathcap"
             ], 
             "FreqStarterBuild": [
                 "Total Biscuit of Rejuvenation", 
@@ -4676,9 +4501,9 @@
                 "Sightstone", 
                 "Sorcerer's Shoes", 
                 "Morellonomicon", 
-                "Rabadon's Deathcap", 
                 "Void Staff", 
-                "Lich Bane"
+                "Zhonya's Hourglass", 
+                "Rabadon's Deathcap"
             ], 
             "WinStarterBuild": [
                 "Total Biscuit of Rejuvenation", 
@@ -4692,11 +4517,11 @@
         "Middle": {
             "FreqFullBuild": [
                 "Morellonomicon", 
-                "Sorcerer's Shoes", 
+                "Ionian Boots of Lucidity", 
                 "Luden's Echo", 
                 "Rabadon's Deathcap", 
-                "Void Staff", 
-                "Liandry's Torment"
+                "Rylai's Crystal Scepter", 
+                "Zhonya's Hourglass"
             ], 
             "FreqStarterBuild": [
                 "Doran's Ring", 
@@ -4708,13 +4533,13 @@
                 "Ionian Boots of Lucidity", 
                 "Luden's Echo", 
                 "Rabadon's Deathcap", 
-                "Void Staff", 
-                "Zhonya's Hourglass"
+                "Zhonya's Hourglass", 
+                "Rylai's Crystal Scepter"
             ], 
             "WinStarterBuild": [
                 "Doran's Ring", 
-                "Health Potion", 
-                "Health Potion"
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation"
             ]
         }, 
         "Support": {
@@ -4733,17 +4558,15 @@
                 "Spellthief's Edge"
             ], 
             "WinFullBuild": [
-                "Sightstone", 
-                "Sorcerer's Shoes", 
-                "Morellonomicon", 
-                "Liandry's Torment", 
+                "Frost Queen's Claim", 
+                "Ionian Boots of Lucidity", 
+                "Luden's Echo", 
                 "Rylai's Crystal Scepter", 
-                "Redemption"
+                "Rabadon's Deathcap", 
+                "Mejai's Soulstealer"
             ], 
             "WinStarterBuild": [
-                "Total Biscuit of Rejuvenation", 
-                "Total Biscuit of Rejuvenation", 
-                "Total Biscuit of Rejuvenation", 
+                "Refillable Potion", 
                 "Spellthief's Edge"
             ]
         }
@@ -4756,7 +4579,7 @@
                 "Trinity Force", 
                 "Dead Man's Plate", 
                 "Sterak's Gage", 
-                "Guardian Angel"
+                "Maw of Malmortius"
             ], 
             "FreqStarterBuild": [
                 "Hunter's Machete", 
@@ -4765,16 +4588,16 @@
                 "Health Potion"
             ], 
             "WinFullBuild": [
-                "Stalker's Warrior", 
+                "Skirmisher's Warrior", 
                 "Trinity Force", 
                 "Mercury's Treads", 
                 "Dead Man's Plate", 
-                "Sterak's Gage", 
-                "Maw of Malmortius"
+                "Maw of Malmortius", 
+                "Sterak's Gage"
             ], 
             "WinStarterBuild": [
                 "Hunter's Machete", 
-                "Health Potion"
+                "Refillable Potion"
             ]
         }
     }, 
@@ -4799,7 +4622,7 @@
                 "Rylai's Crystal Scepter", 
                 "Lich Bane", 
                 "Void Staff", 
-                "Zhonya's Hourglass"
+                "Rabadon's Deathcap"
             ], 
             "WinStarterBuild": [
                 "Doran's Ring", 
@@ -4810,35 +4633,6 @@
     }, 
     "vladimir": {
         "Middle": {
-            "FreqFullBuild": [
-                "Hextech Protobelt-01", 
-                "Ionian Boots of Lucidity", 
-                "Spirit Visage", 
-                "Zhonya's Hourglass", 
-                "Rylai's Crystal Scepter", 
-                "Liandry's Torment"
-            ], 
-            "FreqStarterBuild": [
-                "Doran's Shield", 
-                "Health Potion"
-            ], 
-            "WinFullBuild": [
-                "Spirit Visage", 
-                "Ionian Boots of Lucidity", 
-                "Hextech Protobelt-01", 
-                "Void Staff", 
-                "Zhonya's Hourglass", 
-                "Rylai's Crystal Scepter"
-            ], 
-            "WinStarterBuild": [
-                "Boots of Speed", 
-                "Health Potion", 
-                "Health Potion", 
-                "Health Potion", 
-                "Health Potion"
-            ]
-        }, 
-        "Top": {
             "FreqFullBuild": [
                 "Hextech Protobelt-01", 
                 "Ionian Boots of Lucidity", 
@@ -4856,8 +4650,34 @@
                 "Ionian Boots of Lucidity", 
                 "Spirit Visage", 
                 "Rylai's Crystal Scepter", 
+                "Rabadon's Deathcap", 
+                "Zhonya's Hourglass"
+            ], 
+            "WinStarterBuild": [
+                "Doran's Shield", 
+                "Health Potion"
+            ]
+        }, 
+        "Top": {
+            "FreqFullBuild": [
+                "Hextech Protobelt-01", 
+                "Ionian Boots of Lucidity", 
+                "Spirit Visage", 
+                "Rylai's Crystal Scepter", 
                 "Zhonya's Hourglass", 
-                "Guardian Angel"
+                "Liandry's Torment"
+            ], 
+            "FreqStarterBuild": [
+                "Doran's Shield", 
+                "Health Potion"
+            ], 
+            "WinFullBuild": [
+                "Hextech Protobelt-01", 
+                "Ionian Boots of Lucidity", 
+                "Spirit Visage", 
+                "Rylai's Crystal Scepter", 
+                "Zhonya's Hourglass", 
+                "Zz'Rot Portal"
             ], 
             "WinStarterBuild": [
                 "Boots of Speed", 
@@ -4887,22 +4707,24 @@
                 "Mercury's Treads", 
                 "Dead Man's Plate", 
                 "Spirit Visage", 
-                "Thornmail", 
-                "Warmog's Armor"
+                "Titanic Hydra", 
+                "Thornmail"
             ], 
             "WinStarterBuild": [
                 "Hunter's Machete", 
-                "Refillable Potion"
+                "Health Potion", 
+                "Health Potion", 
+                "Health Potion"
             ]
         }, 
         "Top": {
             "FreqFullBuild": [
                 "Sunfire Cape", 
                 "Mercury's Treads", 
-                "Titanic Hydra", 
+                "Dead Man's Plate", 
                 "Spirit Visage", 
-                "Randuin's Omen", 
-                "Phantom Dancer"
+                "Warmog's Armor", 
+                "Thornmail"
             ], 
             "FreqStarterBuild": [
                 "Doran's Shield", 
@@ -4911,10 +4733,10 @@
             "WinFullBuild": [
                 "Sunfire Cape", 
                 "Mercury's Treads", 
-                "Spirit Visage", 
                 "Dead Man's Plate", 
-                "Sterak's Gage", 
-                "Trinity Force"
+                "Spirit Visage", 
+                "Warmog's Armor", 
+                "Thornmail"
             ], 
             "WinStarterBuild": [
                 "Doran's Shield", 
@@ -4925,40 +4747,30 @@
     "warwick": {
         "Jungle": {
             "FreqFullBuild": [
-                "Skirmisher's Bloodrazor", 
+                "Stalker's Cinderhulk", 
+                "Titanic Hydra", 
                 "Mercury's Treads", 
-                "Blade of the Ruined King", 
-                "Dead Man's Plate", 
                 "Spirit Visage", 
-                "Wit's End"
+                "Dead Man's Plate", 
+                "Blade of the Ruined King"
             ], 
             "FreqStarterBuild": [
-                "Hunter's Talisman", 
-                "Health Potion", 
-                "Health Potion", 
-                "Health Potion"
+                "Rejuvenation Bead", 
+                "Hunter's Machete"
             ], 
             "WinFullBuild": [
-                "Skirmisher's Bloodrazor", 
-                "Blade of the Ruined King", 
-                "Mercury's Treads", 
+                "Stalker's Cinderhulk", 
+                "Boots of Swiftness", 
+                "Titanic Hydra", 
                 "Dead Man's Plate", 
                 "Spirit Visage", 
-                "Trinity Force"
+                "Blade of the Ruined King"
             ], 
             "WinStarterBuild": [
                 "Hunter's Machete", 
-                "Refillable Potion"
-            ]
-        }, 
-        "Top": {
-            "FreqFullBuild": [], 
-            "FreqStarterBuild": [
-                "Corrupting Potion"
-            ], 
-            "WinFullBuild": [], 
-            "WinStarterBuild": [
-                "Corrupting Potion"
+                "Health Potion", 
+                "Health Potion", 
+                "Health Potion"
             ]
         }
     }, 
@@ -4979,16 +4791,16 @@
             ], 
             "WinFullBuild": [
                 "Morellonomicon", 
-                "Sorcerer's Shoes", 
                 "Luden's Echo", 
+                "Sorcerer's Shoes", 
                 "Rabadon's Deathcap", 
                 "Void Staff", 
-                "Liandry's Torment"
+                "Zhonya's Hourglass"
             ], 
             "WinStarterBuild": [
                 "Doran's Ring", 
-                "Health Potion", 
-                "Health Potion"
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation"
             ]
         }
     }, 
@@ -5010,11 +4822,11 @@
             ], 
             "WinFullBuild": [
                 "Skirmisher's Bloodrazor", 
-                "Trinity Force", 
                 "Mercury's Treads", 
+                "Trinity Force", 
                 "Dead Man's Plate", 
-                "Maw of Malmortius", 
-                "Frozen Mallet"
+                "Spirit Visage", 
+                "Blade of the Ruined King"
             ], 
             "WinStarterBuild": [
                 "Hunter's Machete", 
@@ -5027,7 +4839,7 @@
                 "Mercury's Treads", 
                 "Blade of the Ruined King", 
                 "Dead Man's Plate", 
-                "Death's Dance", 
+                "Spirit Visage", 
                 "Maw of Malmortius"
             ], 
             "FreqStarterBuild": [
@@ -5039,7 +4851,7 @@
                 "Mercury's Treads", 
                 "Blade of the Ruined King", 
                 "Dead Man's Plate", 
-                "Death's Dance", 
+                "Spirit Visage", 
                 "Maw of Malmortius"
             ], 
             "WinStarterBuild": [
@@ -5064,8 +4876,8 @@
             ], 
             "WinFullBuild": [
                 "Phantom Dancer", 
-                "Infinity Edge", 
                 "Berserker's Greaves", 
+                "Infinity Edge", 
                 "The Bloodthirster", 
                 "Frozen Mallet", 
                 "Guardian Angel"
@@ -5090,8 +4902,8 @@
             ], 
             "WinFullBuild": [
                 "Phantom Dancer", 
-                "Infinity Edge", 
                 "Berserker's Greaves", 
+                "Infinity Edge", 
                 "The Bloodthirster", 
                 "Frozen Mallet", 
                 "Guardian Angel"
@@ -5117,11 +4929,11 @@
             ], 
             "WinFullBuild": [
                 "Trinity Force", 
-                "Mercury's Treads", 
                 "Zz'Rot Portal", 
+                "Mercury's Treads", 
+                "Sterak's Gage", 
                 "Dead Man's Plate", 
-                "Spirit Visage", 
-                "Randuin's Omen"
+                "Spirit Visage"
             ], 
             "WinStarterBuild": [
                 "Doran's Blade", 
@@ -5148,8 +4960,8 @@
                 "Stalker's Cinderhulk", 
                 "Spirit Visage", 
                 "Randuin's Omen", 
-                "Guardian Angel", 
-                "Dead Man's Plate"
+                "Thornmail", 
+                "Locket of the Iron Solari"
             ], 
             "WinStarterBuild": [
                 "Hunter's Talisman", 
@@ -5165,7 +4977,7 @@
                 "Duskblade of Draktharr", 
                 "The Black Cleaver", 
                 "Maw of Malmortius", 
-                "Guardian Angel"
+                "Blade of the Ruined King"
             ], 
             "FreqStarterBuild": [
                 "Long Sword", 
@@ -5195,7 +5007,7 @@
                 "Luden's Echo", 
                 "Rabadon's Deathcap", 
                 "Void Staff", 
-                "Zhonya's Hourglass"
+                "Lich Bane"
             ], 
             "FreqStarterBuild": [
                 "Doran's Ring", 
@@ -5203,17 +5015,17 @@
                 "Total Biscuit of Rejuvenation"
             ], 
             "WinFullBuild": [
-                "Sorcerer's Shoes", 
                 "Morellonomicon", 
                 "Luden's Echo", 
-                "Rabadon's Deathcap", 
-                "Void Staff", 
-                "Lich Bane"
+                "Sorcerer's Shoes", 
+                "Lich Bane", 
+                "Lich Bane", 
+                "Void Staff"
             ], 
             "WinStarterBuild": [
                 "Doran's Ring", 
-                "Health Potion", 
-                "Health Potion"
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation"
             ]
         }, 
         "Middle": {
@@ -5236,7 +5048,7 @@
                 "Sorcerer's Shoes", 
                 "Rabadon's Deathcap", 
                 "Void Staff", 
-                "Lich Bane"
+                "Liandry's Torment"
             ], 
             "WinStarterBuild": [
                 "Doran's Ring", 
@@ -5262,16 +5074,16 @@
             ], 
             "WinFullBuild": [
                 "Rod of Ages", 
+                "Ionian Boots of Lucidity", 
                 "Morellonomicon", 
-                "Sorcerer's Shoes", 
-                "Rabadon's Deathcap", 
                 "Void Staff", 
-                "Rabadon's Deathcap"
+                "Rabadon's Deathcap", 
+                "Guardian Angel"
             ], 
             "WinStarterBuild": [
                 "Doran's Ring", 
-                "Total Biscuit of Rejuvenation", 
-                "Total Biscuit of Rejuvenation"
+                "Health Potion", 
+                "Health Potion"
             ]
         }, 
         "Support": {
@@ -5280,8 +5092,8 @@
                 "Ionian Boots of Lucidity", 
                 "Redemption", 
                 "Locket of the Iron Solari", 
-                "Zhonya's Hourglass", 
-                "Mikael's Crucible"
+                "Talisman of Ascension", 
+                "Zeke's Harbinger"
             ], 
             "FreqStarterBuild": [
                 "Total Biscuit of Rejuvenation", 
@@ -5290,12 +5102,12 @@
                 "Spellthief's Edge"
             ], 
             "WinFullBuild": [
-                "Sightstone", 
                 "Ionian Boots of Lucidity", 
-                "Talisman of Ascension", 
-                "Redemption", 
-                "Locket of the Iron Solari", 
-                "Zeke's Harbinger"
+                "Sightstone", 
+                "Frost Queen's Claim", 
+                "Morellonomicon", 
+                "Rabadon's Deathcap", 
+                "Void Staff"
             ], 
             "WinStarterBuild": [
                 "Refillable Potion", 
@@ -5311,7 +5123,7 @@
                 "Liandry's Torment", 
                 "Rylai's Crystal Scepter", 
                 "Void Staff", 
-                "Rabadon's Deathcap"
+                "Zhonya's Hourglass"
             ], 
             "FreqStarterBuild": [
                 "Total Biscuit of Rejuvenation", 
@@ -5320,17 +5132,18 @@
                 "Spellthief's Edge"
             ], 
             "WinFullBuild": [
-                "Sightstone", 
-                "Liandry's Torment", 
                 "Sorcerer's Shoes", 
+                "Liandry's Torment", 
                 "Rylai's Crystal Scepter", 
                 "Void Staff", 
+                "Zhonya's Hourglass", 
                 "Luden's Echo"
             ], 
             "WinStarterBuild": [
-                "Doran's Ring", 
                 "Total Biscuit of Rejuvenation", 
-                "Total Biscuit of Rejuvenation"
+                "Total Biscuit of Rejuvenation", 
+                "Total Biscuit of Rejuvenation", 
+                "Spellthief's Edge"
             ]
         }
     }
